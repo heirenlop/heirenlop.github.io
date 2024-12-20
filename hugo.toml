@@ -268,6 +268,9 @@ url = "contact/"
 # 添加可在md文件中插入html标签配置
 #----------------------------------------------------------
 
+# 添加github信息来保证时间/字数
+enableGitInfo = true
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
