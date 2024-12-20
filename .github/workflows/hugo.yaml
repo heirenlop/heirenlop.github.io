@@ -42,6 +42,14 @@ jobs:
         run: sudo snap install dart-sass
       - name: Checkout
         uses: actions/checkout@v4
+        # 设置 submodules 为 false，以确保不会拉取子模块
+        with:
+          submodules: false
+        # 添加用于调试 Git 的步骤
+      - name: Debugging Git  
+        run: |
+          git config --list --show-origin
+          git submodule status
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
