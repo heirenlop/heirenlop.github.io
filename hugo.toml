@@ -8,7 +8,7 @@ theme = "hugo-coder"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 #每页显示文章数量
-paginate = 6
+pagination.pagerSize = 8
 #是否启用emoji
 enableEmoji = true
 #服务配置
@@ -268,7 +268,12 @@ url = "contact/"
 # 添加可在md文件中插入html标签配置
 #----------------------------------------------------------
 
+# 启用 Git 信息功能,获取文件的最后提交时间
+enableGitInfo = true
+
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
 unsafe = true
+
+
