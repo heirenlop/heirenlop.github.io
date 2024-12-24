@@ -1,15 +1,10 @@
 {{ partial "head/meta-tags.html" . }}
-<!-- 添加网页小图标favicon，favicon位于images/favicon.ico -->
-<link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}images/favicon.ico">
 
 {{ if .Params.canonicalUrl }}
 <link rel="canonical" href="{{ .Params.canonicalUrl }}">
 {{ else }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{ end }}
-
-<!-- 引入中文字体 -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap">
 
 {{ partialCached "head/theme-styles.html" . }}
 
@@ -24,22 +19,3 @@
 {{ if .IsHome }}{{ partial "head/hugo-generator.html" . }}{{ end }}
 
 {{ partial "head/extensions.html" . }}
-
-<!-- 自定义 CSS 样式 -->
-<style>
-  /* CSS 重置 */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* 设置中文字体 */
-  body, h1, h2, h3, p {
-    font-family: 'Noto Sans SC', 'Microsoft YaHei', 'Arial Unicode MS', sans-serif;
-    line-height: 1.6; /* 调整行高 */
-    letter-spacing: 0.05em; /* 调整字间距 */
-  }
-</style>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
