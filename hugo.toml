@@ -33,7 +33,7 @@ avatarURL = "images/avatar.png"
 # favicon = "images/favicon-32x32.png"
 # gravatar = "13122356672@163.com"
 # 日期格式
-dateFormat = "January 2, 2006"
+dateFormat = "2006-01-02"
 since = 2024
 #mermaid语法启用，可以插入图表
 mermaid = true
@@ -139,9 +139,9 @@ customRemoteJS = []
 
 [taxonomies]
 category = "categories"
-series = "series"
+# series = "series"
 tag = "tags"
-author = "authors"
+# author = "authors"
 #  fa-brands 表示这是一个品牌图标。
 # fa-linkedin 表示这是 LinkedIn 的图标。
 # fa-2x 表示图标的大小是默认大小的两倍。
@@ -201,14 +201,20 @@ url = "resume/"
 name = "生活"
 weight = 3
 url = "生活日常/"
-[[languages.zh-cn.menu.main.children]]
-name = "音乐"
-weight = 1
-url = "生活日常/音乐/"
-[[languages.zh-cn.menu.main.children]]
+identifier = "生活"
+
+[[languages.zh-cn.menu.main]]
 name = "旅行"
-weight = 2
+weight = 1
 url = "生活日常/旅行/"
+parent = "生活"
+
+[[languages.zh-cn.menu.main]]
+name = "音乐"
+weight = 2
+url = "生活日常/音乐/"
+parent = "生活"
+
 
 [[languages.zh-cn.menu.main]]
 name = "工作"
