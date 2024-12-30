@@ -387,8 +387,19 @@ vim ~/.xprofile
 2. 在文件中添加以下内容：
 
 ```bash
-# 允许本地 Docker 容器访问 X11 服务器
-xhost +local:docker
+xhost +local:docker # 允许本地 Docker 容器访问 X11 服务器
 ```
 
 保存退出使更改生效。重新登录用户账户，xhost +local:docker 命令将在登录时自动执行。
+
+# 九. Docker资源空间管理
+
+```bash
+docker system df # 显示docker占用的磁盘空间
+
+docker system prune # 清理停止的容器、未使用的网络、悬空的镜像和构建缓存
+
+docker system prune -a # 清理所有未使用的镜像和容器
+
+```
+

@@ -166,3 +166,12 @@ sudo apt install speedtest-cli
 speedtest-cli --secure
 ```
 
+
+# 八. snap
+
+```bash
+snap list # 查看已安装的snap包
+snap remove <snap包名> # 删除snap包
+snap refresh <snap包名> # 更新snap包
+snap install <snap包名> # 安装snap包
+```
