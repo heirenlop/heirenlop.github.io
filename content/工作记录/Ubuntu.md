@@ -155,3 +155,14 @@ sudo vim /etc/update-manager/release-upgrades
 ```bash
 Prompt=never
 ```
+
+# 七. 网速测试
+安装speedtest
+```bash
+sudo apt update
+sudo apt install speedtest-cli
+```
+```bash
+speedtest-cli --secure
+```
+
