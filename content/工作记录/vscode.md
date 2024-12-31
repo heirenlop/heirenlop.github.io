@@ -132,3 +132,25 @@ ssh -T git@github.com
    ```bash
    ctrl+j
    ```
+# 四：无法输入中文问题
+
+1. 卸载 Snap 版本的 VS Code
+```bash
+sudo snap remove code
+```
+2. 添加微软的 GPG 密钥和软件源
+```bash
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+rm -f packages.microsoft.gpg
+```
+
+3. 更新apt缓存并安装
+```bash
+sudo apt-get update
+sudo apt-get install code
+```
