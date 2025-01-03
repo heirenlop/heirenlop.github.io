@@ -71,7 +71,7 @@ ssh -T git@github.com
 
 如果成功，会显示类似于 Hi username! You've successfully authenticated, but GitHub does not provide shell access. 的消息。
 
-4. Docker-> dev container
+4. dev container
     (1) 作用
 
     在容器化环境中构建、配置和管理开发环境。

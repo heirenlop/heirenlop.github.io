@@ -75,7 +75,11 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
 9. 流编辑器
    ```bash
    sed -i 's/<old>/<new>/g' filename #修改filename文件内old为new
-   
+
+10. 安装程序
+    ```bash
+    sudo apt install -y <package> # -y 自动确认所有提示
+    ``` 
 # 三. terminator
 1. history显示指令时间
 ```bash

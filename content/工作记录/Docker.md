@@ -225,7 +225,7 @@ rm -rf /var/lib/docker
 (5) 参考
 <https://blog.csdn.net/weixin_43145427/article/details/123770971>
 
-# 四. Docker镜像和容器构建流程
+# 四. Docker build and run
 
 1. 根据dockerfile构建镜像
 
@@ -236,10 +236,31 @@ rm -rf /var/lib/docker
 2. 构建并运行单个容器
 
    ```bash
-   docker run xxx
+   docker run 参数 镜像名 命令
    ```
 
-3. 构建并运行多个容器(需要docker compose.yaml)
+    **docker run的部分参数一览**
+----------------------------------------------------------------------------------------------------------------------
+| **命令/选项**               | **说明**                                                                                 |
+|-----------------------------|-----------------------------------------------------------------------------------------|
+| `-it`            | 以交互模式运行容器。                                                                      |
+| `--name <container-name>`       | 为容器设置的名称                                      |
+| `-p <host-port>:<container-port>` | 将主机端口映射到容器端口，以支持远程连接。也可以进行容器间通讯。                              |
+| `--rm`                      | 容器退出时自动删除。                                                                      |
+| `--gpus all`                | 启用容器内的 GPU 支持（需要 NVIDIA 驱动和容器工具）。                                        |
+| `-e DISPLAY=$DISPLAY`       | 将宿主机的 `DISPLAY` 环境变量传递给容器，以支持 GUI 显示。                                    |
+| `-v /tmp/.X11-unix:/tmp/.X11-unix` | 将主机的 X11 套接字挂载到容器内，以支持远程显示。                                      |
+| `-v $(pwd):/workspace`      | 将当前工作目录挂载到容器内的 `/workspace`，便于访问代码和数据。                                |
+| `-v /host/path:/container/path` | 将宿主机目录挂载到容器内。                          |
+| `--name pytorch-container`  | 为容器指定名称为 `pytorch-container`，方便后续管理。                                         |
+| `xhost +local:root`         | 允许本地的 root 用户访问宿主机的显示环境，支持容器图像输出。                                   |
+| `xhost -local:root`         | 取消 root 用户对宿主机显示环境的访问权限（安全关闭后设置）。                                   |
+| `plt.show()`                | 使用 `matplotlib` 在宿主机上显示图像（需要确保正确配置 `DISPLAY` 和 X11 访问）。               |
+| `-e DISPLAY=:0`             | 如果 `DISPLAY` 未正确传递，可以显式指定为 `:0`（宿主机的显示编号）。                           |
+----------------------------------------------------------------------------------------------------------------------
+
+
+1. 构建并运行多个容器(需要docker compose.yaml)
 
    ```bash
    docker-compose up -d
