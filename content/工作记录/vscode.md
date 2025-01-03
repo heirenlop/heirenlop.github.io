@@ -72,46 +72,10 @@ ssh -T git@github.com
 如果成功，会显示类似于 Hi username! You've successfully authenticated, but GitHub does not provide shell access. 的消息。
 
 4. dev container
-    (1) 作用
-
-    在容器化环境中构建、配置和管理开发环境。
-
-    (2) docker内构建按vscode环境流程
-    a. ctrl+shift+p，选择dev container: open folder in container;
-    b. 选择对应文件夹;
-    c. 配置dev container，有dockerfile直接根据dockerfile，没有则根据vscode配置文件生成;
-    以下为devconatainer.json文件例子
-
-    ```yaml
-      {
-    "name": "SEMENTIC_SUMA",
-    "build": {
-        "context": "..",
-        "dockerfile": "../Dockerfile"
-    },
-    "image": "semantic_suma:latest",
-    "containerName": "semantic_suma_dev_container",
-    "runArgs": [
-        "--env", "DISPLAY=${env:DISPLAY}",
-        "--env", "QT_X11_NO_MITSHM=1",
-        "--env", "XAUTHORITY=${env:XAUTHORITY}",
-        "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
-        "--volume", "/kitti:/data",
-        "--gpus", "all"
-        "--network=host",
-        "--ipc=host",
-        "--privileged"
-    ],
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-    "workspaceFolder": "/workspace",
-    "mounts": [ "source=/home/heirenlop/workspace/Dataset/,target=/root/Dataset/,type=bind" ]}
-    ```
-
-    d. 配置完成后，点击rebuild container，构建开发容器;
-    e. 构建完成，进入新开发容器的vscode界面。
-
-    (3) 问题：
-    a. 主机内新增某文件，vscode的界面内同步了，但vscode的终端内未同步，则Ctrl+Shift+P后rebuild容器。但是rebuild后之前容器内所有安装的软件都没了？
+    构建dev容器流程
+    (1) 程序内新建.devcontainer/devcontainer.json;
+    (2) ctrl+shift+p，选择dev container: open folder in container构建dev容器（如果有dockerfile直接根据dockerfile生成）;
+    (3) 配置完成后，点击rebuild container，构建开发容器;
 
 # 三：快捷键
 

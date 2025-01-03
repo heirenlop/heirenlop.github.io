@@ -225,7 +225,7 @@ rm -rf /var/lib/docker
 (5) 参考
 <https://blog.csdn.net/weixin_43145427/article/details/123770971>
 
-# 四. Docker build and run
+# 四. Docker build/run/compose
 
 1. 根据dockerfile构建镜像
 
@@ -260,7 +260,7 @@ rm -rf /var/lib/docker
 ----------------------------------------------------------------------------------------------------------------------
 
 
-1. 构建并运行多个容器(需要docker compose.yaml)
+3. 构建并运行多个容器(需要docker compose.yaml)
 
    ```bash
    docker-compose up -d
@@ -287,6 +287,19 @@ rm -rf /var/lib/docker
    删除原镜像
    docker rmi 镜像名:镜像版本号  # -f强制删除
    ```
+
+4. 迁移镜像
+    ```bash
+   docker save -o /path/to/your/destination/your_image.tar your_image:latest #镜像保存到一个tar文件
+
+   mv /path/to/your/destination/your_image.tar /other/your_image.tar #移动到其他目录
+
+   docker rmi your_image:latest #删除镜像
+
+   docker load -i /other/your_image.tar #从tar文件加载镜像
+
+   rm /other/your_image.tar #删除tar文件
+    ```
 
 # 六. 容器操作
 
