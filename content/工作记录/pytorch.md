@@ -54,7 +54,7 @@ devcontainer.yaml如下：
         ]
       }
     },
-    "postCreateCommand": "apt-get update && apt-get install -y vim x11-apps && pip install matplotlib wandb"  // 容器创建后执行的命令
+    "postCreateCommand": "apt-get update && apt-get install -y vim x11-apps libgl1-mesa-glx libglib2.0-0 && pip install matplotlib wandb opencv-python onnx onnxruntime-gpu"  // 容器创建后执行的命令
   }
 ```
 
