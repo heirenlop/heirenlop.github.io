@@ -13,11 +13,22 @@ apt-get update #更新
 
 apt-get install -y vim #安装vim
 
+apt-get install -y x11-apps #安装x11
+
+apt-get install -y libgl1-mesa-glx #安装opengl
+
+apt-get install -y libglib2.0-0 #安装glib
+
 pip install matplotlib #安装matplotlib
 
 pip install wandb #安装wandb
 
-apt-get install -y x11-apps #安装x11
+pip install opencv-python #安装opencv
+
+pip install onnx #安装onnx
+
+pip install onnxruntime-gpu #安装onnxruntime
+
 ```
 
 # 二. 开发容器搭建
@@ -46,3 +57,7 @@ devcontainer.yaml如下：
     "postCreateCommand": "apt-get update && apt-get install -y vim x11-apps && pip install matplotlib wandb"  // 容器创建后执行的命令
   }
 ```
+
+# 三. 代码
+
+链接：<https://github.com/heirenlop/pytorch>
