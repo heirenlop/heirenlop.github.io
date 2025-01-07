@@ -180,7 +180,7 @@ git commit -m "first commit"
 ```bash
 git remote add origin git@github.com:heirenlop/abc.git #链接远程仓
 git remote -v #查看状态
-git push -u origin master #推送
+git push -u origin main #推送
 ```
 (6) 修改remote链接
 ```bash
