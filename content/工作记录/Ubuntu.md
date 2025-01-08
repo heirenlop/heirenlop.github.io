@@ -22,9 +22,10 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
     ping #ip地址
     ```
 
-2. 查看磁盘空间
+2. 查看空间大小
     ```bash
-    df -h #目录
+    df -h # 总览盘大小
+    du -sh /path/to/file # 文件夹大小
     ```
 
 3. 文件夹赋权限
@@ -63,20 +64,16 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
    ```bash
    locate -i filename
    ```
-7. 查看文件大小
-   ```bash
-   ls -lh filename
-   ```
 
-8. 查看GPU占用率
+7. 查看GPU占用率
    ```bash
    watch -n 1 nvidia-smi #每隔一秒刷新
    ```
-9. 流编辑器
+8. 流编辑器
    ```bash
    sed -i 's/<old>/<new>/g' filename #修改filename文件内old为new
 
-10. 安装程序
+9.  安装程序
     ```bash
     sudo apt install -y <package> # -y 自动确认所有提示
     ``` 
