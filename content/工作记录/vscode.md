@@ -15,7 +15,26 @@ draft: false
 
 (4) 同步
 
-# 二：插件相关 #
+2. Auto save
+
+ <div class="container">
+                <div class="image">
+                    <figure>
+                        <img src="/images/work-record/vscode1.png",alt="设置1",loading="lazy">
+                        <figcaption>步骤1</figcaption>
+                    </figure>
+                </div>
+</div>
+ <div class="container">
+                <div class="image">
+                    <figure>
+                        <img src="/images/work-record/vscode2.png",alt="设置2",loading="lazy">
+                        <figcaption>步骤2</figcaption>
+                    </figure>
+                </div>
+</div>
+
+# 二：插件相关 
 
 1. ssh
 
