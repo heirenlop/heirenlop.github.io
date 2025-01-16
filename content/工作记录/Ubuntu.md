@@ -77,6 +77,18 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
     ```bash
     sudo apt install -y <package> # -y 自动确认所有提示
     ``` 
+10. 查看图片分辨率
+    ```bash
+    file image.jpg 
+    ```
+11. 查看共享内存shm大小
+    ```bash
+    df -h /dev/shm 
+    # docker内输入
+    shm              64M  412K   64M   1% /dev/shm
+    # 宿主机内输入
+    tmpfs           7.7G  532M  7.2G    7% /dev/shm
+    ```
 # 三. terminator
 1. history显示指令时间
 ```bash
@@ -175,4 +187,95 @@ snap list # 查看已安装的snap包
 snap remove <snap包名> # 删除snap包
 snap refresh <snap包名> # 更新snap包
 snap install <snap包名> # 安装snap包
+```
+
+# 九. 关闭升级提示
+
+1. /etc/apt/apt.conf.d/10periodic
+禁止自动下载更新文件，（0 是关闭，1 是开启，将所有值改为 0）
+做以下修改：
+```bash
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+```
+
+2. /etc/apt/apt.conf.d/20auto-upgrades
+禁用安全更新功能，（0 是关闭，1 是开启，将所有值改为 0）
+做以下修改：
+```bash
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Unattended-Upgrade "0";
+```
+
+3. 重启：sudo reboot
+
+# 十. 备份系统rsync
+
+1. rsync指令
+   
+链接：https://www.ruanyifeng.com/blog/2020/08/rsync.html
+
+2. 需要备份的文件
+
+- /etc：包含系统的配置文件。
+- /home：包含用户的个人数据和配置。
+- /var：包含可变数据，如日志、邮件和数据库等。
+- /usr：包含用户安装的程序和库。
+- /opt：包含可选的应用程序软件包。
+- /boot：包含启动加载器和内核相关文件。
+- /lib：包含系统库文件。
+- /root：包含管理员的个人数据。
+等等
+
+3. 不需要备份的文件
+- /dev：包含设备文件，如 /dev/sda1。
+- /proc：包含进程信息。
+- /sys：包含系统信息。
+- /tmp：包含临时文件。
+- /run：包含运行时数据。
+- /mnt：包含挂载的目录。
+- /media：包含挂载的目录。
+- /var/log：包含日志文件。
+- /var/cache/apt/archives：包含软件包缓存。
+
+4. 备份指令
+(1) 测试备份
+```bash
+sudo rsync -avz --info=progress2 --dry-run --delete \
+    --exclude=/proc \
+    --exclude=/sys \
+    --exclude=/dev \
+    --exclude=/run \
+    --exclude=/tmp \
+    --exclude=/mnt \
+    --exclude=/media \
+    --exclude=/var/cache/apt/archives \
+    --exclude=/var/log \
+    / /media/heirenlop/李佳潞的移动硬盘/ubuntu_backup/version_2025_01_14
+
+  # --dry-run：测试备份，不会实际进行备份。
+  # --delete：删除目标目录中不存在于源目录中的文件。
+  # --exclude：排除指定目录和文件。
+  # -avz：备份文件时使用压缩和校验,且显示详细信息。
+  # --info=progress2：显示备份的进度。
+```
+显示信息一般如下：
+```bash
+sent 106,950,204 bytes  received 10,927,096 bytes  2,381,359.60 bytes/sec
+total size is 473,654,672,042  speedup is 4,018.20 (DRY RUN)
+```
+(2) 正常备份
+```bash
+sudo rsync -avz --info=progress2 --delete \
+    --exclude=/proc \
+    --exclude=/sys \
+    --exclude=/dev \
+    --exclude=/run \
+    --exclude=/tmp \
+    --exclude=/mnt \
+    --exclude=/media \
+    --exclude=/var/cache/apt/archives \
+    --exclude=/var/log \
+    / /media/heirenlop/李佳潞的移动硬盘/ubuntu_backup/version_2025_01_14
 ```

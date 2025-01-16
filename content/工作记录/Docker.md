@@ -439,3 +439,16 @@ docker system prune -a # 清理所有未使用的镜像和容器
 # 十. Docker commit
 
 链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
+
+# 十一. Docker共享内存
+
+docker内shm默认值是 64MB，构建容器时，添加 --shm-size=1g 参数即可调整内存大小。
+```bash
+docker run --shm-size=8g -it your_image_name #终端运行容器
+```
+
+```yaml
+"runArgs": [
+    "--shm-size", "4g"  // json 配置文件运行开发容器
+  ],
+```
