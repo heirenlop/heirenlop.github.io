@@ -89,6 +89,12 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
     # 宿主机内输入
     tmpfs           7.7G  532M  7.2G    7% /dev/shm
     ```
+
+12. 查看系统日志
+    ```bash
+    dmesg | tail -n 50
+    ```
+    
 # 三. terminator
 1. history显示指令时间
 ```bash
@@ -242,7 +248,7 @@ APT::Periodic::Unattended-Upgrade "0";
 4. 备份指令
 (1) 测试备份
 ```bash
-sudo rsync -avz --info=progress2 --dry-run --delete \
+sudo rsync -avh --info=progress2 --dry-run --delete \
     --exclude=/proc \
     --exclude=/sys \
     --exclude=/dev \
@@ -252,7 +258,9 @@ sudo rsync -avz --info=progress2 --dry-run --delete \
     --exclude=/media \
     --exclude=/var/cache/apt/archives \
     --exclude=/var/log \
-    / /media/heirenlop/李佳潞的移动硬盘/ubuntu_backup/version_2025_01_14
+    --exclude=/Dataset \
+    --exclude=/home/heirenlop/docker \
+    / /home/heirenlop/mount/2T/backup_ubuntu/20250117
 
   # --dry-run：测试备份，不会实际进行备份。
   # --delete：删除目标目录中不存在于源目录中的文件。
@@ -277,5 +285,6 @@ sudo rsync -avz --info=progress2 --delete \
     --exclude=/media \
     --exclude=/var/cache/apt/archives \
     --exclude=/var/log \
-    / /media/heirenlop/李佳潞的移动硬盘/ubuntu_backup/version_2025_01_14
-```
+    --exclude=/Dataset \
+    --exclude=/home/heirenlop/docker \
+    / /home/heirenlop/mount/2T/backup_ubuntu/20250117
