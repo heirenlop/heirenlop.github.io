@@ -230,7 +230,7 @@ rm -rf /var/lib/docker
 1. 根据dockerfile构建镜像
 
    ```bash
-   docker build -t 镜像名:版本号 
+   docker build -t 镜像名:版本号 .
    ```
 
 2. 构建并运行单个容器

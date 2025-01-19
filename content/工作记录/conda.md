@@ -42,6 +42,7 @@ draft: false
    ```bash
    conda env update -f environment.yaml
    ```
+   
 # 三. 包管理
 1. 安装包
    ```bash
