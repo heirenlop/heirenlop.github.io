@@ -1,5 +1,5 @@
 ---
-title: "SUMA++"
+title: "SLAM(SUMA++)"
 date: 2024-12-11
 draft: false
 ---

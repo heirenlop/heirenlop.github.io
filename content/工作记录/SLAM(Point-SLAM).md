@@ -1,5 +1,5 @@
 ---
-title: "Point-SLAM"
+title: "SLAM(Point-SLAM)"
 date: 2024-12-31
 draft: false
 ---
@@ -7,8 +7,6 @@ draft: false
 # 一. 程序
 
 链接：<https://github.com/eriksandstroem/Point-SLAM>
-
-Docker：同上
 
 # 二. 问题
 

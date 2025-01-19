@@ -1,5 +1,5 @@
 ---
-title: "LIO-SAM"
+title: "SLAM(LIO-SAM)"
 date: 2024-12-12
 draft: false
 ---
