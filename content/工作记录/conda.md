@@ -16,6 +16,8 @@ draft: false
 3. 激活/切换虚拟环境
    ```bash
    conda activate <env_name> # 激活虚拟环境名称
+   或者
+   source activate <env_name> 
    ```
 4. 退出当前虚拟环境
    ```bash

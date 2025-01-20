@@ -6,7 +6,7 @@ draft: false
 
 # 一. 程序
 
-链接：<https://github.com/eriksandstroem/Point-SLAM>
+源码：<https://github.com/eriksandstroem/Point-SLAM>
 
 # 二. 问题
 

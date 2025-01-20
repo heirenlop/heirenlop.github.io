@@ -5,7 +5,7 @@ draft: false
 ---
 # 一. 程序
 
-<https://github.com/PRBonn/semantic_suma>
+源码：<https://github.com/PRBonn/semantic_suma>
 
 # 二. 流程
 

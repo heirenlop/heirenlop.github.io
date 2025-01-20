@@ -6,7 +6,7 @@ draft: false
 
 # 一. 程序
 
-链接：<https://github.com/VladimirYugay/Gaussian-SLAM>
+源码：<https://github.com/VladimirYugay/Gaussian-SLAM>
 
 # 二. 问题
 
