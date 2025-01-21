@@ -42,12 +42,47 @@ simplices.npy 文件包含了场景的简单面信息
 
 无
 
-# 四. 测试
+# 四. 本地复现
 
+1. lego_synthetic数据集
+   PSNR=32 | Iter=150000 | LOSS= 0.0012
+<div class="container">
+                <video controls>
+                    <source src="/videos/work-record/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
+                </video>
+            </div>
+
+2. fern_llff数据集
+    PSNR=29 | Iter=200000 | LOSS= 0.0032
+<div class="container">
+                <video controls>
+                    <source src="/videos/work-record/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
+                </video>
+            </div>
 
 # *论文部分*
 
 
-# 一. 
+# 一. 官网
+
+https://www.matthewtancik.com/nerf
+
+# 二. 论文逻辑
+
++--------------------+       +---------------------+       +-------------------------+       +----------------------+
+| 输入图像（多个视角）|  ---> | 神经网络模块（MLP）  |  ---> | 体积渲染（Volume Ray     |  ---> | 生成新视角图像        |
+| 相机位姿信息        |       | 输入：位置 (x, y, z)  |       | Marching）              |       | 输出：新视角图像      |
+|                    |       | 和视角方向 (θ, φ)    |       | 输出：颜色 (c) 和体积密度  |       |                      |
++--------------------+       | 输出：颜色 (c) 和    |       | (σ)                      |       +----------------------+
+                             | 体积密度 (σ)         |       +-------------------------+
+                             +---------------------+
+                                        |
+                                        V
+                             +-----------------------------+
+                             | 神经网络训练（优化网络参数）|
+                             | 输入：图像、相机位姿、初始网络|
+                             | 输出：最优网络参数          |
+                             +-----------------------------+
+
 
    
