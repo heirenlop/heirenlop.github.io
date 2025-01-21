@@ -94,7 +94,12 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
     ```bash
     dmesg | tail -n 50
     ```
-    
+
+13. 解压.tar.gz文件
+    ```bash
+    tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
+    ```
+
 # 三. terminator
 1. history显示指令时间
 ```bash
@@ -288,3 +293,27 @@ sudo rsync -avz --info=progress2 --delete \
     --exclude=/Dataset \
     --exclude=/home/heirenlop/docker \
     / /home/heirenlop/mount/2T/backup_ubuntu/20250117
+```
+# 十一. 创建桌面快捷方式
+以blender为例
+1. 复制blender.desktop文件到应用程序目录
+```bash
+sudo cp ./blender-4.3.2-linux-x64/blender.desktop /usr/share/applications/ 
+```
+2. 编辑blender.desktop文件，设置正确的Exec和Icon路径
+```bash
+    sudo vim /usr/share/applications/blender.desktop
+    # 修改Exec和Icon路径
+    Exec=/opt/blender-4.3.2-linux-x64/blender
+    Icon=/opt/blender-4.3.2-linux-x64/blender.svg
+    # 保存并关闭文件
+```
+3. 设置权限
+```bash
+   sudo chmod +x /home/heirenlop/tools/blender-4.3.2-linux-x64/blender
+```
+    
+    
+
+
+
