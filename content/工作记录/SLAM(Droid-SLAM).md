@@ -6,7 +6,7 @@ draft: false
 
 # 一. 程序
 
-源码：<https://github.com/princeton-vl/DROID-SLAM>
+链接：<https://github.com/princeton-vl/DROID-SLAM>
 
 # 二. 问题
 

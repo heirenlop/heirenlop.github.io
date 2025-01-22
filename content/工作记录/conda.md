@@ -11,7 +11,7 @@ draft: false
     ```
 2. 删除虚拟环境
    ```bash
-   conda env remove --n <env_name>
+   conda env remove -n <env_name>
    ```
 3. 激活/切换虚拟环境
    ```bash
