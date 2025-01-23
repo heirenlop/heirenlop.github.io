@@ -106,8 +106,18 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
 echo "export HISTTIMEFORMAT='%F %T '" >> ~/.bashrc
 source ~/.bashrc
 ```
+2. 颜色显示
 
-1. 快捷键
+蓝色：目录
+绿色：可执行文件
+浅蓝色：符号链接
+红色：压缩文件（如 .tar、.zip 等）
+黄色：设备文件（如块设备、字符设备）
+紫色：图像文件
+灰色：其他文件
+
+
+3. 快捷键
 ```bash
 //第一部份：关于在同一个标签内的操作
 Alt+Up                          //移动到上面的终端

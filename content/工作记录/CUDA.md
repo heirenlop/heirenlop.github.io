@@ -1,5 +1,5 @@
 ---
-title: "Nvidia"
+title: "CUDA"
 date: 2025-01-23
 draft: false
 ---
@@ -58,7 +58,7 @@ draft: false
     Build cuda_12.2.r12.2/compiler.33191640_0
     ```
 
-# 二. 单独安装驱动
+# 二. 单独安装驱动（一般来讲直接安装cuda toolkit就好）
 1. 查看系统中是否识别到 NVIDIA 显卡：
 
 ```bash
@@ -183,9 +183,11 @@ nvidia-smi
 ```
 
 
-# 三. Nvidia-container-toolkit安装
+# 三. Nvidia-container-toolkit
 
-帮助用户在容器环境(Docker)中构建和运行 GPU 加速的应用程序。它包含一个容器运行时库和相关实用程序，能够自动配置容器以利用 NVIDIA GPU，从而在容器化应用中实现高效的 GPU 加速。
+帮助用户在容器环境(Docker)中访问/构建/运行 GPU 加速的应用程序。它包含一个容器运行时库和相关实用程序，能够自动配置容器以利用 NVIDIA GPU，从而在容器化应用中实现高效的 GPU 加速。
+
+**安装**
 
 1. 检查是否安装nvidia-container-toolkit：
 
@@ -229,7 +231,27 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 ```
 
-# 三. GPU功率设置
+**使用**
+1. 启动容器
+   运行 Docker 容器时，使用 --gpus all 参数启用 GPU 支持，并使用 -v 参数将宿主机的 CUDA 目录挂载到容器内。
+   例如，假设宿主机的 CUDA 安装路径为 /usr/local/cuda，可以使用以下命令启动容器：
+```bash
+docker run --gpus all -it \ 
+  -v /usr/local/cuda:/usr/local/cuda \
+  your_docker_image
+```
+2. 设置环境变量
+进入容器后，设置环境变量以确保系统能够找到 nvcc：
+```bash
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```
+
+3. 测试
+```bash
+nvcc --version
+```
+# 四. GPU功率设置
 
 限制功率
 ```bash
