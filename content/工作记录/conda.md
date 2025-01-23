@@ -1,5 +1,5 @@
 ---
-title: "conda"
+title: "Conda"
 date: 2025-01-18
 draft: false
 ---

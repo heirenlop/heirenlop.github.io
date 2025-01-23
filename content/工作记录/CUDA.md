@@ -88,42 +88,17 @@ sudo reboot
 5.检查 NVIDIA 驱动是否加载：
 
 ```bash
-nvidia-smi
+nvidia-smi #输出结果应同第一部分的第3步
 ```
 
-输出示例：
-```diff
-+---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
-|-----------------------------------------+----------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
-|                                         |                      |               MIG M. |
-|=========================================+======================+======================|
-|   0  NVIDIA GeForce RTX 4060 Ti     Off | 00000000:01:00.0  On |                  N/A |
-| 33%   28C    P8               5W / 160W |    361MiB /  8188MiB |      9%      Default |
-|                                         |                      |                  N/A |
-+-----------------------------------------+----------------------+----------------------+
-                                                                                         
-+---------------------------------------------------------------------------------------+
-| Processes:                                                                            |
-|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
-|        ID   ID                                                             Usage      |
-|=======================================================================================|
-|    0   N/A  N/A      1328      G   /usr/lib/xorg/Xorg                           53MiB |
-|    0   N/A  N/A      2050      G   /usr/lib/xorg/Xorg                          147MiB |
-|    0   N/A  N/A      2185      G   /usr/bin/gnome-shell                         89MiB |
-|    0   N/A  N/A      3280      G   ...52,262144 --variations-seed-version       52MiB |
-+---------------------------------------------------------------------------------------+
-```
 正常情况到此结束
 
-6. 如果上述没有输出或显示错误
+1. 如果上述没有输出或显示错误
 如：
 ```bash
 NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
 ```
-7. 运行以下命令查看驱动是否正确安装：
+1. 运行以下命令查看驱动是否正确安装：
 
 ```bash
 dpkg -l | grep nvidia
@@ -251,6 +226,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 ```bash
 nvcc --version
 ```
+
+
 # 四. GPU功率设置
 
 限制功率
