@@ -295,22 +295,28 @@ sudo rsync -avz --info=progress2 --delete \
     / /home/heirenlop/mount/2T/backup_ubuntu/20250117
 ```
 # 十一. 创建桌面快捷方式
-以blender为例
-1. 复制blender.desktop文件到应用程序目录
+
+以colmap为例
+
+1. 进入应用文件夹
 ```bash
-sudo cp ./blender-4.3.2-linux-x64/blender.desktop /usr/share/applications/ 
+/usr/share/applications
 ```
-2. 编辑blender.desktop文件，设置正确的Exec和Icon路径
+2. 创建并编写colmap.desktop
 ```bash
-    sudo vim /usr/share/applications/blender.desktop
-    # 修改Exec和Icon路径
-    Exec=/opt/blender-4.3.2-linux-x64/blender
-    Icon=/opt/blender-4.3.2-linux-x64/blender.svg
-    # 保存并关闭文件
+[Desktop Entry]
+Name=COLMAP
+Comment=Structure-from-Motion and Multi-View Stereo
+Exec=/usr/local/bin/colmap
+Icon=/usr/local/share/icons/colmap.svg
+Terminal=false
+Type=Application
+Categories=Graphics;3DGraphics;
 ```
-3. 设置权限
+
+1. 设置权限
 ```bash
-   sudo chmod +x /home/heirenlop/tools/blender-4.3.2-linux-x64/blender
+   sudo chmod +x /usr/local/bin/colmap
 ```
     
     

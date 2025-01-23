@@ -436,9 +436,15 @@ docker system prune # 清理停止的容器、未使用的网络、悬空的镜�
 docker system prune -a # 清理所有未使用的镜像和容器
 
 ```
-# 十. Docker commit
+# 十. Docker commit / save / load
 
-链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
+```bash
+docker commit -m "commit message" -a "author" container_id image_name # 将容器保存为镜像
+docker save -o image_name.tar image_name # 将镜像保存为tar文件
+docker load -i image_name.tar # 从tar文件加载镜像
+```
+参考链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
+
 
 # 十一. Docker共享内存
 
