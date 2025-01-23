@@ -1,10 +1,64 @@
 ---
 title: "Nvidia"
-date: 2024-12-05
+date: 2025-01-23
 draft: false
 ---
+# 一. cuda toolkit安装
 
-# 一. ubuntu驱动安装
+    cuda toolkit内包含：驱动、cuda、cudnn、tensorrt等。安装了cuda toolkit后，无需单独安装驱动。
+
+1. 下载安装cuda toolkit
+    下载链接：https://developer.nvidia.com/cuda-toolkit-archive
+
+2. 配置环境变量
+    ```bash
+    export PATH=/usr/local/cuda-12.2/bin:$PATH
+    export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:$LD_LIBRARY_PATH
+    ```
+
+3. 测试
+    ```bash
+    nvcc --version # 显示cuda版本
+
+    Thu Jan 23 19:03:24 2025       
+    +---------------------------------------------------------------------------------------+
+    | NVIDIA-SMI 535.183.01             Driver Version: 535.183.01   CUDA Version: 12.2     |
+    |-----------------------------------------+----------------------+----------------------+
+    | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+    |                                         |                      |               MIG M. |
+    |=========================================+======================+======================|
+    |   0  NVIDIA GeForce RTX 4060 Ti     Off | 00000000:01:00.0  On |                  N/A |
+    | 33%   27C    P8               5W / 160W |    476MiB /  8188MiB |      2%      Default |
+    |                                         |                      |                  N/A |
+    +-----------------------------------------+----------------------+----------------------+
+                                                                                            
+    +---------------------------------------------------------------------------------------+
+    | Processes:                                                                            |
+    |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+    |        ID   ID                                                             Usage      |
+    |=======================================================================================|
+    |    0   N/A  N/A      1307      G   /usr/lib/xorg/Xorg                           89MiB |
+    |    0   N/A  N/A      2105      G   /usr/lib/xorg/Xorg                          205MiB |
+    |    0   N/A  N/A      2260      G   /usr/bin/gnome-shell                         36MiB |
+    |    0   N/A  N/A      8936      G   ...an,WebOTP --variations-seed-version       16MiB |
+    |    0   N/A  N/A     21421      G   ...51,262144 --variations-seed-version       59MiB |
+    |    0   N/A  N/A    336154      G   ...erProcess --variations-seed-version       47MiB |
+    +---------------------------------------------------------------------------------------+
+    ```
+
+    ```bash
+    nvidia-smi #显示驱动版本
+    
+    heirenlop@REN:~$ nvcc --version
+    nvcc: NVIDIA (R) Cuda compiler driver
+    Copyright (c) 2005-2023 NVIDIA Corporation
+    Built on Tue_Aug_15_22:02:13_PDT_2023
+    Cuda compilation tools, release 12.2, V12.2.140
+    Build cuda_12.2.r12.2/compiler.33191640_0
+    ```
+
+# 二. 单独安装驱动
 1. 查看系统中是否识别到 NVIDIA 显卡：
 
 ```bash
@@ -128,9 +182,10 @@ Change Password：更改密码。
 nvidia-smi
 ```
 
-# 二. Nvidia-container-toolkit安装
 
-这东西帮助用户在容器环境(Docker)中构建和运行 GPU 加速的应用程序。它包含一个容器运行时库和相关实用程序，能够自动配置容器以利用 NVIDIA GPU，从而在容器化应用中实现高效的 GPU 加速。
+# 三. Nvidia-container-toolkit安装
+
+帮助用户在容器环境(Docker)中构建和运行 GPU 加速的应用程序。它包含一个容器运行时库和相关实用程序，能够自动配置容器以利用 NVIDIA GPU，从而在容器化应用中实现高效的 GPU 加速。
 
 1. 检查是否安装nvidia-container-toolkit：
 
