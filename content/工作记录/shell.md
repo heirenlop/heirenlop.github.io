@@ -3,9 +3,10 @@ title: "Shell"
 date: 2025-01-23
 draft: false
 ---
-**常用脚本**
 
-# 一. download
+# 常用脚本的shell脚本
+
+1. 下载脚本
 以下载cuda12.2toolkit为例
 ```shell
 #!/bin/bash

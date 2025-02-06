@@ -8,18 +8,18 @@ draft: false
 
 # 一. 程序
 
-链接：https://github.com/graphdeco-inria/gaussian-splatting
+源码：<https://github.com/graphdeco-inria/gaussian-splatting>
 
 # 二. 问题
 
 1. 构建
-   通过docker内的conda构建，构建过程中，如下三个子模块报错，无法编译(build wheel)
+通过docker内的conda构建，构建过程中，如下三个子模块报错，无法编译(build wheel)
 ```bash
     - submodules/diff-gaussian-rasterization
     - submodules/simple-knn
     - submodules/fused-ssim
 ```
-    解决方法：降级gcc从11.x降级到9.x
+解决方法：降级gcc从11.x降级到9.x
 ```bash
     apt-get install gcc-9 g++-9
     update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
@@ -68,9 +68,6 @@ draft: false
 6. **blender**
     概念：
     开源的三维渲染软件。一旦三维点云数据导入到 Blender 中，就可以对这些点云进行可视化和渲染。在 Blender 中，可以使用包括 **体积渲染 (Volumetric Rendering)和快速光栅化 (Fast Rasterization)** 等技术来优化渲染效果。
-
-
-# 一. 官网
 
 
 # 二. 论文逻辑

@@ -6,8 +6,8 @@ draft: false
 
 # 说明
 
-1. 链接：https://github.com/zhaoweih/Clash-Copy
-   
+1. 源码：<https://github.com/zhaoweih/Clash-Copy>
+
 2. 用法：
 - 进入项目目录
 
