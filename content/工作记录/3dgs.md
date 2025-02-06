@@ -8,9 +8,26 @@ draft: false
 
 # 一. 程序
 
-# 二. 说明
+链接：https://github.com/graphdeco-inria/gaussian-splatting
 
-# 三. 问题
+# 二. 问题
+
+1. 构建
+   通过docker内的conda构建，构建过程中，如下三个子模块报错，无法编译(build wheel)
+```bash
+    - submodules/diff-gaussian-rasterization
+    - submodules/simple-knn
+    - submodules/fused-ssim
+```
+    解决方法：降级gcc从11.x降级到9.x
+```bash
+    apt-get install gcc-9 g++-9
+    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
+    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
+    gcc --version
+```
+
+# 三. 说明
 
 # 四. 本地复现
 

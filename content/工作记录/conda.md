@@ -8,6 +8,7 @@ draft: false
 1. 创建虚拟环境
     ```bash
     conda create -n <env_name> python=<version> # -n 创建虚拟环境名称，python=指定python版本
+    conda env create -f environment.yml # 根据environment.yml文件创建虚拟环境
     ```
 2. 删除虚拟环境
    ```bash

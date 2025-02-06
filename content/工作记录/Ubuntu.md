@@ -100,13 +100,15 @@ https://blog.csdn.net/qq_41833455/article/details/117882535
     tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
     ```
 
-# 三. terminator
-1. history显示指令时间
+
+# 三. 常用软件
+1. terminator
+(1) history显示指令时间
 ```bash
 echo "export HISTTIMEFORMAT='%F %T '" >> ~/.bashrc
 source ~/.bashrc
 ```
-2. 颜色显示
+(2) 颜色显示
 
 蓝色：目录
 绿色：可执行文件
@@ -117,7 +119,7 @@ source ~/.bashrc
 灰色：其他文件
 
 
-3. 快捷键
+(3) 快捷键
 ```bash
 //第一部份：关于在同一个标签内的操作
 Alt+Up                          //移动到上面的终端
@@ -161,6 +163,23 @@ Ctrl+Shift+I                    //打开一个窗口，新窗口与原来的窗�
 Super+i                         //打开一个新窗口，新窗口与原来的窗口使用不同的进程
 ```
 
+2. snap
+
+```bash
+snap list # 查看已安装的snap包
+snap remove <snap包名> # 删除snap包
+snap refresh <snap包名> # 更新snap包
+snap install <snap包名> # 安装snap包
+```
+
+3. nvitop
+
+```bash
+pip3 install --upgrade nvitop # 安装
+nvitop --monitor #打开监控
+```
+
+
 # 四. USB设备挂载
 
 一般来讲USB设备挂在到USB2.0的接口，不要挂载到USB3.0接口。USB 2.0端口的兼容性通常更好，电力需求更稳定，因此可能会提供更好的连接稳定性。比如随身wifi需要挂载到USB2.0接口。
@@ -200,15 +219,6 @@ sudo apt install speedtest-cli
 speedtest-cli --secure
 ```
 
-
-# 八. snap
-
-```bash
-snap list # 查看已安装的snap包
-snap remove <snap包名> # 删除snap包
-snap refresh <snap包名> # 更新snap包
-snap install <snap包名> # 安装snap包
-```
 
 # 九. 关闭升级提示
 
@@ -328,8 +338,3 @@ Categories=Graphics;3DGraphics;
 ```bash
    sudo chmod +x /usr/local/bin/colmap
 ```
-    
-    
-
-
-
