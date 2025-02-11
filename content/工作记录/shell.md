@@ -33,7 +33,8 @@ done
 
 ```
 
-# 2. <h2 id="section2">下载VOC2007</h2>
+# 2. 下载VOC2007 <h2 id="section2"> </h2>
+
 ```shell
 #!/bin/bash
 
@@ -77,7 +78,9 @@ rm VOCdevkit_08-Jun-2007.tar  # 🗑️ 解压后删除 tar 文件
 echo "✅ VOC 2007 数据集下载、解压、清理完成！"
 
 ```
-# 3. 下载COCO
+<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E9%9B%86/">⬅返回数据集页面🔗</a>
+# 3. 下载COCO <h2 id="section3"> </h2>
+
 ```shell
 #!/bin/bash
 
@@ -121,7 +124,10 @@ unzip annotations_trainval2017.zip && rm -f annotations_trainval2017.zip
 echo "🎉 COCO2017 数据集下载、解压和清理完成！"
 
 ```
-# 4. 代理设置脚本
+
+<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E9%9B%86/">⬅返回数据集页面🔗</a>
+
+# 4. 代理设置脚本 <h2 id="section4"> </h2>
 
 ```shell
 #!/bin/bash
@@ -186,7 +192,10 @@ else
     exit 1
 fi
 ```
-# 5. 容器内代理设置脚本
+
+<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/proxy/">⬅返回proxy页面🔗</a>
+
+# 5. 容器内代理设置脚本 <h2 id="section5"> </h2>
 
 ```shell
 #!/bin/bash
@@ -243,4 +252,6 @@ else
     exit 1
 fi
 ```
+
+<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/proxy/">⬅返回proxy页面🔗</a>
 

@@ -10,9 +10,11 @@ draft: false
 
 源码：<https://github.com/graphdeco-inria/gaussian-splatting>
 
-# 二. 问题
+根据pytorch和cuda toolkit版本，要求ubuntu为20.04
 
-1. 构建
+# 二. 问题
+   
+1. 构建-gcc降级
 通过docker内的conda构建，构建过程中，如下三个子模块报错，无法编译(build wheel)
 ```bash
     - submodules/diff-gaussian-rasterization
@@ -26,7 +28,15 @@ draft: false
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
     gcc --version
 ```
+2. 构建-安装cudatoolkit-dev=11.6 
+```bash
+conda install -c conda-forge cudatoolkit=11.6 cudatoolkit-dev=11.6 #安装
 
+export CUDA_HOME=$CONDA_PREFIX #设置环境变量
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+
+```
 # 三. 说明
 
 # 四. 本地复现
