@@ -8,6 +8,10 @@ draft: false
 
 # 一. 程序
 
+链接：https://github.com/VladimirYugay/Gaussian-SLAM
+
+根据pytorch和cuda toolkit版本，要求ubuntu为20.04
+
 # 二. 问题
 
 1. 构建

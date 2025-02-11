@@ -96,28 +96,55 @@ curl https://www.google.com # 验证代理设置
 
 5. docker容器内conda/pip/git /apt设置代理
 自动化脚本配置conda+pip+git+apt代理
-```bash
+```shell
 #!/bin/bash
 
-# 设置代理
+# 设置代理地址
 PROXY="socks5://127.0.0.1:10808"
 HTTP_PROXY="http://127.0.0.1:10809"
 HTTPS_PROXY="http://127.0.0.1:10809"
 
 # 配置 Conda 走代理
+echo "Setting Conda proxy..."
 conda config --set proxy_servers.http $PROXY
-conda config --set proxy_servers.https $PROXY
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to set Conda proxy."
+    exit 1
+else
+    echo "Conda proxy set successfully."
+fi
 
 # 配置 Pip 走代理
+echo "Setting Pip proxy..."
 pip config set global.proxy $PROXY
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to set Pip proxy."
+    exit 1
+else
+    echo "Pip proxy set successfully."
+fi
 
 # 配置 Git 走代理
+echo "Setting Git proxy..."
 git config --global http.proxy $PROXY
 git config --global https.proxy $PROXY
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to set Git proxy."
+    exit 1
+else
+    echo "Git proxy set successfully."
+fi
 
 # 配置 APT 走代理
+echo "Setting APT proxy..."
 echo "Acquire::http::Proxy \"$HTTP_PROXY\";" | tee /etc/apt/apt.conf.d/proxy.conf
 echo "Acquire::https::Proxy \"$HTTPS_PROXY\";" | tee -a /etc/apt/apt.conf.d/proxy.conf
+if [[ $? -ne 0 ]]; then
+    echo "Error: Failed to set APT proxy."
+    exit 1
+else
+    echo "APT proxy set successfully."
+fi
 
 # 验证代理是否成功
 echo "Checking if proxies are set correctly..."
@@ -125,30 +152,56 @@ echo "Checking if proxies are set correctly..."
 # 检查 Conda 配置
 conda_config_check=$(conda config --show proxy_servers)
 echo "Conda proxy config: $conda_config_check"
+if [[ -z "$conda_config_check" ]]; then
+    echo "Error: Conda proxy configuration not found."
+    exit 1
+else
+    echo "Conda proxy configuration found."
+fi
 
 # 检查 Pip 配置
 pip_config_check=$(pip config list | grep proxy)
 echo "Pip proxy config: $pip_config_check"
+if [[ -z "$pip_config_check" ]]; then
+    echo "Error: Pip proxy configuration not found."
+    exit 1
+else
+    echo "Pip proxy configuration found."
+fi
 
 # 检查 Git 配置
 git_config_http=$(git config --global --get http.proxy)
 git_config_https=$(git config --global --get https.proxy)
 echo "Git proxy config HTTP: $git_config_http"
 echo "Git proxy config HTTPS: $git_config_https"
+if [[ -z "$git_config_http" || -z "$git_config_https" ]]; then
+    echo "Error: Git proxy configuration not found."
+    exit 1
+else
+    echo "Git proxy configuration found."
+fi
 
 # 检查 APT 配置
 apt_config_check=$(cat /etc/apt/apt.conf.d/proxy.conf)
 echo "APT proxy config: $apt_config_check"
+if [[ -z "$apt_config_check" ]]; then
+    echo "Error: APT proxy configuration not found."
+    exit 1
+else
+    echo "APT proxy configuration found."
+fi
 
 # 测试代理是否有效（curl 测试）
+echo "Testing proxy with curl..."
 curl_test=$(curl -I https://www.google.com 2>/dev/null | head -n 1)
 echo "Curl test result: $curl_test"
 
 # 判断是否成功
-if [[ "$curl_test" =~ "200 Connection established" ]]; then
-    echo "success"
+if [[ "$curl_test" =~ "200 OK" || "$curl_test" =~ "200 Connection established" ]]; then
+    echo "Proxy setup successful"
+    exit 0
 else
-    echo "Proxy setup failed!"
+    echo "Error: Proxy setup failed!"
+    exit 1
 fi
-
 ```

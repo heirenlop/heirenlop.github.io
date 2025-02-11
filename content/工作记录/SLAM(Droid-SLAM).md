@@ -8,6 +8,8 @@ draft: false
 
 链接：<https://github.com/princeton-vl/DROID-SLAM>
 
+根据pytorch和cuda toolkit版本，要求ubuntu为20.04
+
 # 二. 问题
 
 无
