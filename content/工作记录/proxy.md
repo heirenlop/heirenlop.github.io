@@ -86,11 +86,11 @@ Ctrl + Shift + P -> 选择 "Remote-Containers: Rebuild and Reopen in Container"
 echo $HTTP_PROXY # 验证代理设置
 echo $HTTPS_PROXY
 echo $ALL_PROXY 
-curl https://www.google.com # 验证代理设置
+curl -I https://www.google.com # 验证代理设置
 
 ```
 
-6. docker容器内conda/pip/git /apt设置代理
+5. docker容器内conda/pip/git /apt设置代理
 
    按需要可删除脚本中不需要代理的部分
-<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/shell/#sections5">点击跳转到脚本🔗</a>
+<a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/shell/#sections4">点击跳转到脚本🔗</a>
