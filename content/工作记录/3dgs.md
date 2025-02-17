@@ -10,36 +10,33 @@ draft: false
 
 源码：<https://github.com/graphdeco-inria/gaussian-splatting>
 
-根据pytorch和cuda toolkit版本，要求ubuntu为20.04
-
 # 二. 问题
-   
-1. 构建-gcc降级
-通过docker内的conda构建，构建过程中，如下三个子模块报错，无法编译(build wheel)
-```bash
-    - submodules/diff-gaussian-rasterization
-    - submodules/simple-knn
-    - submodules/fused-ssim
-```
-解决方法：降级gcc从11.x降级到9.x
-```bash
-    apt-get install gcc-9 g++-9
-    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 100
-    update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 100
-    gcc --version
-```
-2. 构建-安装cudatoolkit-dev=11.6 
-```bash
-conda install -c conda-forge cudatoolkit=11.6 cudatoolkit-dev=11.6 #安装
 
-export CUDA_HOME=$CONDA_PREFIX #设置环境变量
-export PATH="$CUDA_HOME/bin:$PATH"
-export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
+conda安装过程：
 
-```
+1. 下载pytorch的cuda版本，结果是cpu版本
+参考如下链接
+https://blog.csdn.net/u013468614/article/details/125910538
+
+2. undefined symbol: iJIT_NotifyEvent
+如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
+
 # 三. 说明
+1. 自己数据集制作：
+   colmap + ffmpeg
+   
+2. 运行过程：
+官方链接：<https://www.youtube.com/watch?v=UXtuigy_wYc>
+
+参考链接：<https://blog.csdn.net/Mekjeri/article/details/135716907?utm_source=chatgpt.com>
 
 # 四. 本地复现
+
+conda运行过程：
+1. 缺少libgl
+```bash
+    conda install -c conda-forge libgl
+```
 
 
 

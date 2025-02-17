@@ -32,6 +32,21 @@ draft: false
    ```bash
    conda info
    ```
+7. 根据 environment.yml 文件更新环境
+   ```bash
+   conda env update -f environment.yml
+   ```
+
+8. 显示镜像源列表
+   ```bash
+   conda config --show channels
+   ```
+9. 添加清华镜像源
+   ````bash
+   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ # 换conda源
+   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ # 换conda源
+   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ # 换conda源
+   ```
 # 二. 环境配置
 1. 导出虚拟环境配置文件.yaml
    ```bash

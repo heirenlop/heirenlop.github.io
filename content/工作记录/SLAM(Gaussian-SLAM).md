@@ -10,21 +10,8 @@ draft: false
 
 链接：https://github.com/VladimirYugay/Gaussian-SLAM
 
-根据pytorch和cuda toolkit版本，要求ubuntu为20.04
-
 # 二. 问题
 
-1. 构建
-   通过docker内的conda构建，构建过程中，无法clone三个子模块
-```bash
-   git+https://github.com/eriksandstroem/evaluate_3d_reconstruction_lib.git@9b3cc08be5440db9c375cc21e3bd65bb4a337db7
-   git+https://github.com/VladimirYugay/simple-knn.git@c7e51a06a4cd84c25e769fee29ab391fe5d5ff8d
-   git+https://github.com/VladimirYugay/gaussian_rasterizer.git@9c40173fcc8d9b16778a1a8040295bc2f9ebf129
-```
-   解决方法：由于 Git 2.16+ 默认使用 HTTP/2，而报错 curl 16 Error in the HTTP2 framing layer 是因为 HTTP/2 连接问题。可以强制 Git 退回到 HTTP/1.1：
-```bash
-   git config --global http.version HTTP/1.1
-```   
 # 三. 说明
 
 # 四. 本地复现

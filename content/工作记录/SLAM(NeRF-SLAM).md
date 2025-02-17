@@ -6,7 +6,6 @@ draft: false
 # *代码部分*
 
 # 一. 程序
-根据pytorch和cuda toolkit版本，要求ubuntu为20.04
 
 # 二. 说明
 
