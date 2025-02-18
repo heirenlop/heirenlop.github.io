@@ -15,29 +15,61 @@ draft: false
 conda安装过程：
 
 1. 下载pytorch的cuda版本，结果是cpu版本
-参考如下链接
-https://blog.csdn.net/u013468614/article/details/125910538
+参考如下链接：<https://blog.csdn.net/u013468614/article/details/125910538>
 
 2. undefined symbol: iJIT_NotifyEvent
-如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
+原因：大概率是docker容器内与conda环境不匹配导致。
+现象：错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，解决：尝试运行 pip install mkl==2024.0
 
 # 三. 说明
-1. 自己数据集制作：
-   colmap + ffmpeg
-   
-2. 运行过程：
 官方链接：<https://www.youtube.com/watch?v=UXtuigy_wYc>
 
 参考链接：<https://blog.csdn.net/Mekjeri/article/details/135716907?utm_source=chatgpt.com>
 
 # 四. 本地复现
-
-conda运行过程：
-1. 缺少libgl
+1. 自己数据集制作：
+   需要：colmap 和 ffmpeg
+2. conda运行：
+如果conda内缺少libgl，因为我是在docker容器中运行的，需要安装libgl。
 ```bash
     conda install -c conda-forge libgl
 ```
+3. 可视化SIBR_viewers
+```bash
+# Dependencies
+sudo apt install -y libglew-dev libassimp-dev libboost-all-dev libgtk-3-dev libopencv-dev libglfw3-dev libavdevice-dev libavcodec-dev libeigen3-dev libxxf86vm-dev libembree-dev
+# Project setup
+cd SIBR_viewers
+git checkout fossa_compatibility # 如果是22.04就不需要加这个指令
+cmake -Bbuild . -DCMAKE_BUILD_TYPE=Release # add -G Ninja to build faster
+cmake --build build -j24 --target install
+```
+如果是在conda内运行可视化，会出现x11问题：
+```bash
+[SIBR] ##  ERROR  ##:   FILE /workspace/gaussian-splatting/SIBR_viewers/src/core/graphics/Window.cpp
+                        LINE 30, FUNC glfwErrorCallback
+                        GLX: Failed to create context: GLXBadFBConfig
+```
+解决方法：
+a. 宿主机glxinfo| grep OpenGL，查看OpenGL core profile version string' = 4.6
+b. docker容器内export MESA_GL_VERSION_OVERRIDE=4.6
+c. docker容器内再执行./install/bin/SIBR_gaussianViewer_app -m ../output/water_bottle/
 
+参考链接： <https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>
+
+4. 测试效果：
+手机录制原始数据视频：
+<div class="container">
+                <video controls>
+                    <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
+                </video>
+            </div>
+SIBR：
+<div class="container">
+                <video controls>
+                    <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
+                </video>
+            </div>
 
 
 
