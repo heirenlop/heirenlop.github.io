@@ -66,24 +66,23 @@ c. docker容器内再执行./install/bin/SIBR_gaussianViewer_app -m ../output/wa
 <https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>
 
 4. 本地数据测试
-   
+
 **手机录制原始数据视频：**
-<div class="container">
-    <video controls width="360" heght="640">
+<div class="container" style="display: flex; justify-content: center;">
+    <video controls width="360" height="640">
         <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
     </video>
 </div>
 
 **SIBR**：
-<div class="container">
-    <video controls width="640" heght="360">
+<div class="container" style="display: flex; justify-content: center;">
+    <video controls width="640" height="360">
         <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
     </video>
 </div>
 
 **高斯分布可视化**：
-
-<div class="twenty-container" style="position: relative; width: 80%; max-width: 500px; height: 700px; overflow: hidden; border-radius: 10px;">
+<div class="twenty-container" style="position: relative; width: 80%; max-width: 500px; height: 700px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center;">
     <img class="twenty-before" src="/images/work-record/ori_water_bottle.png" alt="Original Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
     <img class="twenty-after" src="/images/work-record/sbir_water_bottle.png" alt="SBIR Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
     <div class="twenty-handle" style="position: absolute; top: 0; left: 50%; width: 20px; height: 100%; background-color: rgba(255, 255, 255, 0.7); cursor: pointer; z-index: 10; border-radius: 50%;"></div>
@@ -132,7 +131,6 @@ c. docker容器内再执行./install/bin/SIBR_gaussianViewer_app -m ../output/wa
         document.addEventListener('mouseup', onMouseUp);
     });
 </script>
-
 
 
 
