@@ -55,21 +55,23 @@ a. 宿主机glxinfo| grep OpenGL，查看OpenGL core profile version string' = 4
 b. docker容器内export MESA_GL_VERSION_OVERRIDE=4.6
 c. docker容器内再执行./install/bin/SIBR_gaussianViewer_app -m ../output/water_bottle/
 
-参考链接： <https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>
+参考链接：
+<https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>
 
-4. 测试效果：
+4. 本地数据测试
 手机录制原始数据视频：
 <div class="container">
-                <video controls>
-                    <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
-                </video>
-            </div>
+    <video controls width="360" heght="640">
+        <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
+    </video>
+</div>
+
 SIBR：
 <div class="container">
-                <video controls>
-                    <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
-                </video>
-            </div>
+    <video controls width="640" heght="360">
+        <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
+    </video>
+</div>
 
 
 
