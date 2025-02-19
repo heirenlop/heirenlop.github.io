@@ -79,6 +79,7 @@ echo "✅ VOC 2007 数据集下载、解压、清理完成！"
 
 ```
 <a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E9%9B%86/">⬅返回数据集页面🔗</a>
+
 # 3. 下载COCO <h2 id="section3"> </h2>
 
 ```shell
@@ -264,18 +265,19 @@ CONDA_ENV_NAME=$(basename "$CONDA_PREFIX")
 
 # 根据当前的 conda 环境设置不同的 OpenGL 配置
 export DISPLAY=:1
-echo "DISPLAY set to :1."
+echo "✅DISPLAY set to :1."
 if [[ "$CONDA_ENV_NAME" == "gaussian_splatting" ]]; then
     export MESA_GL_VERSION_OVERRIDE=4.6
-    echo "Environment is 'gaussian_splatting'. OpenGL version set to 4.6."
+    echo "✅ Environment is 'gaussian_splatting'. OpenGL version set to 4.6."
 
 elif [[ "$CONDA_ENV_NAME" == "MonoGS" ]]; then
     export MESA_GL_VERSION_OVERRIDE=4.3
-    echo "Environment is 'MonoGS'. OpenGL version set to 4.3."
+    echo "✅ Environment is 'MonoGS'. OpenGL version set to 4.3."
 
 else
-    echo "No matching environment found. Current environment: $CONDA_ENV_NAME"
+    echo "❌No matching environment found. Current environment: $CONDA_ENV_NAME"
 fi
+
 
 ```
 

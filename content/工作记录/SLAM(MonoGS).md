@@ -13,7 +13,6 @@ draft: false
 
 # 二. 问题
 
-1. undefined symbol: iJIT_NotifyEvent
 如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
    
 # 三. 说明
@@ -22,7 +21,7 @@ draft: false
 
 # 四. 本地复现
 
-如果是在conda内运行可视化，可能会出现x11问题，本质也是opengl问题，同3dgs问题相同：
+1. 如果是在conda内运行可视化，可能会出现x11问题，本质也是opengl问题，同3dgs问题相同：
 ```bash
 Traceback (most recent call last):
   File "slam.py", line 252, in <module>
@@ -90,6 +89,17 @@ export MESA_GL_VERSION_OVERRIDE=4.3
 参考链接：
 
 <https://github.com/muskie82/MonoGS/issues/5>
+
+2. DEMO复现
+<div class="container" style="display: flex; justify-content: center;">
+    <video controls width="640" height="360">
+        <source src="/videos/work-record/MonoGS-demo.mp4" type="video/mp4">
+    </video>
+</div>
+
+3. 本地数据复现
+
+等待RGBD摄像头或mono
 
 # *论文部分*
 
