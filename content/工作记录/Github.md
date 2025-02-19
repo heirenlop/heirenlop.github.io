@@ -33,14 +33,20 @@ hit邮箱无法认证
 ```bash
 echo "your_token_here" | docker login ghcr.io -u your_username --password-stdin #echo token | -u github的username
 ```
-2. 标记docker镜像
+
+2. 打包容器为镜像
+```bash
+docker commit -m "commit message" -a "author" container_id image_name # 将容器保存为镜像
+```
+3. 标记docker镜像
 ```bash
 docker tag your_image_name ghcr.io/your_username/your_image_name:latest
 ```
 
-3. 推送镜像
+4. 推送镜像
 ```bash
 docker push ghcr.io/your_username/your_image_name:latest
 ```
-参考链接：https://laomeinote.com/posts/push-docker-images-to-github-registry/
+5. 参考链接：https://laomeinote.com/posts/push-docker-images-to-github-registry/
 
+6. 删除镜像

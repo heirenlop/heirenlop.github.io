@@ -1,5 +1,5 @@
 ---
-title: "3dgs"
+title: "BASE(3dgs)"
 date: 2025-01-20
 draft: false
 ---
@@ -58,9 +58,18 @@ cmake --build build -j24 --target install
                         GLX: Failed to create context: GLXBadFBConfig
 ```
 解决方法：
-a. 宿主机glxinfo| grep OpenGL，查看OpenGL core profile version string' = 4.6
-b. docker容器内export MESA_GL_VERSION_OVERRIDE=4.6
-c. docker容器内再执行./install/bin/SIBR_gaussianViewer_app -m ../output/water_bottle/
+a. 宿主机
+```bash
+glxinfo| grep OpenGL #查看OpenGL core profile version string' = 4.6
+```
+b. docker容器内
+```bash
+export MESA_GL_VERSION_OVERRIDE=4.6
+```
+c. docker容器内
+```bash
+./install/bin/SIBR_gaussianViewer_app -m ../output/water_bottle/
+```
 
 参考链接：
 <https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>

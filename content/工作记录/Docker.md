@@ -299,7 +299,12 @@ rm -rf /var/lib/docker
    docker load -i /other/your_image.tar #从tar文件加载镜像
 
    rm /other/your_image.tar #删除tar文件
+ 
+    docker commit -m "commit message" -a "author" container_id image_name # 将容器保存为镜像
+    docker save -o /path/to/directory/image_name.tar image_name # 将镜像保存为tar文件
+    docker load -i image_name.tar # 从tar文件加载镜像
     ```
+    参考链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
 
 # 六. 容器操作
 
@@ -315,25 +320,25 @@ rm -rf /var/lib/docker
    docker exec -it 容器名/容器号 bash
    ```
 
-1. 停止容器：
+2. 停止容器：
 
    ```bash
    docker stop 容器名/容器号  # -f强制停止
    ```
 
-2. 删除容器：
+3. 删除容器：
 
    ```bash
    docker rm 容器名/容器号 # -f强制删除
    ```
 
-3. 修改容器名称
+4. 修改容器名称
 
 ```bash
 docker rename 旧容器名 新容器名
 ```
 
-4. 复制
+5. 复制
 复制宿主机文件到容器中
 ```bash
 docker cp 宿主机文件路径 容器id:容器内路径 # docker cp /home/heirenlop/workspace/Dataset 356d3fe40061:/workspace/
@@ -436,17 +441,8 @@ docker system prune # 清理停止的容器、未使用的网络、悬空的镜�
 docker system prune -a # 清理所有未使用的镜像和容器
 
 ```
-# 十. Docker commit / save / load
 
-```bash
-docker commit -m "commit message" -a "author" container_id image_name # 将容器保存为镜像
-docker save -o /path/to/directory/image_name.tar image_name # 将镜像保存为tar文件
-docker load -i image_name.tar # 从tar文件加载镜像
-```
-参考链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
-
-
-# 十一. Docker共享内存
+# 十. Docker共享内存
 
 docker内shm默认值是 64MB，构建容器时，添加 --shm-size=1g 参数即可调整内存大小。
 ```bash
