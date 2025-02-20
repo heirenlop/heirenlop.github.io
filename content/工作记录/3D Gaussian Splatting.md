@@ -1,43 +1,44 @@
 ---
-title: "BASE(3dgs)"
+title: "3D Gaussian Splatting"
 date: 2025-01-20
 draft: false
 ---
 
 - [_代码部分_](#代码部分)
-- [一. 程序](#一-程序)
-- [二. 问题](#二-问题)
-- [三. 说明](#三-说明)
-- [四. 本地复现](#四-本地复现)
+  - [一. 程序](#一-程序)
+  - [二. 问题](#二-问题)
+  - [三. 说明](#三-说明)
+  - [四. 本地复现](#四-本地复现)
 - [_论文部分_](#论文部分)
-- [一. 前置内容](#一-前置内容)
-- [二. 论文逻辑](#二-论文逻辑)
+  - [一. 前置内容](#一-前置内容)
+  - [二. 论文逻辑](#二-论文逻辑)
 
 # _代码部分_
 
-# 一. 程序
+## 一. 程序
 
-    [源码](https://github.com/graphdeco-inria/gaussian-splatting)
+[github源码](https://github.com/graphdeco-inria/gaussian-splatting)
 
 
-# 二. 问题
+## 二. 问题
 
-    conda 安装过程：
+conda 安装过程：
 
-    1. 下载 pytorch 的 cuda 版本，结果是 cpu 版本
+1. 下载 pytorch 的 cuda 版本，结果是 cpu 版本
+   
     [参考链接](https://blog.csdn.net/u013468614/article/details/125910538)
 
-    2. undefined symbol: iJIT_NotifyEvent
+2. undefined symbol: iJIT_NotifyEvent
     原因：大概率是 docker 容器内与 conda 环境不匹配导致。
     现象：错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，解决：尝试运行 pip install mkl==2024.0
 
-# 三. 说明
+## 三. 说明
 
-    [官方链接](https://www.youtube.com/watch?v=UXtuigy_wYc)
+[官方链接](https://www.youtube.com/watch?v=UXtuigy_wYc)
 
-    [参考链接](https://blog.csdn.net/Mekjeri/article/details/135716907?utm_source=chatgpt.com)
+[参考链接](https://blog.csdn.net/Mekjeri/article/details/135716907?utm_source=chatgpt.com)
 
-# 四. 本地复现
+## 四. 本地复现
 
 1. 自己数据集制作：
 
@@ -169,7 +170,7 @@ draft: false
 
 # _论文部分_
 
-# 一. 前置内容
+## 一. 前置内容
 
 1. **稀疏/半稠密/稠密 SLAM**
    稀疏 SLAM：
@@ -210,7 +211,7 @@ draft: false
    概念：
    开源的三维渲染软件。一旦三维点云数据导入到 Blender 中，就可以对这些点云进行可视化和渲染。在 Blender 中，可以使用包括 **体积渲染 (Volumetric Rendering)和快速光栅化 (Fast Rasterization)** 等技术来优化渲染效果。
 
-# 二. 论文逻辑
+## 二. 论文逻辑
 
 | **Step**                                                  | **Description**                                                                                                                                                                                                                                      | **Technology Used**                                |
 | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
