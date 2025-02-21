@@ -101,13 +101,15 @@ export MESA_GL_VERSION_OVERRIDE=4.3
             <div class="container">
                 <div class="image">
                     <figure>
-                        <img src="images/work-record/MonoGS误差.png">
+                        <img src="/images/work-record/MonoGS误差.png">
                         <figcaption>均值轨迹误差</figcaption>
                     </figure>
                 </div>
             </div>
 
 3. 本地数据复现
+
+todo
 
 等待RGBD摄像头或mono
 
