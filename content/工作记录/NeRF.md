@@ -1,8 +1,17 @@
 ---
-title: "BASE(NeRF)"
+title: "NeRF"
 date: 2025-01-20
 draft: false
 ---
+- [*实验测试为pytorch版本*](#实验测试为pytorch版本)
+- [*代码部分*](#代码部分)
+- [一. 程序](#一-程序)
+- [二. 说明](#二-说明)
+- [三. 问题](#三-问题)
+- [四. 本地复现](#四-本地复现)
+- [*论文部分*](#论文部分)
+- [一. 官网](#一-官网)
+- [二. 论文逻辑](#二-论文逻辑)
 
 # *实验测试为pytorch版本*
 
@@ -10,7 +19,7 @@ draft: false
 
 # 一. 程序
 
-源码：<https://github.com/yenchenlin/nerf-pytorch>
+[源码](https://github.com/yenchenlin/nerf-pytorch)
 
 # 二. 说明
 

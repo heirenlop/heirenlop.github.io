@@ -3,6 +3,12 @@ title: "SLAM(SUMA++)"
 date: 2024-12-11
 draft: false
 ---
+
+- [一. 程序](#一-程序)
+- [二. 流程](#二-流程)
+- [三. 问题](#三-问题)
+- [四. 测试](#四-测试)
+
 # 一. 程序
 
 源码：<https://github.com/PRBonn/semantic_suma>

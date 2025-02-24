@@ -3,12 +3,15 @@ title: "Barrier"
 date: 2024-12-02
 draft: false
 ---
+- [用法](#用法)
+- [问题](#问题)
+  - [Windows防火墙设置](#windows防火墙设置)
+  - [Windows端口设置](#windows端口设置)
 
 # 用法
+[参考1](https://blog.csdn.net/guojingyue123/article/details/135066151)
 
-https://blog.csdn.net/guojingyue123/article/details/135066151
-
-https://juejin.cn/post/7163950376079753252
+[参考2](https://juejin.cn/post/7163950376079753252)
 
 # 问题
 

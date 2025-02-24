@@ -3,12 +3,15 @@ title: "Clash for Linux"
 date: 2025-02-06
 draft: false
 ---
+- [1. 源码](#1-源码)
+- [2. 用法](#2-用法)
+- [3. 终端内代理验证](#3-终端内代理验证)
 
-# 说明
 
-1. 源码：<https://github.com/zhaoweih/Clash-Copy>
+## 1. 源码
+[源码](https://github.com/zhaoweih/Clash-Copy)
 
-2. 用法：
+## 2. 用法
 - 进入项目目录
 
 ```bash
@@ -49,7 +52,7 @@ proxy_off
 
 - 详情见readme中启动程序部分，该clash会在终端设置代理，终端内打开proxy_on，则该终端走代理，并不是系统级代理。
    
-3. 终端内代理验证：
+## 3. 终端内代理验证
 ```bash
 方法1. env | grep -E 'http_proxy|https_proxy|ALL_PROXY' # 如果返回如下所示，则代理生效
 

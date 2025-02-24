@@ -3,6 +3,12 @@ title: "CUDA"
 date: 2025-01-23
 draft: false
 ---
+
+- [一. 安装cuda toolkit](#一-安装cuda-toolkit)
+- [二. 安装驱动](#二-安装驱动)
+- [三. Nvidia-container-toolkit](#三-nvidia-container-toolkit)
+- [四. GPU功率设置](#四-gpu功率设置)
+
 # 一. 安装cuda toolkit
 
     cuda toolkit内包含：cuda、cudnn、tensorrt等。

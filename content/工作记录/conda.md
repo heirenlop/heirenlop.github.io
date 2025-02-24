@@ -3,6 +3,12 @@ title: "Conda"
 date: 2025-01-18
 draft: false
 ---
+
+- [一. 环境管理](#一-环境管理)
+- [二. 环境配置](#二-环境配置)
+- [三. 包管理](#三-包管理)
+- [四. 换源](#四-换源)
+
 # 一. 环境管理
 
 1. 创建虚拟环境
@@ -41,13 +47,9 @@ draft: false
    ```bash
    conda config --show channels
    ```
-9. 添加清华镜像源
-   ````bash
-   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/ # 换conda源
-   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/ # 换conda源
-   conda config --add channels http://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/ # 换conda源
-   ```
+   
 # 二. 环境配置
+
 1. 导出虚拟环境配置文件.yaml
    ```bash
    conda env export > environment.yaml
@@ -62,6 +64,7 @@ draft: false
    ```
    
 # 三. 包管理
+
 1. 安装包
    ```bash
    conda install package_name # conda install numpy
