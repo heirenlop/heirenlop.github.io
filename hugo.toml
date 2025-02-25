@@ -243,12 +243,12 @@ url = "resume/"
 [[languages.en.menu.main]]
 name = "daily record"
 weight = 3
-url = "daily-record/"
+url = "daily/"
 
 [[languages.en.menu.main]]
 name = "work record"
 weight = 4
-url = "work-record/"
+url = "work/"
 
 [[languages.en.menu.main]]
 name = "other"

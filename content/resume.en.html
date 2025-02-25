@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    /* HTML and CSS comment styles are different */
+    /* The following content is called CSS styles */
+    .summary {
+      font-size: 30px;
+      font-family: sans-serif;
+    }
+
+    .first-class {
+      font-size: 24px;
+      font-family: sans-serif;
+      margin-left: 30px;
+    }
+
+    .second-class {
+      font-size: 20px;
+      margin-left: 40px;
+      font-family: sans-serif;
+    }
+
+    .third-class {
+      /* Set font size */
+      font-size: 18px;
+      /* Set font style to italic */
+      font-style: italic;
+      /* Set left margin */
+      margin-left: 50px;
+      font-family: sans-serif;
+    }
+
+    .foured-class {
+      /* Set font size */
+      font-size: 16px;
+      /* Set font style to italic */
+      font-style: italic;
+      /* Set left margin */
+      margin-left: 60px;
+      font-family: sans-serif;
+    }
+
+    /* Style for underlined text */
+    .underline {
+      text-decoration: underline;
+    }
+
+    .summary icon {
+      /* Adjust spacing between icon and text */
+      margin-right: 8px;
+      /* Set icon color */
+      color: #3d83e5;
+    }
+
+    /* Style for divider line */
+    hr {
+      border: none;
+      /* Set line thickness */
+      height: 1px;
+      /* Set line color */
+      background-color: #ccc;
+      /* Set margin for top and bottom of line */
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<!-- This is the HTML content -->
+
+<body class="vscode-body vscode-light">
+  <!-- <details> tag is used to create collapsible elements. When paired with <summary>, you can click the summary tag to expand or collapse the content. -->
+  <details>
+    <summary class="summary">
+      <icon class="fas fa-graduation-cap"></icon> Education
+    </summary>
+    <ul>
+      <li class="first-class"><span class="underline"><strong>Ph.D.</strong></span>
+        <ul>
+          <li class="second-class">2024 - Present · Harbin Institute of Technology · Mechanical Engineering</li>
+          <li class="third-class">Research Focus: SLAM</li>
+        </ul>
+      </li>
+      <li class="first-class"><span class="underline"><strong>Master's</strong></span>
+        <ul>
+          <li class="second-class">2019 - 2021 · Harbin Institute of Technology · Mechanical Engineering</li>
+          <li class="third-class">Research Focus: SLAM</li>
+        </ul>
+      </li>
+      <li class="first-class"><span class="underline"><strong>Bachelor's</strong></span>
+        <ul>
+          <li class="second-class">2013 - 2017 · Shanghai Normal University · Automotive Service Engineering</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <hr>
+
+  <details>
+    <summary class="summary">
+      <icon class="fas fa-briefcase"></icon> Work Experience
+    </summary>
+    <ul>
+      <li class="first-class"><span class="underline"><strong>Algorithm Engineer</strong></span>
+        <ul>
+          <li class="second-class">2021 - 2024 · SAIC Research Institute · Localization Algorithm Team
+            <details>
+              <summary>Static Feature Extraction in Memory Driving System</summary>
+              <li class="foured-class">Project Duration: 2023 - 2024</li>
+              <li class="foured-class">Project Overview: Perception, tracking, and fusion of extracted semantic segmentation results (including zebra crossings, stop lines), with output to downstream mapping systems.</li>
+              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+            </details>
+
+            <details>
+              <summary>Static Feature Extraction in Memory Parking System</summary>
+              <li class="foured-class">Project Duration: 2022 - 2023</li>
+              <li class="foured-class">Project Overview: Perception, tracking, and fusion of unprocessed semantic segmentation results (including lane lines, zebra crossings, ground arrows), with output to downstream mapping systems.</li>
+              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+            </details>
+
+            <details>
+              <summary>Mapping Engine for Memory Parking System</summary>
+              <li class="foured-class">Project Duration: 2022</li>
+              <li class="foured-class">Project Overview: Built a parking state machine using hash tables and shared memory, writing topological map data for downstream control systems.</li>
+              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+            </details>
+
+            <details>
+              <summary>Millimeter-Wave Radar High-Speed Sign Extraction</summary>
+              <li class="foured-class">Project Duration: 2021 - 2022</li>
+              <li class="foured-class">Project Overview: Perception, tracking, and fusion of millimeter-wave radar point clouds, matched with high-definition maps, and used as longitudinal constraints for lane-level localization.</li>
+              <li class="foured-class">Responsibilities: Development, testing</li>
+            </details>
+          </li>
+        </ul>
+      </li>
+
+      <li class="first-class"><span class="underline"><strong>Intern</strong></span>
+        <ul>
+          <li class="second-class">2016 · Handicraft Association, Erfurt, Germany</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <hr>
+
+  <details>
+    <summary class="summary">
+      <icon class="fas fa-cog"></icon> Skills
+    </summary>
+    <ul>
+      <li class="first-class"><span class="underline"><strong>Programming</strong></span>
+        <ul>
+          <li class="second-class">C++</li>
+          <li class="second-class">Python</li>
+          <li class="second-class">HTML/CSS/JavaScript</li>
+        </ul>
+      </li>
+      <li class="first-class"><span class="underline"><strong>Other</strong></span>
+        <ul>
+          <li class="second-class">Git</li>
+          <li class="second-class">Linux</li>
+          <li class="second-class">ROS</li>
+          <li class="second-class">Docker</li>
+          <li class="second-class">conda</li>
+        </ul>
+      </li>
+      <li class="first-class"><span class="underline"><strong>Languages</strong></span>
+        <ul>
+          <li class="second-class">English CET-6 </li>
+          <li class="second-class">German B1</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+  <hr>
+
+  <details>
+    <summary class="summary">
+      <icon class="fas fa-book"></icon> Publications
+    </summary>
+    <ul>
+      <ul>
+        <li class="first-class"><span class="underline"><strong>todo</strong></span>
+        <li class="second-class">todo</li>
+        </li>
+      </ul>
+    </ul>
+  </details>
+
+</body>
+
+</html>
