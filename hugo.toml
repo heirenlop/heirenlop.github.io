@@ -137,11 +137,13 @@ customRemoteJS = []
 # # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
 # connectsrc = ["'self'", "https://www.google-analytics.com"]
 
+#-----------------------------------set category--------------------------------------
 [taxonomies]
 category = "categories"
-# series = "series"
+series = "series"
 tag = "tags"
-# author = "authors"
+author = "authors"
+
 #  fa-brands 表示这是一个品牌图标。
 # fa-linkedin 表示这是 LinkedIn 的图标。
 # fa-2x 表示图标的大小是默认大小的两倍。
@@ -200,31 +202,17 @@ url = "resume/"
 [[languages.zh-cn.menu.main]]
 name = "生活"
 weight = 3
-url = "生活日常/"
-identifier = "生活"
-
-[[languages.zh-cn.menu.main]]
-name = "旅行"
-weight = 1
-url = "生活日常/旅行/"
-parent = "生活"
-
-[[languages.zh-cn.menu.main]]
-name = "音乐"
-weight = 2
-url = "生活日常/音乐/"
-parent = "生活"
-
+url = "daily/"
 
 [[languages.zh-cn.menu.main]]
 name = "工作"
 weight = 4
-url = "工作记录/"
+url = "work/"
 
 [[languages.zh-cn.menu.main]]
 name = "杂项"
 weight = 5
-url = "其他记录/"
+url = "other/"
 
 [[languages.zh-cn.menu.main]]
 name = "联系"
@@ -232,54 +220,54 @@ weight = 6
 url = "contact/"
 
 #-----------------------------------set EN--------------------------------------
-# [languages.en]
-# languageName = ":us:"
-# title = "heirenlop"
+[languages.en]
+languageName = ":us:"
+title = "heirenlop"
 
-# [languages.en.params]
-# author = "heirenlop"
-# info = ""
-# description = ""
-# keywords = ""
+[languages.en.params]
+author = "heirenlop"
+info = ""
+description = ""
+keywords = ""
 
-# [[languages.en.menu.main]]
-# name = "About"
-# weight = 1
-# url = "about/"
+[[languages.en.menu.main]]
+name = "About"
+weight = 1
+url = "about/"
 
-# [[languages.en.menu.main]]
-# name = "resume"
-# weight = 2
-# url = "resume/"
+[[languages.en.menu.main]]
+name = "resume"
+weight = 2
+url = "resume/"
 
-# [[languages.en.menu.main]]
-# name = "daily record"
-# weight = 3
-# url = "daily-record/"
+[[languages.en.menu.main]]
+name = "daily record"
+weight = 3
+url = "daily-record/"
 
-# [[languages.en.menu.main]]
-# name = "work record"
-# weight = 4
-# url = "work-record/"
+[[languages.en.menu.main]]
+name = "work record"
+weight = 4
+url = "work-record/"
 
-# [[languages.en.menu.main]]
-# name = "other"
-# weight = 5
-# url = "other/"
+[[languages.en.menu.main]]
+name = "other"
+weight = 5
+url = "other/"
 
-# [[languages.en.menu.main]]
-# name = "contact"
-# weight = 6
-# url = "contact/"
-# 添加可在md文件中插入html标签配置
+[[languages.en.menu.main]]
+name = "contact"
+weight = 6
+url = "contact/"
+
 #----------------------------------------------------------
 
 # 启用 Git 信息功能,获取文件的最后提交时间
-enableGitInfo = true
+# enableGitInfo = true
 
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
+
+# 添加可在md文件中插入html标签配置
 unsafe = true
-
-
