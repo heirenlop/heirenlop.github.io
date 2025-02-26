@@ -102,8 +102,8 @@ conda 安装过程：
    ./install/bin/SIBR_gaussianViewer_app -m ../output/water_bottle/
    ```
 
-   参考链接：
-   <https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152>
+    [参考链接](https://github.com/graphdeco-inria/gaussian-splatting/issues/267#issuecomment-1840760152)
+
 
 4. 本地数据测试
 
