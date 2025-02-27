@@ -156,12 +156,6 @@ weight = 1
 url = "https://github.com/heirenlop"
 
 [[params.social]]
-name = "Twitter"
-icon = "fa-brands fa-x-twitter fa-2x"
-weight = 6
-url = "https://x.com/heirenlop"
-
-[[params.social]]
 name = "LinkedIn"
 icon = "fa-brands fa-linkedin fa-2x"
 weight = 3
@@ -181,9 +175,15 @@ url = "images/QQ.jpg"
 
 [[params.social]]
 name = "Zhihu"
-icon = "fa-brands fa-zhihu fa-2x"
+icon = "fa-brands fa-maimai fa-2x"
 weight = 5
 url = "https://www.zhihu.com/people/heiren-70"
+
+[[params.social]]
+name = "Twitter"
+icon = "fa-brands fa-x-twitter fa-2x"
+weight = 6
+url = "https://x.com/heirenlop"
 
 #-----------------------------------set menu--------------------------------------
 [languages.zh-cn]
@@ -271,3 +271,10 @@ url = "contact/"
 
 # 添加可在md文件中插入html标签配置
 unsafe = true
+
+#----set comment------
+[params.utterances]
+enable=true
+repo="heirenlop/blog_comments" 
+issueTerm="title"
+theme="dark-blue"  
