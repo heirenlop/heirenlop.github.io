@@ -275,6 +275,3 @@ unsafe = true
 #----set comment------
 [params.utterances]
 enable=true
-repo="heirenlop/blog_comments" 
-issueTerm="title"
-theme="dark-blue"  
