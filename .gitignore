@@ -2,4 +2,4 @@
 public/
 
 # Hugo cache directory
-resources/_gen/
+# resources/_gen/
