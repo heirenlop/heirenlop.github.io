@@ -271,7 +271,3 @@ url = "contact/"
 
 # 添加可在md文件中插入html标签配置
 unsafe = true
-
-#----set comment------
-[params.utterances]
-enable=true

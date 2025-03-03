@@ -37,8 +37,6 @@
         {{ end }}
         {{ .Content }}
       </div>
-
-
       <footer>
         {{ partial "posts/series.html" . }}
         {{ partial "posts/disqus.html" . }}
@@ -52,6 +50,5 @@
     </article>
 
     {{ partial "posts/math.html" . }}
-    {{ partial "comments.html" . }}
   </section>
 {{ end }}
