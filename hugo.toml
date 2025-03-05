@@ -1,7 +1,7 @@
 #网站的基 URL
 baseURL = "http://www.example.com"
 #网站的标题
-title = "heirenlop"
+title = "李佳潞"
 #主题
 theme = "hugo-coder"
 #语言
@@ -222,7 +222,7 @@ url = "contact/"
 #-----------------------------------set EN--------------------------------------
 [languages.en]
 languageName = ":us:"
-title = "heirenlop"
+title = "Jialu Li"
 
 [languages.en.params]
 author = "Jialu Li"
