@@ -30,7 +30,7 @@ keywords = "blog,developer,personal"
 info = [""]
 #240 * 240px
 avatarURL = "images/avatar.png"
-# favicon = "images/favicon-32x32.png"
+favicon = "images/favicon.ico"
 # gravatar = "13122356672@163.com"
 # 日期格式
 dateFormat = "2006-01-02"
@@ -175,7 +175,7 @@ url = "images/QQ.jpg"
 
 [[params.social]]
 name = "Zhihu"
-icon = "fa-brands fa-maimai fa-2x"
+icon = "fa-brands fa-zhihu fa-2x"
 weight = 5
 url = "https://www.zhihu.com/people/heiren-70"
 
