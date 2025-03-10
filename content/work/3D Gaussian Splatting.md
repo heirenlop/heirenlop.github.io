@@ -19,6 +19,16 @@ tags = [
 - [_论文部分_](#论文部分)
   - [一. 前置内容](#一-前置内容)
   - [二. 论文逻辑](#二-论文逻辑)
+- [3D Gaussian Splatting Pipeline](#3d-gaussian-splatting-pipeline)
+  - [1. **初始化阶段**](#1-初始化阶段)
+    - [输入：多视角图像 + 稀疏点云（如COLMAP/SfM生成）](#输入多视角图像--稀疏点云如colmapsfm生成)
+  - [2. **参数优化阶段**](#2-参数优化阶段)
+    - [优化目标：最小化渲染图像与GT的差异（L1 + SSIM Loss）](#优化目标最小化渲染图像与gt的差异l1--ssim-loss)
+  - [3. **自适应高斯控制**](#3-自适应高斯控制)
+    - [动态调整高斯数量与分布](#动态调整高斯数量与分布)
+  - [4. **可微分光栅化渲染**](#4-可微分光栅化渲染)
+    - [渲染方程：将3D高斯投影到2D屏幕空间](#渲染方程将3d高斯投影到2d屏幕空间)
+  - [5. **训练与推理流程**](#5-训练与推理流程)
 
 # _代码部分_
 
@@ -175,6 +185,8 @@ conda 安装过程：
        });
    </script>
 
+
+
 # _论文部分_
 
 ## 一. 前置内容
@@ -220,12 +232,69 @@ conda 安装过程：
 
 ## 二. 论文逻辑
 
-| **Step**                                                  | **Description**                                                                                                                                                                                                                                      | **Technology Used**                                |
-| --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| **1. Input Images / 输入图像**                            | Collect a set of 2D images from different viewpoints. / 从不同视角获取一组 2D 图像。                                                                                                                                                                 |                                                    |
-| **2. Feature Point Extraction / 特征点提取**              | Apply feature extraction algorithms like SIFT (Scale-Invariant Feature Transform). / 使用 SIFT 等特征提取算法。                                                                                                                                      | **SIFT**, **SURF**, **ORB**                        |
-| **3. Sparse Point Cloud Generation / 稀疏点云生成**       | Use Structure-from-Motion (SfM) or similar techniques to generate a sparse point cloud and estimate camera poses. / 使用 SfM 或类似技术生成稀疏点云并估计相机位姿。                                                                                  | **Structure-from-Motion (SfM)**                    |
-| **4. Gaussian Point Cloud Representation / 高斯点云表示** | Convert the sparse point cloud into 3D Gaussian point cloud, where each point represents a Gaussian distribution with position, opacity, and color information. / 将稀疏点云转换为 3D 高斯点云，每个点表示一个包含位置、透明度和颜色信息的高斯分布。 | **3D Gaussian Splatting**                          |
-| **5. Optimization / 优化**                                | Optimize the Gaussian points by adjusting their positions, opacities, and colors based on new images. / 根据新图像数据调整高斯点的位置、透明度和颜色等属性进行优化。                                                                                 | **Bundle Adjustment**, **Optimization Algorithms** |
-| **6. Rendering / 渲染**                                   | Render the Gaussian point cloud into a 2D image using fast rasterization techniques. / 使用快速光栅化技术将高斯点云渲染为 2D 图像。                                                                                                                  | **Fast Rasterization**, **Volumetric Rendering**   |
-| **7. Output / 输出**                                      | Output the optimized 2D image and the optimized Gaussian point cloud for further applications, such as rendering or localization. / 输出优化后的 2D 图像和优化后的高斯点云，供后续应用，如渲染或定位。                                               |                                                    |
+# 3D Gaussian Splatting Pipeline
+
+## 1. **初始化阶段**  
+### 输入：多视角图像 + 稀疏点云（如COLMAP/SfM生成）
+- **目标**：将稀疏点云转换为初始3D高斯集合  
+- **关键操作**：
+  - 每个3D点初始化为一个各向同性高斯（协方差矩阵为对角矩阵，缩放由点云密度自适应决定）
+  - 初始颜色通过多视角图像反投影计算均值颜色
+  - 不透明度（α）初始化为均匀值（如0.5）
+
+---
+
+## 2. **参数优化阶段**  
+### 优化目标：最小化渲染图像与GT的差异（L1 + SSIM Loss）
+- **优化参数**：
+  - **几何参数**：
+    - 位置（μ ∈ ℝ³）
+    - 协方差矩阵（Σ ∈ ℝ³×³，通过旋转矩阵𝑅和缩放矩阵𝑆参数化为：Σ = 𝑅𝑆𝑆ᵀ𝑅ᵀ）
+  - **外观参数**：
+    - 不透明度（α ∈ [0,1]）
+    - 球谐系数（SH Coefficients ∈ ℝⁿ，用于视角相关颜色建模）
+- **优化方法**：
+  - 使用可微分光栅化计算梯度
+  - 基于Adam优化器迭代更新参数
+
+---
+
+## 3. **自适应高斯控制**  
+### 动态调整高斯数量与分布
+- **高斯增加**：
+  - **条件**：当某区域重建误差（梯度）过高时
+  - **操作**：将大高斯分裂为多个小高斯（沿梯度方向细分）
+- **高斯修剪**：
+  - **条件**：当高斯不透明度（α）低于阈值或对渲染贡献可忽略
+  - **操作**：直接移除低贡献高斯
+- **高斯合并**：
+  - **条件**：当相邻高斯参数相似时（如位置、颜色相近）
+  - **操作**：合并为单一高斯以降低计算量
+
+---
+
+## 4. **可微分光栅化渲染**  
+### 渲染方程：将3D高斯投影到2D屏幕空间
+- **步骤**：
+  1. **投影变换**：
+     - 将3D高斯椭球投影到2D屏幕空间，计算2D协方差矩阵（Σ'）
+  2. **排序与混合**：
+     - 按深度对高斯进行快速排序（近似Front-to-Back）
+  3. **像素着色**：
+     - 对每个像素覆盖的高斯进行透明度混合（Alpha Blending）
+     - 颜色计算：`C = Σ(α_i * c_i * ∏(1 - α_j))`（j < i）
+
+---
+
+## 5. **训练与推理流程**
+```mermaid
+graph TD
+A[输入图像] --> B[SfM稀疏重建]
+B --> C[初始化3D高斯]
+C --> D[参数优化]
+D --> E[自适应高斯控制]
+E --> F{收敛?}
+F -->|No| D
+F -->|Yes| G[导出高斯模型]
+G --> H[实时渲染]
+```
