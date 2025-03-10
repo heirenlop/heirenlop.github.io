@@ -1,7 +1,7 @@
 #网站的基 URL
 baseURL = "http://www.example.com"
 #网站的标题
-title = "李佳潞"
+title = "heirenlop"
 #主题
 theme = "hugo-coder"
 #语言
@@ -21,7 +21,7 @@ enableEmoji = true
 noClasses = false
 
 [params]
-author = "heirenlop"
+author = "李佳潞"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 # description = "John Doe's personal website"
 description = "Jialu Li's personal website"
@@ -222,10 +222,10 @@ url = "contact/"
 #-----------------------------------set EN--------------------------------------
 [languages.en]
 languageName = ":us:"
-title = "Jialu Li"
+title = "heirenlop"
 
 [languages.en.params]
-author = "heirenlop"
+author = "Jialu Li"
 info = ""
 description = ""
 keywords = ""
