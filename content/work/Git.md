@@ -268,6 +268,14 @@ git branch -M main
 git push -u origin main
 
 ```
+(3) 修改完远程地址后，当前本地修改不会被推送到新的远程仓，需再次推送
+
+```bash
+git status 
+git add xxx
+git commit -m "xxx"
+git push origin main
+```
 
 # 备注
 ![没图？](/images/work-record/github.png "github逻辑图")
