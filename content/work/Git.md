@@ -35,6 +35,7 @@ tags = [
   - [12.4 用法](#124-用法)
 - [13. 新建仓](#13-新建仓)
 - [14. 拉取submodule](#14-拉取submodule)
+- [15. 修改仓的地址](#15-修改仓的地址)
 - [备注](#备注)
 
 
@@ -232,5 +233,41 @@ git clone --recursive <repository_url>
 ```bash
 git submodule update --init --recursive
 ```
+
+# 15. 修改仓的地址
+
+在忘记fork且clone到本地的情况下，修改别人仓地址为自己仓
+(1) 网页新建自己仓
+(2) 修改远程地址步骤
+```bash
+# 检查当前远程仓地址
+git remote -v
+
+#output 
+origin  https://github.com/original_owner/original_repo.git (fetch)
+origin  https://github.com/original_owner/original_repo.git (push)
+
+# 删除原始远程仓地址
+git remote remove origin
+
+# 添加新的远程仓地址
+git remote add origin https://github.com/your_username/your_repo.git
+
+# 检查是否修改成功
+git remote -v
+
+# output
+origin  https://github.com/your_username/your_repo.git (fetch)
+origin  https://github.com/your_username/your_repo.git (push)
+
+# 推送到新的远程仓
+git push -u origin main 
+
+# tips： 如果main分支不存在，新建一个main分支，再推送
+git branch -M main
+git push -u origin main
+
+```
+
 # 备注
 ![没图？](/images/work-record/github.png "github逻辑图")
