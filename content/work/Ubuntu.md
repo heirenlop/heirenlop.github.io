@@ -17,6 +17,7 @@ tags = [
 - [九. 关闭升级提示](#九-关闭升级提示)
 - [十. 备份系统rsync](#十-备份系统rsync)
 - [十一. 创建桌面快捷方式](#十一-创建桌面快捷方式)
+- [十二. 修改fcitx输入法候选框大小](#十二-修改fcitx输入法候选框大小)
 
 # 一. 烧录镜像
 
@@ -351,3 +352,17 @@ speedtest-cli --secure
     ```bash
     sudo chmod +x /usr/local/bin/colmap
     ```
+
+# 十二. 修改fcitx输入法候选框大小
+1. 进入fcitx配置界面
+    ```bash
+    # 启动fcitx配置界面
+    fcitx-configtool
+    # 外观-> 字体大小修改
+    ```
+2. 重启fcitx
+   ```bash
+   fcitx -r
+   ```
+
+
