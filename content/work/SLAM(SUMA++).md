@@ -15,6 +15,7 @@ tags = [
 - [二. 流程](#二-流程)
 - [三. 问题](#三-问题)
 - [四. 本地复现](#四-本地复现)
+- [五. tips](#五-tips)
 
 # 一. 程序
 
@@ -161,3 +162,16 @@ WORKDIR /catkin_ws/src
            <source src="/videos/work-record/suma++1080p.mp4" type="video/mp4">
        </video>
 </div>
+
+
+# 五. tips
+
+play按钮的位置实在是太小
+
+
+<div class="container">
+                <div class="image">
+                    <figure>
+                        <img src="/images/work-record/suma++.png">
+                    </figure>
+                </div>
