@@ -115,6 +115,13 @@ tags = [
     tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
     ```
 
+14. 删除apt-get安装的软件
+    ```bash
+    # 以删除vlc为例
+    sudo apt-get remove vlc
+    sudo apt-get purge vlc
+    sudo apt-get autoremove 
+    ```
 
 # 三. 常用软件
 1. terminator

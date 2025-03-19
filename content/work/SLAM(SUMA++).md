@@ -14,7 +14,7 @@ tags = [
 - [一. 程序](#一-程序)
 - [二. 流程](#二-流程)
 - [三. 问题](#三-问题)
-- [四. 测试](#四-测试)
+- [四. 本地复现](#四-本地复现)
 
 # 一. 程序
 
@@ -152,6 +152,12 @@ WORKDIR /catkin_ws/src
 
 链接： <https://github.com/heirenlop/semantic_suma_docker_ternsorRT8x>
 
-# 四. 测试
+# 四. 本地复现
 
-可复现
+可复现，测试KITTI数据集结果：
+
+<div class="container" style="display: flex; justify-content: center;">
+       <video controls width="640" height="360">
+           <source src="/videos/work-record/suma++1080p.mp4" type="video/mp4">
+       </video>
+</div>
