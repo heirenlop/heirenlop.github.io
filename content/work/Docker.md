@@ -23,6 +23,7 @@ tags = [
 - [八. Docker访问X11服务器](#八-docker访问x11服务器)
 - [九. Docker资源空间管理](#九-docker资源空间管理)
 - [十. Docker共享内存](#十-docker共享内存)
+- [tips](#tips)
 
 
 # 一. Docker APT安装
@@ -485,4 +486,9 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 "runArgs": [
     "--shm-size", "4g"  // json 配置文件运行开发容器
   ],
+```
+# tips
+通过docker运行hugo博客
+```bash
+docker run --rm -it \-v $(pwd):/src \-p 1313:1313 \hugomods/hugo server -D
 ```
