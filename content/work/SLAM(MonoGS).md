@@ -12,32 +12,28 @@ tags = [
 +++
 
 - [*代码部分*](#代码部分)
-- [一. 程序](#一-程序)
-- [二. 问题](#二-问题)
-- [三. 说明](#三-说明)
-- [四. 本地复现](#四-本地复现)
+- [1. 程序](#1-程序)
+- [2. 问题](#2-问题)
+  - [2.1 libtorch\_cpu.so问题](#21-libtorch_cpuso问题)
+  - [2.2 opengl问题](#22-opengl问题)
+- [3. 复现](#3-复现)
+  - [3.1 DEMO复现](#31-demo复现)
+  - [3.2 本地复现](#32-本地复现)
 - [*论文部分*](#论文部分)
-- [一. 前置内容](#一-前置内容)
-- [二. 论文逻辑](#二-论文逻辑)
 
 # *代码部分*
 
-# 一. 程序
-
+# 1. 程序
 源码：<https://github.com/muskie82/MonoGS>
 
+---
 
-# 二. 问题
-
-如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
+# 2. 问题
+## 2.1 libtorch_cpu.so问题
+- 如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
    
-# 三. 说明
-
-无
-
-# 四. 本地复现
-
-1. 如果是在conda内运行可视化，可能会出现x11问题，本质也是opengl问题，同3dgs问题相同：
+## 2.2 opengl问题
+- 如果是在conda内运行可视化，可能会出现x11问题，本质也是opengl问题，同3dgs问题相同：
 ```bash
 Traceback (most recent call last):
   File "slam.py", line 252, in <module>
@@ -96,24 +92,27 @@ Traceback (most recent call last):
     pid, sts = os.waitpid(self.pid, flag)
 ```
 
-解决方法：
+- 解决方法：
+  
+  docker容器内
+  ```bash
+  export MESA_GL_VERSION_OVERRIDE=4.3 
+  ```
+- 参考链接：
+  
+  <https://github.com/muskie82/MonoGS/issues/5>
 
-docker容器内
-```bash
-export MESA_GL_VERSION_OVERRIDE=4.3 
-```
-参考链接：
+---
 
-<https://github.com/muskie82/MonoGS/issues/5>
-
-2. DEMO复现
+# 3. 复现
+## 3.1 DEMO复现
+- 渲染效果：
 <div class="container" style="display: flex; justify-content: center;">
     <video controls width="640" height="360">
         <source src="/videos/work-record/MonoGS-demo.mp4" type="video/mp4">
     </video>
 </div>
-
-测试误差：
+- 测试误差：
             <div class="container">
                 <div class="image">
                     <figure>
@@ -123,15 +122,11 @@ export MESA_GL_VERSION_OVERRIDE=4.3
                 </div>
             </div>
 
-3. 本地数据复现
+## 3.2 本地复现
+- 渲染效果：
 
-  todo
+  ![alt text](/images/work-record/Peek_MonoGS_camera_1080P.gif)
 
-等待RGBD摄像头或mono
 
 # *论文部分*
-
-# 一. 前置内容
-  todo
-# 二. 论文逻辑
   todo
