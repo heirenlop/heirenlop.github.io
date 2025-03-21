@@ -123,8 +123,14 @@ Traceback (most recent call last):
             </div>
 
 ## 3.2 本地复现
+- 设备
+  * 设备型号：Intel realsense D435i
+  * 相机类型：深度相机
+  * 运行环境：
+    (1) GPU：4060Ti
+    (2) Docker：cuda-11.6 
+    (3) conda：pytorch=1.12.1
 - 渲染效果：
-
   ![alt text](/images/work-record/Peek_MonoGS_camera_1080P.gif)
 
 
