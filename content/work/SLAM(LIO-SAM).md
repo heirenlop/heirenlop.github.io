@@ -47,15 +47,9 @@ tags = [
     (1) park_dataset
 
     ```yaml
-
----
-
     #Topics
     pointCloudTopic: "/points_raw"                   # Point cloud data
     imuTopic: "imu_raw"                # IMU data
-
----
-
     #IMU Settings
     extrinsicRot:    [-1.0,  0.0,  0.0,
                         0.0,  1.0,  0.0,
@@ -68,15 +62,9 @@ tags = [
     (2) campus_dataset
 
     ```yaml
-
----
-
     #Topics
     pointCloudTopic: "/points_raw"                   # Point cloud data
     imuTopic: "/imu_correct"                        # IMU data
-
----
-
     #IMU Settings
     extrinsicRot:    [1.0,  0.0,  0.0,
                         0.0,  1.0,  0.0,

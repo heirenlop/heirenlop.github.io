@@ -285,52 +285,28 @@ git submodule update --init --recursive
 (1) 网页新建自己仓
 (2) 修改远程地址步骤
 ```bash
-
----
-
 # 检查当前远程仓地址
 git remote -v
-
-
----
 
 #output 
 origin  https://github.com/original_owner/original_repo.git (fetch)
 origin  https://github.com/original_owner/original_repo.git (push)
 
-
----
-
 # 删除原始远程仓地址
 git remote remove origin
-
-
----
 
 # 添加新的远程仓地址
 git remote add origin https://github.com/your_username/your_repo.git
 
-
----
-
 # 检查是否修改成功
 git remote -v
-
-
----
 
 # output
 origin  https://github.com/your_username/your_repo.git (fetch)
 origin  https://github.com/your_username/your_repo.git (push)
 
-
----
-
 # 推送到新的远程仓
 git push -u origin main 
-
-
----
 
 # tips： 如果main分支不存在，新建一个main分支，再推送
 git branch -M main
