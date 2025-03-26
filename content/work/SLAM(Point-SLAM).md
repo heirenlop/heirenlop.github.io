@@ -53,9 +53,15 @@ python run.py configs/Replica/room0.yaml
 
 以Replica的wandb 日志为例
 
-<a href="/images/work-record/wandb1.png" data-lightbox="point-slam">
-  <img src="/images/work-record/wandb1.png" alt="wandb1" >
-</a>
+<div class="container">
+    <div class="image">
+        <figure>
+          <a data-fancybox="gallery" href="/images/work-record/wandb1.png" data-lightbox="point-slam">
+              <img src="/images/work-record/wandb1.png" loading="lazy">
+          </a>
+        </figure>
+    </div>
+</div>
 
 (1) *参数*
 
@@ -111,9 +117,16 @@ python run.py configs/Replica/room0.yaml
 可能的解释：
 随着点云数量增加，每帧需要处理的数据更多，导致耗时增加。
 
-<a href="/images/work-record/wandb2.png" data-lightbox="point-slam">
-  <img src="/images/work-record/wandb2.png" alt="wandb2" >
-</a>
+<div class="container">
+    <div class="image">
+        <figure>
+          <a data-fancybox="gallery" href="/images/work-record/wandb2.png" data-lightbox="point-slam">
+              <img src="/images/work-record/wandb2.png" loading="lazy">
+          </a>
+        </figure>
+    </div>
+</div>
+
 (1) *Mapping_00100_0299 和 Mapping_00050_0299*
 这是两个不同的时间点或关键帧的结果。
 
@@ -148,9 +161,16 @@ c. RGB Residual：
 表示输入 RGB 图像与生成 RGB 图像之间的误差（残差）。
 通常是基于像素的差异显示，颜色越亮表示误差越大。
 
-<a href="/images/work-record/wandb3.png" data-lightbox="point-slam">
-  <img src="/images/work-record/wandb3.png" alt="wandb3" >
-</a>
+<div class="container">
+    <div class="image">
+        <figure>
+          <a data-fancybox="gallery" href="/images/work-record/wandb3.jpg" data-lightbox="point-slam">
+              <img src="/images/work-record/wandb3.jpg" loading="lazy">
+          </a>
+        </figure>
+    </div>
+</div>
+
 (1) *geo_loss_pixel*
 纵坐标：几何误差，通常表示每个像素的几何损失。
 趋势：

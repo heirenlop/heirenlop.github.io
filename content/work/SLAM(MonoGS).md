@@ -118,7 +118,9 @@ Traceback (most recent call last):
             <div class="container">
                 <div class="image">
                     <figure>
-                        <img src="/images/work-record/MonoGS误差.png">
+                         <a data-fancybox="gallery" href="/images/work-record/MonoGS误差.png"  >
+              <img src="/images/work-record/MonoGS误差.png" loading="lazy">
+          </a>
                         <figcaption>均值轨迹误差</figcaption>
                     </figure>
                 </div>
@@ -133,8 +135,16 @@ Traceback (most recent call last):
     (2) Docker：cuda-11.6 
     (3) conda：pytorch=1.12.1
 - 渲染效果：
-  ![alt text](/images/work-record/Peek_MonoGS_camera_1080P.gif)
-
+<div class="container">
+  <div class="image">
+        <figure>
+              <a data-fancybox="gallery" href="/images/work-record/Peek_MonoGS_camera_1080P.gif"  >
+                  <img src="/images/work-record/Peek_MonoGS_camera_1080P.gif" loading="lazy">
+              </a>
+            <figcaption>均值轨迹误差</figcaption>
+        </figure>
+    </div>
+</div>
 
 # *论文部分*
   todo

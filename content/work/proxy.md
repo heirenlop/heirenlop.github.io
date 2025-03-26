@@ -27,18 +27,17 @@ tags = [
 2. UI代理(不包括终端)
   这个没太大用，可以不开，如果要开的话，方法如下：
   设置->网络->代理->手动->设置代理端口
-  <section>
-              <div class="container">
-                  <div class="image">
-                      <figure>
-                          <img src="/images/work-record/proxy.png",alt="proxy",loading="lazy">
-                          <figcaption>ubuntu设置代理</figcaption>
-                      </figure>
-                  </div>
-              </div>
-          </section>
-
-3. 宿主机设置终端+conda+pip+git+apt代理
+  <div class="container">
+      <div class="image">
+          <figure>
+            <a data-fancybox="gallery" href="/images/work-record/proxy.png" >
+              <img src="/images/work-record/proxy.png" loading="lazy">
+          </a>
+              <figcaption>ubuntu设置代理</figcaption>
+          </figure>
+      </div>
+  </div>
+1. 宿主机设置终端+conda+pip+git+apt代理
    按需要可删除脚本中不需要代理的部分
 <a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/shell/#sections4">点击跳转到脚本🔗</a>
 

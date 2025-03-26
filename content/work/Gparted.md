@@ -21,7 +21,9 @@ tags = [
     <div class="container">
         <div class="image">
             <figure>
+                                     <a data-fancybox="gallery" href="/images/work-record/gparted.png">
                     <img src="/images/work-record/gparted.png">
+                    </a>
                     <figcaption>选地一个进入ubunut</figcaption>
             </figure>
         </div>

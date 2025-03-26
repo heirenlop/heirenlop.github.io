@@ -39,22 +39,26 @@ tags = [
 
 ## 1.2 Auto save
 
-    <div class="container">
-                    <div class="image">
-                        <figure>
-                            <img src="/images/work-record/vscode1.png",alt="设置1",loading="lazy">
-                            <figcaption>步骤1</figcaption>
-                        </figure>
-                    </div>
+<div class="container">
+    <div class="image">
+        <figure>
+            <a data-fancybox="gallery" href="/images/work-record/vscode1.png">
+            <img src="/images/work-record/vscode1.png",alt="设置1",loading="lazy">
+            </a>
+            <figcaption>步骤1</figcaption>
+        </figure>
     </div>
-    <div class="container">
-                    <div class="image">
-                        <figure>
-                            <img src="/images/work-record/vscode2.png",alt="设置2",loading="lazy">
-                            <figcaption>步骤2</figcaption>
-                        </figure>
-                    </div>
+</div>
+<div class="container">
+    <div class="image">
+        <figure>
+                    <a data-fancybox="gallery" href="/images/work-record/vscode2.png">
+            <img src="/images/work-record/vscode2.png",alt="设置2",loading="lazy">
+            </a>
+            <figcaption>步骤2</figcaption>
+        </figure>
     </div>
+</div>
 
 # 2 插件相关 
 
@@ -202,8 +206,14 @@ tags = [
     ```
     json改好后在下图处选择要调试的程序名称
     <div class="container">
-                <div class="image">
-                        <img src="/images/work-record/vscode调试.png">
+        <div class="image">
+            <figure>
+                        <a data-fancybox="gallery" href="/images/work-record/vscode调试.png">
+                <img src="/images/work-record/vscode调试.png",alt=" ",loading="lazy">
+                </a>
+                <figcaption>选择调试程序</figcaption>
+            </figure>
+        </div>
     </div>
 
- 
+- todo

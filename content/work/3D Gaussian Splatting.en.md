@@ -123,11 +123,44 @@ Conda installation process:
 
    Gaussian distribution visualization:
 
-   <div class="twenty-container" style="position: relative; width: 80%; max-width: 500px; height: 700px; overflow: hidden; border-radius: 10px; display: flex; justify-content: center;">
-       <img class="twenty-before" src="/images/work-record/ori_water_bottle.png" alt="Original Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-       <img class="twenty-after" src="/images/work-record/sbir_water_bottle.png" alt="SBIR Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-       <div class="twenty-handle" style="position: absolute; top: 0; left: 50%; width: 20px; height: 100%; background-color: rgba(255, 255, 255, 0.7); cursor: pointer; z-index: 10; border-radius: 50%;"></div>
-   </div>
+<div class="twenty-container" 
+     style="position: relative; 
+            width: 80%; 
+            max-width: 500px; 
+            height: 700px; 
+            overflow: hidden; 
+            border-radius: 10px; 
+            margin: 0 auto; /* 新增关键居中属性 */
+            /* 移除无用的flex设置 */">
+   <img class="twenty-before" 
+        src="/images/work-record/ori_water_bottle.png" 
+        alt="Original Image" 
+        style="position: absolute; 
+               top: 0; 
+               left: 0; 
+               width: 100%; 
+               height: 100%; 
+               object-fit: cover;">
+   <img class="twenty-after" 
+        src="/images/work-record/sbir_water_bottle.png" 
+        alt="SBIR Image" 
+        style="position: absolute; 
+               top: 0; 
+               left: 0; 
+               width: 100%; 
+               height: 100%; 
+               object-fit: cover;">
+   <div class="twenty-handle" 
+        style="position: absolute; 
+               top: 0; 
+               left: 50%; 
+               width: 20px; 
+               height: 100%; 
+               background-color: rgba(255, 255, 255, 0.7); 
+               cursor: pointer; 
+               z-index: 10; 
+               border-radius: 50%;"></div>
+</div>
 
    <script>
        const handle = document.querySelector('.twenty-handle');

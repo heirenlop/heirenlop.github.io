@@ -157,7 +157,15 @@ tags = [
 
 因为墙的原因，在docker pull镜像的时候会很慢，或者说根本pull不下来，我ping的结果是丢包率100%。
 
-![ping](/images/work-record/ping.png "丢包率")
+<div class="container">
+                <div class="image">
+                    <figure>
+                    <a data-fancybox="gallery" href="/images/work-record/ping.png">
+                        <img src="/images/work-record/ping.png">
+                        </a>
+                        <figcaption>丢包率</figcaption>
+                    </figure>
+                </div>
 
 ## 方法1. 科学上网
 
