@@ -87,7 +87,6 @@ tags = [
 8. 流编辑器
    ```bash
    sed -i 's/<old>/<new>/g' filename #修改filename文件内old为new
-
 9.  安装程序
     ```bash
     sudo apt install -y <package> # -y 自动确认所有提示
@@ -104,17 +103,14 @@ tags = [
     # 宿主机内输入
     tmpfs           7.7G  532M  7.2G    7% /dev/shm
     ```
-
 12. 查看系统日志
     ```bash
     dmesg | tail -n 50
     ```
-
 13. 解压.tar.gz文件
     ```bash
     tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
     ```
-
 14. 删除apt-get安装的软件
     ```bash
     # 以删除vlc为例
@@ -126,7 +122,10 @@ tags = [
     ```bash
     sudo dmidecode -s system-serial-number
     ```
-
+16. 查看系统安装了哪些字体
+    ```bash
+    fc-list :lang=zh
+    ```
 
 
 # 三. 常用软件

@@ -24,6 +24,9 @@ tags = [
     - [5.6 random](#56-random)
     - [5.7 PIL](#57-pil)
     - [5.8 opencv](#58-opencv)
+    - [5.9 yaml](#59-yaml)
+    - [5.10 rich](#510-rich)
+    - [5.11 munch](#511-munch)
   - [6. 数据结构](#6-数据结构)
     - [6.1 列表 \[\]](#61-列表-)
     - [6.2 字典 {}](#62-字典-)
@@ -114,7 +117,19 @@ with open(os.path.join(self.model_path, "cameras.json"), 'w') as file:
                 json.dump(json_cams, file)
 ```
 
+- if isinstance(v, dict): 判断 v 是否为字典类型
 
+- current_datetime = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")： 获取当前时间，并格式化为 "%Y-%m-%d-%H-%M-%S" 的字符串。
+
+
+
+
+- tmp = tmp.split(".")[0]：将字符串 tmp 按照点 (.) 分割，并获取分割后的第一个部分。
+  ```python
+  '/workspace/MonoGS/configs/mono/tum/fr3_office.yaml'
+  变成
+  '/workspace/MonoGS/configs/mono/tum/fr3_office'
+  ```
 
 ------------
 
@@ -221,6 +236,7 @@ gaussians.exposure_optimizer.step()
 - torch.nn.Parameter(): 将输入转换为可训练参数
 - torch.eye(): 生成单位矩阵
 - torch.rand(): 生成随机数
+- torch.stack(): 堆叠张量
 - torch.cat(): 拼接张量
   ```python
   # dim=0 → 在行方向拼接
@@ -298,7 +314,22 @@ image = PIL.Image.open(path)
 ```
 ### 5.8 opencv
 - cv2.imread(path)： 读取图片，返回一个numpy数组。
+- map1,map2 = cv2.initUndistortRectifyMap(cameraMatrix, distCoeffs, R, newCameraMatrix, size, m1type)： 初始化映射
+- image = cv2.remap(image, map1, map2, interpolation=cv2.INTER_LINEAR)： 得到去畸变后的图像。和initUndistortRectifyMap搭配使用。
+
+
+
+
+### 5.9 yaml
+- output = yaml.full_load(f): 读取yaml文件，返回一个字典。
 ------------
+
+### 5.10 rich
+- rich.print(a): 打印a，支持颜色、格式化等。
+
+### 5.11 munch
+- b = muchify(a): 将字典a转换为munch对象b，支持点式访问。
+
 ## 6. 数据结构
 ### 6.1 列表 []
 - 特性:
@@ -318,6 +349,7 @@ image = PIL.Image.open(path)
   d = a.pop(0) # 删除并返回指定索引的元素
   ```
 ### 6.2 字典 {}
+- 其他表达：dict()
 - 特性:
   可修改 / 无序 / 键唯一
 - 示例：
