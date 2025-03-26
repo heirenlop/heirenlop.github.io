@@ -8,7 +8,7 @@ theme = "hugo-coder"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 #每页显示文章数量
-pagination.pagerSize = 8
+pagination.pagerSize = 10
 #是否启用emoji
 enableEmoji = true
 #服务配置
