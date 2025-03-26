@@ -62,6 +62,9 @@ customJS = []
 # Custom remote JS files
 customRemoteJS = []
 
+# 图片放大功能
+fancybox = true
+
 # If you want to use fathom(https://usefathom.com) for analytics, add this section
 # [params.fathomAnalytics]
 # siteID = "ABCDE"
