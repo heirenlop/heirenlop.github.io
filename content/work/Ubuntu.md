@@ -122,6 +122,12 @@ tags = [
     sudo apt-get purge vlc
     sudo apt-get autoremove 
     ```
+15. 查看主机序列号
+    ```bash
+    sudo dmidecode -s system-serial-number
+    ```
+
+
 
 # 三. 常用软件
 1. terminator
