@@ -36,7 +36,7 @@ tags = [
 - [13. 新建仓](#13-新建仓)
 - [14. 拉取submodule](#14-拉取submodule)
 - [15. 修改仓的地址](#15-修改仓的地址)
-- [备注](#备注)
+- [tips](#tips)
 
 
 
@@ -349,5 +349,5 @@ git push origin main
 
 ---
 
-# 备注
+# tips
 ![没图？](/images/work-record/github.png "github逻辑图")

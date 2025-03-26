@@ -34,7 +34,7 @@ tags = [
 3. 测试
     ```bash
     nvcc --version # 显示cuda版本
-
+    ```
 
 
 ---
