@@ -25,6 +25,9 @@ tags = [
   - [5.1 基本用法](#51-基本用法)
   - [5.2 .json文件](#52-json文件)
 
+
+---
+
 # 1 设置相关
 
 ## 1.1 vscode同步多电脑
@@ -59,6 +62,9 @@ tags = [
         </figure>
     </div>
 </div>
+
+
+---
 
 # 2 插件相关 
 
@@ -128,6 +134,9 @@ tags = [
     (2) ctrl+shift+p，选择dev container: open folder in container构建dev容器（如果有dockerfile直接根据dockerfile生成）;
     (3) 配置完成后，点击rebuild container，构建开发容器;
 
+
+---
+
 # 3 快捷键
 
 - 显示右侧边栏
@@ -147,6 +156,9 @@ tags = [
    ```bash
    ctrl+j
    ```
+
+---
+
 # 4 无法输入中文问题
 
 - 卸载 Snap 版本的 VS Code
@@ -170,6 +182,9 @@ tags = [
     sudo apt-get install code
     ```
 
+
+
+---
 
 # 5. 调试
 ## 5.1 基本用法

@@ -27,6 +27,9 @@ tags = [
 - [tips](#tips)
 
 
+
+---
+
 # 一. Docker APT安装
 
 1. 更新 APT 包索引
@@ -153,6 +156,9 @@ tags = [
 
     这将显示有关 Docker 系统的详细信息，包括存储驱动、网络设置等。
 
+
+---
+
 # 二. 下载镜像加速
 
 因为墙的原因，在docker pull镜像的时候会很慢，或者说根本pull不下来，我ping的结果是丢包率100%。
@@ -222,6 +228,9 @@ sudo docker run hello-world
 
 [目前国内可用代理汇总](https://www.coderjia.cn/archives/dba3f94c-a021-468a-8ac6-e840f85867ea)
 
+
+---
+
 # 三. 修改镜像存储路径
 
 1. 查看当前存储路径以及存储空间
@@ -245,6 +254,9 @@ sudo docker run hello-world
 3. 将原文件拷贝到新目录下
 
     ```bash
+
+---
+
     # 将原来docker中存储的数据copy到新的存储目录下
     sudo cp -r /var/lib/docker /data/docker
     ```
@@ -255,9 +267,15 @@ sudo docker run hello-world
     sudo systemctl daemon-reload
     sudo systemctl restart docker
     
+
+---
+
     # 查看image信息
     docker images
     
+
+---
+
     # 可以将之前的目录中数据删除
     rm -rf /var/lib/docker
     ```
@@ -265,6 +283,9 @@ sudo docker run hello-world
 5. 参考
    
     [Ubuntu中更改默认镜像和容器存储位置](https://blog.csdn.net/weixin_43145427/article/details/123770971)
+
+
+---
 
 # 四. Docker build/run/compose
 
@@ -307,6 +328,9 @@ sudo docker run hello-world
    docker-compose up -d
    ```
 
+
+---
+
 # 五. 镜像操作
 
 1. 删除镜像：
@@ -346,6 +370,9 @@ sudo docker run hello-world
     docker load -i image_name.tar # 从tar文件加载镜像
     ```
     参考链接：<http://qiushao.net/2020/02/18/Linux/docker-%E4%BF%AE%E6%94%B9%E5%AE%B9%E5%99%A8%E7%9A%84%E6%8C%82%E8%BD%BD%E7%9B%AE%E5%BD%95/index.html>
+
+
+---
 
 # 六. 容器操作
 
@@ -391,12 +418,24 @@ sudo docker run hello-world
     ```
 
 
+
+---
+
 # 七. Dockerfile写法
 
 以SUMA++中dockerfile为例
 ```bash
+
+---
+
 # CUDA 10.1.243, cuDNN 7.6.2, TensorRT 5.1.5
+
+---
+
 # FROM nvcr.io/nvidia/tensorrt:19.08-py3
+
+
+---
 
 # CUDA 11.3、cuDNN 8.2.1 和 TensorRT 8.2.1。
 FROM nvcr.io/nvidia/tensorrt:21.11-py3 
@@ -408,6 +447,9 @@ ENV NVIDIA_VISIBLE_DEVICES \
 ENV NVIDIA_DRIVER_CAPABILITIES \
     ${NVIDIA_DRIVER_CAPABILITIES:+$NVIDIA_DRIVER_CAPABILITIES,}graphics
     
+
+---
+
 # Dependencies
 RUN apt-get -y update &&\
     apt-get -y upgrade &&\
@@ -417,6 +459,9 @@ RUN apt-get -y install software-properties-common &&\
     add-apt-repository ppa:borglab/gtsam-release-4.0 &&\
     apt-get -y update &&\
     apt-get install -y libgtsam-dev libgtsam-unstable-dev
+
+
+---
 
 # ROS melodic        
 RUN apt-get install -y lsb-release &&\
@@ -429,6 +474,9 @@ RUN rosdep init && rosdep update
     
 RUN python3 -m pip install --upgrade pip
 RUN pip install catkin_tools catkin_tools_fetch empy trollius numpy rosinstall_generator
+
+
+---
 
 # RangeNetLib & Suma++
 RUN mkdir -p /catkin_ws/src
@@ -445,6 +493,9 @@ RUN git clone https://github.com/PRBonn/semantic_suma.git &&\
     cd glow && git checkout e66d7f855514baed8dca0d1b82d7a51151c9eef3 && cd ../ &&\
     catkin build --save-config -i --cmake-args -DCMAKE_BUILD_TYPE=Release -DOPENGL_VERSION=430 -DENABLE_NVIDIA_EXT=YES
     
+
+---
+
 # Download model
 WORKDIR /catkin_ws/src/semantic_suma
 RUN wget https://www.ipb.uni-bonn.de/html/projects/semantic_suma/darknet53.tar.gz &&\
@@ -452,6 +503,9 @@ RUN wget https://www.ipb.uni-bonn.de/html/projects/semantic_suma/darknet53.tar.g
     
 WORKDIR /catkin_ws/src
 ```
+
+
+---
 
 # 八. Docker访问X11服务器
 
@@ -473,6 +527,9 @@ WORKDIR /catkin_ws/src
 
     保存退出使更改生效。重新登录用户账户，xhost +local:docker 命令将在登录时自动执行。
 
+
+---
+
 # 九. Docker资源空间管理
 
 ```bash
@@ -483,6 +540,9 @@ docker system prune # 清理停止的容器、未使用的网络、悬空的镜�
 docker system prune -a # 清理所有未使用的镜像和容器
 
 ```
+
+
+---
 
 # 十. Docker共享内存
 
@@ -498,6 +558,9 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 ```
 
 
+
+---
+
 # 十一. 动态挂载宿主机usb设备
 
 容器内执行
@@ -505,8 +568,10 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 mount --bind /dev/bus/usb /dev/bus/usb
 ```
 
------
 
+
+
+---
 
 # tips
 通过docker运行hugo博客

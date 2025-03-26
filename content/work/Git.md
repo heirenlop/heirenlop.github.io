@@ -39,6 +39,9 @@ tags = [
 - [备注](#备注)
 
 
+
+---
+
 # 1. 新建分支
 基于所在本地分支创建新分支
 ```shell
@@ -54,6 +57,9 @@ git push origin xxx
 git branch -u origin/xxx xxx
 ```
 
+
+---
+
 # 2. 删除分支
 删除远程分支
 ```shell
@@ -63,6 +69,9 @@ git push origin --delete xxx
 ```shell
 git branch -D xxx
 ```
+
+
+---
 
 # 3. 回退版本
 ## 3.1 整个分支回退到指定版本 
@@ -83,6 +92,9 @@ b. 界面推送
 git checkout 版本号 -- 文件路径 #git checkout abc1234 -- file.txt
 ```
 
+
+---
+
 # 4. 清空本地修改
 ## 4.1 已跟踪文件
 
@@ -101,6 +113,9 @@ git checkout xxx #xxx为某文件
 git clean -fd #f为未跟踪的文件，d为未跟踪的目录
 ```
 
+
+---
+
 # 5. 撤销与修改
 add到暂存区后未commit，撤销 add
 ```shell
@@ -115,11 +130,17 @@ commit 到地仓后未push，撤销 commit
 git reset --soft 上一个版本号
 ```
 
+
+---
+
 # 6. 基于所在分支的某个版本号拉新分支
 ```shell
 git checkout -b new branch name xxx 版本号
 git switch -c new branch name xxx 版本号
 ```
+
+
+---
 
 # 7. 打包 bundle
 常规流程
@@ -138,11 +159,17 @@ git bun
 dle venfy xxx.bundle
 ```
 
+
+---
+
 # 8. 切换到老版本号后再切换回最新版本号
 ```shell
 git checkout xxx 版本号
 git pull 远程分支到本地
 ```
+
+
+---
 
 # 9. 查看差异
 查看版本差异
@@ -154,10 +181,16 @@ git diff 版本号
 git diff 版本号 -- 文件名 #文件的路径写全
 ```
 
+
+---
+
 # 10. 强制重命名当前分支
 ```shell
 git branch -M xxx #xxx为新分支名
 ```
+
+
+---
 
 # 11. 将远程仓库地址添加到本地仓库
 一般为新建仓后，把本地仓推到远程仓做准备用。
@@ -168,6 +201,9 @@ git remote add origin xxx #xxx为远程仓库地址
 ```shell
 git remote add origin https://github.com/heirenlop/heirenlop.github.io.git
 ```
+
+
+---
 
 # 12. git fetch和git pull的区别
 git fetch
@@ -193,6 +229,9 @@ git pull <remote> <branch>
 ```shell
 git pull origin main
 ```
+
+
+---
 
 # 13. 新建仓
 
@@ -224,6 +263,9 @@ git remote -v  #查看状态
 git remote set-url origin git@github.com:heirenlop/abc.git  #x修改为新的链接
 git remote -v  #查看状态
 ```
+
+---
+
 # 14. 拉取submodule
 (1) clone时直接拉取submodule
 ```bash
@@ -234,34 +276,61 @@ git clone --recursive <repository_url>
 git submodule update --init --recursive
 ```
 
+
+---
+
 # 15. 修改仓的地址
 
 在忘记fork且clone到本地的情况下，修改别人仓地址为自己仓
 (1) 网页新建自己仓
 (2) 修改远程地址步骤
 ```bash
+
+---
+
 # 检查当前远程仓地址
 git remote -v
+
+
+---
 
 #output 
 origin  https://github.com/original_owner/original_repo.git (fetch)
 origin  https://github.com/original_owner/original_repo.git (push)
 
+
+---
+
 # 删除原始远程仓地址
 git remote remove origin
+
+
+---
 
 # 添加新的远程仓地址
 git remote add origin https://github.com/your_username/your_repo.git
 
+
+---
+
 # 检查是否修改成功
 git remote -v
+
+
+---
 
 # output
 origin  https://github.com/your_username/your_repo.git (fetch)
 origin  https://github.com/your_username/your_repo.git (push)
 
+
+---
+
 # 推送到新的远程仓
 git push -u origin main 
+
+
+---
 
 # tips： 如果main分支不存在，新建一个main分支，再推送
 git branch -M main
@@ -276,6 +345,9 @@ git add xxx
 git commit -m "xxx"
 git push origin main
 ```
+
+
+---
 
 # 备注
 ![没图？](/images/work-record/github.png "github逻辑图")

@@ -15,6 +15,9 @@ tags = [
 - [三. Nvidia-container-toolkit](#三-nvidia-container-toolkit)
 - [四. GPU功率设置](#四-gpu功率设置)
 
+
+---
+
 # 一. 安装cuda toolkit
 
     cuda toolkit内包含：cuda、cudnn、tensorrt等。
@@ -32,6 +35,9 @@ tags = [
     ```bash
     nvcc --version # 显示cuda版本
 
+
+
+---
 
 # 二. 安装驱动
 1. 查看系统中是否识别到 NVIDIA 显卡：
@@ -133,6 +139,9 @@ nvidia-smi
 ```
 
 
+
+---
+
 # 三. Nvidia-container-toolkit
 
 帮助用户在容器环境(Docker)中访问/构建/运行 GPU 加速的应用程序。它包含一个容器运行时库和相关实用程序，能够自动配置容器以利用 NVIDIA GPU，从而在容器化应用中实现高效的 GPU 加速。
@@ -202,6 +211,9 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 nvcc --version
 ```
 
+
+
+---
 
 # 四. GPU功率设置
 

@@ -16,16 +16,25 @@ tags = [
 - [三. 问题](#三-问题)
 - [四. 测试](#四-测试)
 
+
+---
+
 # 一. 程序
 
 [源码](https://github.com/TixiaoShan/LIO-SAM/tree/master?tab=readme-ov-file#sample-datasets>)
 
 分支：ros2
 
+
+---
+
 # 二. 流程
 
 1. 官方bag为velody雷达，修改ros2分支中/config/params.yaml中sensor settings
     ```yaml
+
+---
+
     # Sensor Settings
         sensor: velodyne                               # lidar sensor type, either 'velodyne', 'ouster' or 'livox'
         N_SCAN: 16                                   # number of lidar channels (i.e., Velodyne/Ouster: 16, 32, 64, 128, Livox Horizon: 6)
@@ -38,9 +47,15 @@ tags = [
     (1) park_dataset
 
     ```yaml
+
+---
+
     #Topics
     pointCloudTopic: "/points_raw"                   # Point cloud data
     imuTopic: "imu_raw"                # IMU data
+
+---
+
     #IMU Settings
     extrinsicRot:    [-1.0,  0.0,  0.0,
                         0.0,  1.0,  0.0,
@@ -53,9 +68,15 @@ tags = [
     (2) campus_dataset
 
     ```yaml
+
+---
+
     #Topics
     pointCloudTopic: "/points_raw"                   # Point cloud data
     imuTopic: "/imu_correct"                        # IMU data
+
+---
+
     #IMU Settings
     extrinsicRot:    [1.0,  0.0,  0.0,
                         0.0,  1.0,  0.0,
@@ -64,6 +85,9 @@ tags = [
                     0.0,  1.0,  0.0,
                         0.0,  0.0,  1.0 ]
     ```
+
+
+---
 
 # 三. 问题
 
@@ -85,6 +109,9 @@ tags = [
     安装并测试：写了一个docker镜像，[地址](https://github.com/heirenlop/ros1_bridge_docker>)
 
     结果：无降频问题，可用。
+
+
+---
 
 # 四. 测试
 

@@ -19,6 +19,9 @@ tags = [
 - [十一. 创建桌面快捷方式](#十一-创建桌面快捷方式)
 - [十二. 修改fcitx输入法候选框大小](#十二-修改fcitx输入法候选框大小)
 
+
+---
+
 # 一. 烧录镜像
 
 1. U盘烧录软件：rufus
@@ -29,6 +32,9 @@ tags = [
 
 3. 单系统烧录流程
     [流程2](https://blog.csdn.net/qq_41833455/article/details/117882535)
+
+
+---
 
 # 二. 常用指令
 
@@ -98,8 +104,14 @@ tags = [
 11. 查看共享内存shm大小
     ```bash
     df -h /dev/shm 
+
+---
+
     # docker内输入
     shm              64M  412K   64M   1% /dev/shm
+
+---
+
     # 宿主机内输入
     tmpfs           7.7G  532M  7.2G    7% /dev/shm
     ```
@@ -113,6 +125,9 @@ tags = [
     ```
 14. 删除apt-get安装的软件
     ```bash
+
+---
+
     # 以删除vlc为例
     sudo apt-get remove vlc
     sudo apt-get purge vlc
@@ -127,6 +142,9 @@ tags = [
     fc-list :lang=zh
     ```
 
+
+
+---
 
 # 三. 常用软件
 1. terminator
@@ -207,9 +225,15 @@ tags = [
     ```
 
 
+
+---
+
 # 四. USB设备挂载问题
 
     一般来讲USB设备挂在到USB2.0的接口，不要挂载到USB3.0接口。USB 2.0端口的兼容性通常更好，电力需求更稳定，因此可能会提供更好的连接稳定性。比如随身wifi需要挂载到USB2.0接口。
+
+
+---
 
 # 五. Docker自动补全
 
@@ -226,6 +250,9 @@ tags = [
     source ~/.bashrc
     ```
 
+
+---
+
 # 六. 取消升级提示
 ```bash
 sudo vim /etc/update-manager/release-upgrades
@@ -234,6 +261,9 @@ sudo vim /etc/update-manager/release-upgrades
 ```bash
 Prompt=never
 ```
+
+
+---
 
 # 七. 网速测试
 安装speedtest
@@ -245,6 +275,9 @@ sudo apt install speedtest-cli
 speedtest-cli --secure
 ```
 
+
+
+---
 
 # 九. 关闭升级提示
 
@@ -266,6 +299,9 @@ speedtest-cli --secure
     ```
 
 3. 重启：sudo reboot
+
+
+---
 
 # 十. 备份系统rsync
 
@@ -313,10 +349,25 @@ speedtest-cli --secure
         --exclude=/home/heirenlop/docker \
         / /home/heirenlop/mount/2T/backup_ubuntu/20250117
 
+
+---
+
     # --dry-run：测试备份，不会实际进行备份。
+
+---
+
     # --delete：删除目标目录中不存在于源目录中的文件。
+
+---
+
     # --exclude：排除指定目录和文件。
+
+---
+
     # -avz：备份文件时使用压缩和校验,且显示详细信息。
+
+---
+
     # --info=progress2：显示备份的进度。
     ```
     显示信息一般如下：
@@ -340,6 +391,9 @@ speedtest-cli --secure
         --exclude=/home/heirenlop/docker \
         / /home/heirenlop/mount/2T/backup_ubuntu/20250117
     ```
+
+---
+
 # 十一. 创建桌面快捷方式
 
 以colmap为例
@@ -365,11 +419,20 @@ speedtest-cli --secure
     sudo chmod +x /usr/local/bin/colmap
     ```
 
+
+---
+
 # 十二. 修改fcitx输入法候选框大小
 1. 进入fcitx配置界面
     ```bash
+
+---
+
     # 启动fcitx配置界面
     fcitx-configtool
+
+---
+
     # 外观-> 字体大小修改
     ```
 2. 重启fcitx

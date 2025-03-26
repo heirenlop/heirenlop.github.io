@@ -14,6 +14,9 @@ tags = [
 - [一. 学生认证](#一-学生认证)
 - [二. github container registry](#二-github-container-registry)
 
+
+---
+
 # 一. 学生认证
 
 1. github学生认证攻略：
@@ -34,6 +37,9 @@ tags = [
 4. terminus认证攻略
 
     直接登录github账号即可
+
+
+---
 
 # 二. github container registry
 
