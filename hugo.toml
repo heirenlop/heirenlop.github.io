@@ -30,7 +30,7 @@ keywords = "blog,developer,personal"
 info = [""]
 #240 * 240px
 avatarURL = "images/avatar.png"
-favicon = "images/favicon.ico"
+# favicon = "images/favicon.ico"
 # gravatar = "13122356672@163.com"
 # 日期格式
 dateFormat = "2006-01-02"
