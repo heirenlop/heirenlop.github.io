@@ -220,8 +220,8 @@ tags = [
 <div class="container">
     <div class="image">
         <figure>
-                <a data-fancybox="gallery" href="/images/work-record/output10.png">
-                <img src="/images/work-record/output10.png" loading="lazy">
+                <a data-fancybox="gallery" href="/images/work-record/pointcloud_water_bottle.png">
+                <img src="/images/work-record/pointcloud_water_bottle.png" loading="lazy">
             </a>
             <figcaption>上图为SFM后初始点云，下图为30 000次迭代后点云</figcaption>
         </figure>
