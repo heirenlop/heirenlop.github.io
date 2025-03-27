@@ -216,6 +216,20 @@ tags = [
        });
    </script>
    
+    - 点云可视化：
+<div class="container">
+    <div class="image">
+        <figure>
+                <a data-fancybox="gallery" href="/images/work-record/output10.png">
+                <img src="/images/work-record/output10.png" loading="lazy">
+            </a>
+            <figcaption>上图为SFM后初始点云，下图为30 000次迭代后点云</figcaption>
+        </figure>
+    </div>
+</div>
+
+
+
 ---
 
 ## 5. 代码解读
