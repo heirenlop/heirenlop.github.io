@@ -3,7 +3,7 @@ authors = ["李佳潞"]
 title = "Neural Radiance Fields"
 date = "2025-01-20"
 categories = [
-    "计算机视觉"
+    "三维重建"
 ]
 series = [""]
 tags = [

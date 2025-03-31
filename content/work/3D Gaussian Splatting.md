@@ -3,7 +3,7 @@ authors = ["李佳潞"]
 title = "3D Gaussian Splatting"
 date = "2025-01-20"
 categories = [
-    "计算机视觉"
+    "三维重建"
 ]
 series = [""]
 tags = [
