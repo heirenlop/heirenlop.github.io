@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "LiDAR", "Fusion", "IMU", "ROS2"
+   "LiDAR", "IMU", "ROS2"
 ]
 +++
 

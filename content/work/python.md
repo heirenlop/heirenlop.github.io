@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "python","学习记录"
+  "学习记录"
 ]
 +++
 - [python 学习记录](#python-学习记录)

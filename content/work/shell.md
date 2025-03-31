@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "下载","VOC2007","COCO","环境设置","代理"
+   
 ]
 +++
 

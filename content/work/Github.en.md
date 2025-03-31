@@ -3,11 +3,11 @@ authors = ["Li Jialu"]
 title = "Github"
 date = "2024-10-28"
 categories = [
-    "Development Tools", "Version Control"
+    "Development Tools"
 ]
 series = [""]
 tags = [
-   "Student Verification", "Github Container Registry"
+   "Student Verification", "Github Container Registry", "Version Control"
 ]
 +++
 

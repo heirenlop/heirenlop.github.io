@@ -3,7 +3,7 @@ authors = ["李佳潞"]
 title = "proxy"
 date = "2025-02-11"
 categories = [
-    "代理","软件"
+    "软件"
 ]
 series = [""]
 tags = [

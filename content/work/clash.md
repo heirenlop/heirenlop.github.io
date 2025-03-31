@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-    "proxy","clash"
+    "clash"
 ]
 +++
 

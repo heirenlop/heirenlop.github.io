@@ -3,11 +3,11 @@ authors = ["李佳潞"]
 title = "Git"
 date = "2024-10-21"
 categories = [
-    "开发工具","版本控制"
+    "开发工具"
 ]
 series = [""]
 tags = [
-   "常用Git命令"
+   "版本控制"
 ]
 +++
 

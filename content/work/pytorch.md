@@ -3,11 +3,11 @@ authors = ["李佳潞"]
 title = "Pytorch"
 date = "2025-01-03"
 categories = [
-    "机器学习"
+    "库"
 ]
 series = [""]
 tags = [
-   "pytorch","深度学习"
+   "pytorch"
 ]
 +++
 

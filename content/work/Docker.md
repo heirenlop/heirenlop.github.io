@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "Docker","虚拟环境"
+   "虚拟环境"
 ]
 +++
 

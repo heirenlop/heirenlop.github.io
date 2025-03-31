@@ -3,7 +3,7 @@ authors = ["Li Jialu"]
 title = "Proxy"
 date = "2025-02-11"
 categories = [
-    "Proxy", "Software"
+    "Software"
 ]
 series = [""]
 tags = [

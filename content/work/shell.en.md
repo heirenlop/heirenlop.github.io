@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "Download", "VOC2007", "COCO", "Environment Setup", "Proxy"
+   
 ]
 +++
 

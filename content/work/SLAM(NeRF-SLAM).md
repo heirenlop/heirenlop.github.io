@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "NeRF","CUDA","深度学习"
+   "NeRF","深度学习"
 ]
 +++
 

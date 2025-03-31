@@ -3,11 +3,11 @@ authors = ["Li Jialu"]
 title = "Pytorch"
 date = "2025-01-03"
 categories = [
-    "Machine Learning"
+    "lib"
 ]
 series = [""]
 tags = [
-   "pytorch", "Deep Learning"
+   "pytorch"
 ]
 +++
 

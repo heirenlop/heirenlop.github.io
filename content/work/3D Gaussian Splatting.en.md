@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-    "3DGS", "Machine Learning"
+     "Machine Learning"
 ]
 +++
 

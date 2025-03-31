@@ -161,32 +161,38 @@ url = "https://github.com/heirenlop"
 [[params.social]]
 name = "LinkedIn"
 icon = "fa-brands fa-linkedin fa-2x"
-weight = 3
+weight = 2
 url = "https://www.linkedin.com/in/%E4%BD%B3%E6%BD%9E-%E6%9D%8E-30b8961b7/"
+
+[[params.social]]
+name = "Twitter"
+icon = "fa-brands fa-x-twitter fa-2x"
+weight = 3
+url = "https://x.com/heirenlop"
+
+[[params.social]]
+name = "Facebook"
+icon = "fa-brands fa-facebook fa-2x"
+weight = 4
+url = "https://www.facebook.com/profile.php?id=61574129154877"
 
 [[params.social]]
 name = "WeChat"
 icon = "fa-brands fa-weixin fa-2x"
-weight = 2
+weight = 5
 url = "images/wechat.jpg"
 
 [[params.social]]
 name = "QQ"
 icon = "fa-brands fa-qq fa-2x"
-weight = 4
+weight = 6
 url = "images/QQ.jpg"
 
 [[params.social]]
 name = "Zhihu"
 icon = "fa-brands fa-zhihu fa-2x"
-weight = 5
+weight = 7
 url = "https://www.zhihu.com/people/heiren-70"
-
-[[params.social]]
-name = "Twitter"
-icon = "fa-brands fa-x-twitter fa-2x"
-weight = 6
-url = "https://x.com/heirenlop"
 
 #-----------------------------------set menu--------------------------------------
 [languages.zh-cn]
@@ -216,11 +222,6 @@ url = "work/"
 name = "杂项"
 weight = 5
 url = "other/"
-
-[[languages.zh-cn.menu.main]]
-name = "联系"
-weight = 6
-url = "contact/"
 
 #-----------------------------------set EN--------------------------------------
 [languages.en]
@@ -257,11 +258,6 @@ url = "work/"
 name = "other"
 weight = 5
 url = "other/"
-
-[[languages.en.menu.main]]
-name = "contact"
-weight = 6
-url = "contact/"
 
 #----------------------------------------------------------
 

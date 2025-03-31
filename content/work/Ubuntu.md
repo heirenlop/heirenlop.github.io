@@ -3,7 +3,7 @@ authors = ["李佳潞"]
 title = "Ubuntu"
 date = "2024-10-24"
 categories = [
-    "操作系统"
+    "系统"
 ]
 series = [""]
 tags = [

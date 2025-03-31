@@ -3,11 +3,11 @@ authors = ["李佳潞"]
 title = "Github"
 date = "2024-10-28"
 categories = [
-    "开发工具","版本控制"
+    "开发工具"
 ]
 series = [""]
 tags = [
-   "学生认证","github container registry"
+   "学生认证","github container registry","版本控制"
 ]
 +++
 

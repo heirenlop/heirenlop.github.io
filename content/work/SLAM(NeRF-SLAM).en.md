@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "NeRF", "CUDA", "Deep Learning"
+   "NeRF", "Deep Learning"
 ]
 +++
 

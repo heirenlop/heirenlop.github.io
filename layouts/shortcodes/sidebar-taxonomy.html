@@ -1,0 +1,79 @@
+<style>
+    .taxonomy-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+  
+    .taxonomy-card {
+      flex: 1 1 320px;
+      padding: 1.5rem;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      background: rgba(30, 30, 30, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+  
+    .taxonomy-card:hover {
+      transform: translateY(-5px);
+    }
+  
+    .taxonomy-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 0.5rem;
+      color: #ffc107;
+    }
+  
+    .taxonomy-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+  
+    .taxonomy-tags a {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: #61dafb;
+      padding: 0.4rem 0.8rem;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  
+    .taxonomy-tags a:hover {
+      background-color: rgba(0, 123, 255, 0.2);
+      color: #ffffff;
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+  
+  <div class="taxonomy-wrapper">
+    <!-- 分类卡片 -->
+    <div class="taxonomy-card">
+      <h2>📂 分类</h2>
+      <div class="taxonomy-tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>
+        {{ end }}
+      </div>
+    </div>
+  
+    <!-- 标签卡片 -->
+    <div class="taxonomy-card">
+      <h2>🏷️ 标签</h2>
+      <div class="taxonomy-tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+          <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  

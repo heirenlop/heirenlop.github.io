@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "vscode","IDE"
+   "IDE"
 ]
 +++
 - [1 设置相关](#1-设置相关)

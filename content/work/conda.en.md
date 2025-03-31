@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-    "conda","python","virtual environment"
+    "virtual environment"
 ]
 +++
 - [1. Environment Management](#1-environment-management)

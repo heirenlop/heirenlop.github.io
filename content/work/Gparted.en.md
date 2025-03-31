@@ -7,7 +7,7 @@ categories = [
 ]
 series = [""]
 tags = [
-   "Memory Management", "Ubuntu"
+   "Memory Management"
 ]
 +++
 
