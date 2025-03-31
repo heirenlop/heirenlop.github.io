@@ -1,11 +1,17 @@
----
-title: "Css"
-date: 2024-10-22
-draft: false
-public: true
-categories: ["css"]
-tags: ["语法"]
----
++++
+authors = ["李佳潞"]
+title = "Css"
+date = "2024-10-22"
+categories = [
+    "博客"
+]
+series = [""]
+tags = [
+    
+]
++++
+
+
 
 ## 1.1 注释
 

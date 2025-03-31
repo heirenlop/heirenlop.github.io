@@ -1,11 +1,17 @@
----
-title: "JavaScript"
-date: 2024-10-25
-draft: false
-public: true
-categories: ["JavaScript"]
-tags: ["语法"]
----
++++
+authors = ["李佳潞"]
+title = "JavaScript"
+date = "2024-10-25"
+categories = [
+    "博客"
+]
+series = [""]
+tags = [
+    
+]
++++
+
+
 
 两个示例
 ```html

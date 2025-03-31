@@ -1,11 +1,15 @@
----
-title: "Markdwon"
-date: 2024-10-20
-draft: false
-public: true
-categories: ["markdown"]
-tags: ["语法"]
----
++++
+authors = ["李佳潞"]
+title = "Markdwon"
+date = "2024-10-20"
+categories = [
+    "博客"
+]
+series = [""]
+tags = [
+    
+]
++++
 
 # 1. 插入
 

@@ -1,11 +1,17 @@
----
-title: "Hugo"
-date: 2024-10-21
-draft: false
-public: true
-categories: ["hugo"]
-tags: ["hugo"]
----
++++
+authors = ["李佳潞"]
+title = "Hugo"
+date = "2024-10-21"
+categories = [
+    "博客"
+]
+series = [""]
+tags = [
+    
+]
++++
+
+
 
 # 1. 项目内文件夹和项目主题内文件夹关系
 
