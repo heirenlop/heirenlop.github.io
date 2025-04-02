@@ -22,5 +22,30 @@
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     {{ end }}
     
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('pre').forEach((pre) => {
+          if (pre.querySelector('.copy-button')) return;
+    
+          const button = document.createElement('button');
+          button.innerText = 'Copy';
+          button.className = 'copy-button';
+          pre.appendChild(button);
+    
+          button.addEventListener('click', () => {
+            const code = pre.querySelector('code');
+            if (!code) return;
+            navigator.clipboard.writeText(code.innerText).then(() => {
+              button.innerText = 'Copied!';
+              setTimeout(() => (button.innerText = 'Copy'), 1200);
+            });
+          });
+        });
+      });
+    </script>
+    
+    
+    
+
   </section>
 </footer>

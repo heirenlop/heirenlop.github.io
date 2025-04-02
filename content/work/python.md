@@ -27,6 +27,8 @@ tags = [
     - [5.9 yaml](#59-yaml)
     - [5.10 rich](#510-rich)
     - [5.11 munch](#511-munch)
+    - [5.12 trimesh](#512-trimesh)
+    - [5.13 multiprocessing](#513-multiprocessing)
   - [6. 数据结构](#6-数据结构)
     - [6.1 列表 \[\]](#61-列表-)
     - [6.2 字典 {}](#62-字典-)
@@ -269,6 +271,8 @@ t = np.clip(step / max_steps, 0, 1)
 - np.linalg.norm()： 计算向量的L2 范数，即模长
 - np.linalg.inv()： 计算矩阵的逆矩阵
 - np.asarray()： 将输入转换为 numpy 数组
+- np.argmin(): 返回最小值的索引
+- np.roll(a,1)：把a的最后一个元素移到最前面
 ###  5.4 os
 - os.getenv()： 获取环境变量
 - os.path.join()： 拼接路径
@@ -330,6 +334,13 @@ image = PIL.Image.open(path)
 ### 5.11 munch
 - b = muchify(a): 将字典a转换为munch对象b，支持点式访问。
 
+### 5.12 trimesh
+- T = trimesh.transformations.quaternion_matrix(np.roll(quat, 1))： 创建旋转矩阵
+### 5.13 multiprocessing
+- multiprocessing.Queue(): 创建一个队列，用于在多个进程之间交换数据。
+- multiprocessing.Process(): 创建一个进程，用于在多个进程中执行任务。
+- multiprocessing.start()： 启动子进程（开启新进程）。
+- multiprocessing.run()： 在主进程内运行子进程（不开启新进程）。
 ## 6. 数据结构
 ### 6.1 列表 []
 - 特性:
@@ -347,6 +358,7 @@ image = PIL.Image.open(path)
   a.extend(b) # 扩展列表
   c = len(a) # 获取长度
   d = a.pop(0) # 删除并返回指定索引的元素
+  e = b[-1] # e = 3
   ```
 ### 6.2 字典 {}
 - 其他表达：dict()
