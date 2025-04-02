@@ -3,79 +3,91 @@
 
 <head>
   <style>
-    /* html和css的注释风格不一样 */
-    /* 以下内容都叫css样式 */
-    .summary {
-      font-size: 30px;
-      font-family: sans-serif;
-    }
+    /* 响应式优化样式 */
+body {
+  margin: 0;
+  padding: 0 10px;
+  font-family: sans-serif;
+}
 
-    .first-class {
-      font-size: 24px;
-      font-family: sans-serif;
-      margin-left: 30px;
-    }
+/* 一级标题：大屏适中，小屏缩小字体 */
+.summary {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .second-class {
-      font-size: 20px;
-      margin-left: 40px;
-      font-family: sans-serif;
-    }
+/* 图标右边留白 */
+.summary icon {
+  margin-right: 8px;
+  color: #3d83e5;
+}
 
-    .third-class {
-      /* 设置字体大小 */
-      font-size: 18px;
-      /* 设置字体颜色 */
-      /* color: darkblue; */
-      /* 设置字体斜体 */
-      font-style: italic;
-      /* 设置行缩进 */
-      margin-left: 50px;
-      font-family: sans-serif;
-      /* 字体设置下划线 */
-      /* text-decoration: underline; */
-      /* 设置字体格式 */
-      /* font-family: '宋体', 'Microsoft YaHei' */
-    }
+/* 缩进使用 padding，更适配移动端 */
+.first-class {
+  font-size: 20px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
 
-    .foured-class {
-      /* 设置字体大小 */
-      font-size: 16px;
-      /* 设置字体颜色 */
-      /* color: darkblue; */
-      /* 设置字体斜体 */
-      font-style: italic;
-      /* 设置行缩进 */
-      margin-left: 60px;
-      font-family: sans-serif;
-      /* 字体设置下划线 */
-      /* text-decoration: underline; */
-      /* 设置字体格式 */
-      /* font-family: '宋体', 'Microsoft YaHei' */
-    }
+.second-class {
+  font-size: 18px;
+  padding-left: 20px;
+}
 
-    /* 独立标签设置下划线样式 */
-    .underline {
-      text-decoration: underline;
-    }
+.third-class {
+  font-size: 16px;
+  padding-left: 30px;
+  font-style: italic;
+}
 
-    .summary icon {
-      /* 调整图标与文本之间的间距 */
-      margin-right: 8px;
-      /* 设置图标的颜色 */
-      color: #3d83e5;
-    }
+.foured-class {
+  font-size: 15px;
+  padding-left: 40px;
+  font-style: italic;
+}
 
-    /* 设置分割线标签 */
-    hr {
-      border: none;
-      /* 分割线粗细 */
-      height: 1px;
-      /* 分割线颜色 */
-      background-color: #ccc;
-      /* 分割线上下边距为20px */
-      margin: 20px 0;
-    }
+/* 下划线 */
+.underline {
+  text-decoration: underline;
+}
+
+/* 分割线样式 */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+/* 响应式调整：在小屏幕上缩小字体和缩进 */
+@media (max-width: 600px) {
+  .summary {
+    font-size: 20px;
+  }
+
+  .first-class {
+    font-size: 18px;
+    padding-left: 5px;
+  }
+
+  .second-class {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+
+  .third-class {
+    font-size: 15px;
+    padding-left: 15px;
+  }
+
+  .foured-class {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+}
   </style>
 </head>
 <!-- 以下内容都叫html -->
@@ -88,7 +100,7 @@
   </details>-->
   <details>
     <summary class="summary">
-      <icon class="fas fa-graduation-cap"></icon>教育经历
+      <icon class="fas fa-graduation-cap"></icon> 教育经历
     </summary>
     <ul>
       <li class="first-class"><span class="underline"><strong>博士</strong></span>
@@ -120,36 +132,37 @@
     <ul>
       <li class="first-class"><span class="underline"><strong>上汽研发总院</strong></span>
         <ul>
-          <li class="second-class">2021 - 2024 · 定位建图组 · 算法工程师
+          <div class="second-class">2021 - 2024 · 定位建图组 · 算法工程师
             <details>
               <summary>记忆行车系统中静态要素提取</summary>
-          <li class="foured-class">参与时间：2023 - 2024</li>
-          <li class="foured-class">项目概述：对输入的提取后的语义分割结果(包括斑马线、停止线) 做感知、跟踪、融合，并输出给下游建图端
-          </li>
-          <li class="foured-class">负责情况：开发、测试、维护</li>
+          <div class="foured-class">参与时间：2023 - 2024</div>
+          <div class="foured-class">项目概述：对输入的提取后的语义分割结果(包括斑马线、停止线) 做感知、跟踪、融合，并输出给下游建图端
+          </div>
+          <div class="foured-class">负责情况：开发、测试、维护</div>
+          
   </details>
 
   <details>
     <summary>记忆泊车系统中静态要素提取</summary>
-    <li class="foured-class">参与时间：2022 - 2023</li>
-    <li class="foured-class">项目概述：对输入的未提取的语义分割结果(包括车道线、斑马线、地面箭头)做感知、跟踪、融合，并输出给下
-      游建图端</li>
-    <li class="foured-class">负责情况：开发、测试、维护</li>
+    <div class="foured-class">参与时间：2022 - 2023</div>
+    <div class="foured-class">项目概述：对输入的未提取的语义分割结果(包括车道线、斑马线、地面箭头)做感知、跟踪、融合，并输出给下
+      游建图端</div>
+    <div class="foured-class">负责情况：开发、测试、维护</div>
   </details>
 
   <details>
     <summary>记忆泊车系统中地图引擎</summary>
-    <li class="foured-class">参与时间：2022</li>
-    <li class="foured-class">项目概述：利用哈希表与共享内存构建泊车状态机，写入拓扑地图数据，并输出给下游规控端</li>
-    <li class="foured-class">负责情况：开发、测试、维护</li>
+    <div class="foured-class">参与时间：2022</div>
+    <div class="foured-class">项目概述：利用哈希表与共享内存构建泊车状态机，写入拓扑地图数据，并输出给下游规控端</div>
+    <div class="foured-class">负责情况：开发、测试、维护</div>
   </details>
 
   <details>
     <summary>毫米波雷达高速指示牌提取</summary>
-    <li class="foured-class">参与时间：2021 - 2022</li>
-    <li class="foured-class">项目概述：对输入的毫米波雷达点云做感知、跟踪、融合，结果与高精地图匹配，并以此作为纵向约束，供车道
-      级定位使用</li>
-    <li class="foured-class">负责情况：开发、测试</li>
+    <div class="foured-class">参与时间：2021 - 2022</div>
+    <div class="foured-class">项目概述：对输入的毫米波雷达点云做感知、跟踪、融合，结果与高精地图匹配，并以此作为纵向约束，供车道
+      级定位使用</div>
+    <div class="foured-class">负责情况：开发、测试</div>
   </details>
 
   </li>
@@ -158,7 +171,7 @@
 
   <li class="first-class"><span class="underline"><strong>德国Erfurt手工业协会</strong></span>
     <ul>
-      <li class="second-class">2016 · 实习生</li>
+      <div class="second-class">2016 · 实习生</li>
     </ul>
   </li>
 

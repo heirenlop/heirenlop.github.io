@@ -3,67 +3,91 @@
 
 <head>
   <style>
-    /* HTML and CSS comment styles are different */
-    /* The following content is called CSS styles */
-    .summary {
-      font-size: 30px;
-      font-family: sans-serif;
-    }
+     /* 响应式优化样式 */
+body {
+  margin: 0;
+  padding: 0 10px;
+  font-family: sans-serif;
+}
 
-    .first-class {
-      font-size: 24px;
-      font-family: sans-serif;
-      margin-left: 30px;
-    }
+/* 一级标题：大屏适中，小屏缩小字体 */
+.summary {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .second-class {
-      font-size: 20px;
-      margin-left: 40px;
-      font-family: sans-serif;
-    }
+/* 图标右边留白 */
+.summary icon {
+  margin-right: 8px;
+  color: #3d83e5;
+}
 
-    .third-class {
-      /* Set font size */
-      font-size: 18px;
-      /* Set font style to italic */
-      font-style: italic;
-      /* Set left margin */
-      margin-left: 50px;
-      font-family: sans-serif;
-    }
+/* 缩进使用 padding，更适配移动端 */
+.first-class {
+  font-size: 20px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
 
-    .foured-class {
-      /* Set font size */
-      font-size: 16px;
-      /* Set font style to italic */
-      font-style: italic;
-      /* Set left margin */
-      margin-left: 60px;
-      font-family: sans-serif;
-    }
+.second-class {
+  font-size: 18px;
+  padding-left: 20px;
+}
 
-    /* Style for underlined text */
-    .underline {
-      text-decoration: underline;
-    }
+.third-class {
+  font-size: 16px;
+  padding-left: 30px;
+  font-style: italic;
+}
 
-    .summary icon {
-      /* Adjust spacing between icon and text */
-      margin-right: 8px;
-      /* Set icon color */
-      color: #3d83e5;
-    }
+.foured-class {
+  font-size: 15px;
+  padding-left: 40px;
+  font-style: italic;
+}
 
-    /* Style for divider line */
-    hr {
-      border: none;
-      /* Set line thickness */
-      height: 1px;
-      /* Set line color */
-      background-color: #ccc;
-      /* Set margin for top and bottom of line */
-      margin: 20px 0;
-    }
+/* 下划线 */
+.underline {
+  text-decoration: underline;
+}
+
+/* 分割线样式 */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 20px 0;
+}
+
+/* 响应式调整：在小屏幕上缩小字体和缩进 */
+@media (max-width: 600px) {
+  .summary {
+    font-size: 20px;
+  }
+
+  .first-class {
+    font-size: 18px;
+    padding-left: 5px;
+  }
+
+  .second-class {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+
+  .third-class {
+    font-size: 15px;
+    padding-left: 15px;
+  }
+
+  .foured-class {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+}
   </style>
 </head>
 <!-- This is the HTML content -->
@@ -107,30 +131,30 @@
           <li class="second-class">2021 - 2024 · Localization Algorithm Team · Algorithm Engineer
             <details>
               <summary>Static Feature Extraction in Memory Driving System</summary>
-              <li class="foured-class">Project Duration: 2023 - 2024</li>
-              <li class="foured-class">Project Overview: Perception, tracking, and fusion of extracted semantic segmentation results (including zebra crossings, stop lines), with output to downstream mapping systems.</li>
-              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+              <div class="foured-class">Project Duration: 2023 - 2024</div>
+              <div class="foured-class">Project Overview: Perception, tracking, and fusion of extracted semantic segmentation results (including zebra crossings, stop lines), with output to downstream mapping systems.</div>
+              <div class="foured-class">Responsibilities: Development, testing, and maintenance</div>
             </details>
 
             <details>
               <summary>Static Feature Extraction in Memory Parking System</summary>
-              <li class="foured-class">Project Duration: 2022 - 2023</li>
-              <li class="foured-class">Project Overview: Perception, tracking, and fusion of unprocessed semantic segmentation results (including lane lines, zebra crossings, ground arrows), with output to downstream mapping systems.</li>
-              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+              <div class="foured-class">Project Duration: 2022 - 2023</div>
+              <div class="foured-class">Project Overview: Perception, tracking, and fusion of unprocessed semantic segmentation results (including lane lines, zebra crossings, ground arrows), with output to downstream mapping systems.</div>
+              <div class="foured-class">Responsibilities: Development, testing, and maintenance</div>
             </details>
 
             <details>
               <summary>Mapping Engine for Memory Parking System</summary>
-              <li class="foured-class">Project Duration: 2022</li>
-              <li class="foured-class">Project Overview: Built a parking state machine using hash tables and shared memory, writing topological map data for downstream control systems.</li>
-              <li class="foured-class">Responsibilities: Development, testing, and maintenance</li>
+              <div class="foured-class">Project Duration: 2022</div>
+              <div class="foured-class">Project Overview: Built a parking state machine using hash tables and shared memory, writing topological map data for downstream control systems.</div>
+              <div class="foured-class">Responsibilities: Development, testing, and maintenance</div>
             </details>
 
             <details>
               <summary>Millimeter-Wave Radar High-Speed Sign Extraction</summary>
-              <li class="foured-class">Project Duration: 2021 - 2022</li>
-              <li class="foured-class">Project Overview: Perception, tracking, and fusion of millimeter-wave radar point clouds, matched with high-definition maps, and used as longitudinal constraints for lane-level localization.</li>
-              <li class="foured-class">Responsibilities: Development, testing</li>
+              <div class="foured-class">Project Duration: 2021 - 2022</div>
+              <div class="foured-class">Project Overview: Perception, tracking, and fusion of millimeter-wave radar point clouds, matched with high-definition maps, and used as longitudinal constraints for lane-level localization.</div>
+              <div class="foured-class">Responsibilities: Development, testing</div>
             </details>
           </li>
         </ul>
