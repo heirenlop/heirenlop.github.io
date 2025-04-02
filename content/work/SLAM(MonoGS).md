@@ -117,7 +117,7 @@ Traceback (most recent call last):
 ## 3.1 DEMO复现
 - 渲染效果：
 <div class="container" style="display: flex; justify-content: center;">
-    <video controls width="640" height="360">
+  <video controls style="width: 100%; max-width: 640px; height: auto;">
         <source src="/videos/work-record/MonoGS-demo.mp4" type="video/mp4">
     </video>
 </div>

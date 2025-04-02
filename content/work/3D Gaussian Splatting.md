@@ -119,7 +119,7 @@ tags = [
    - 手机录制原始数据视频：
 
    <div class="container" style="display: flex; justify-content: center;">
-       <video controls width="360" height="640">
+       <video controls style="height: 100%; max-height: 360px; height: auto;">
            <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
        </video>
    </div>
@@ -127,94 +127,123 @@ tags = [
    - SIBR：
 
    <div class="container" style="display: flex; justify-content: center;">
-       <video controls width="640" height="360">
-           <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
-       </video>
-   </div>
-
-   - 高斯分布可视化：
-<div class="twenty-container" 
-     style="position: relative; 
-            width: 80%; 
-            max-width: 500px; 
-            height: 700px; 
-            overflow: hidden; 
-            border-radius: 10px; 
-            margin: 0 auto; /* 新增关键居中属性 */
-            /* 移除无用的flex设置 */">
-   <img class="twenty-before" 
-        src="/images/work-record/ori_water_bottle.png" 
-        alt="Original Image" 
-        style="position: absolute; 
-               top: 0; 
-               left: 0; 
-               width: 100%; 
-               height: 100%; 
-               object-fit: cover;">
-   <img class="twenty-after" 
-        src="/images/work-record/sbir_water_bottle.png" 
-        alt="SBIR Image" 
-        style="position: absolute; 
-               top: 0; 
-               left: 0; 
-               width: 100%; 
-               height: 100%; 
-               object-fit: cover;">
-   <div class="twenty-handle" 
-        style="position: absolute; 
-               top: 0; 
-               left: 50%; 
-               width: 20px; 
-               height: 100%; 
-               background-color: rgba(255, 255, 255, 0.7); 
-               cursor: pointer; 
-               z-index: 10; 
-               border-radius: 50%;"></div>
+    <video controls style="width: 100%; max-width: 640px; height: auto;">
+    <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
+  </video>
 </div>
 
-   <script>
-       const handle = document.querySelector('.twenty-handle');
-       const beforeImg = document.querySelector('.twenty-before');
-       const afterImg = document.querySelector('.twenty-after');
-   
-       // Initialize handle position
-       let handlePosition = handle.offsetLeft;
-   
-       // Function to update the clipping based on the handle position
-       function updateClipPosition() {
-           beforeImg.style.clip = `rect(0px, ${handlePosition}px, 700px, 0px)`;
-           afterImg.style.clip = `rect(0px, 500px, 700px, ${handlePosition}px)`;
-       }
-   
-       // Initially set the clip for both images
-       updateClipPosition();
-   
-       handle.addEventListener('mousedown', (e) => {
-           const startX = e.clientX;
-           const initialLeft = handlePosition;
-   
-           const onMouseMove = (moveEvent) => {
-               const diffX = moveEvent.clientX - startX;
-               let newLeft = initialLeft + diffX;
-   
-               // Limit the handle movement within the container bounds
-               newLeft = Math.max(0, Math.min(newLeft, handle.parentElement.offsetWidth));
-   
-               handlePosition = newLeft;
-               handle.style.left = `${handlePosition}px`;
-   
-               updateClipPosition();
-           };
-   
-           const onMouseUp = () => {
-               document.removeEventListener('mousemove', onMouseMove);
-               document.removeEventListener('mouseup', onMouseUp);
-           };
-   
-           document.addEventListener('mousemove', onMouseMove);
-           document.addEventListener('mouseup', onMouseUp);
-       });
-   </script>
+
+   - 高斯分布可视化：
+<!-- 放在页面任意位置都可以（支持 PC + 手机滑动） -->
+<div class="twenty-container">
+  <img class="twenty-before" 
+       src="/images/work-record/ori_water_bottle.png" 
+       alt="Original Image">
+  <img class="twenty-after" 
+       src="/images/work-record/sbir_water_bottle.png" 
+       alt="SBIR Image">
+  <div class="twenty-handle"></div>
+</div>
+
+<style>
+  .twenty-container {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    height: 700px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+    touch-action: none; /* ✅ 阻止移动端页面跟随滑动 */
+  }
+
+  .twenty-before,
+  .twenty-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .twenty-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: ew-resize;
+    z-index: 10;
+    border-radius: 50%;
+  }
+</style>
+
+<script>
+  const handle = document.querySelector('.twenty-handle');
+  const beforeImg = document.querySelector('.twenty-before');
+  const afterImg = document.querySelector('.twenty-after');
+  const container = handle.parentElement;
+
+  let handlePosition = handle.offsetLeft;
+
+  function updateClipPosition() {
+    beforeImg.style.clip = `rect(0px, ${handlePosition}px, 700px, 0px)`;
+    afterImg.style.clip = `rect(0px, 500px, 700px, ${handlePosition}px)`;
+  }
+
+  updateClipPosition();
+
+  // PC 鼠标事件
+  handle.addEventListener('mousedown', (e) => {
+    const startX = e.clientX;
+    const initialLeft = handlePosition;
+
+    const onMouseMove = (moveEvent) => {
+      const diffX = moveEvent.clientX - startX;
+      let newLeft = initialLeft + diffX;
+      newLeft = Math.max(0, Math.min(newLeft, container.offsetWidth));
+      handlePosition = newLeft;
+      handle.style.left = `${handlePosition}px`;
+      updateClipPosition();
+    };
+
+    const onMouseUp = () => {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+  });
+
+  // ✅ 手机触摸事件
+  handle.addEventListener('touchstart', (e) => {
+    const startX = e.touches[0].clientX;
+    const initialLeft = handlePosition;
+
+    const onTouchMove = (moveEvent) => {
+      moveEvent.preventDefault(); // ✅ 阻止页面跟着滑
+      const diffX = moveEvent.touches[0].clientX - startX;
+      let newLeft = initialLeft + diffX;
+      newLeft = Math.max(0, Math.min(newLeft, container.offsetWidth));
+      handlePosition = newLeft;
+      handle.style.left = `${handlePosition}px`;
+      updateClipPosition();
+    };
+
+    const onTouchEnd = () => {
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
+    };
+
+    document.addEventListener('touchmove', onTouchMove, { passive: false });
+    document.addEventListener('touchend', onTouchEnd);
+  });
+</script>
+
+
    
     - 点云可视化：
 <div class="container">

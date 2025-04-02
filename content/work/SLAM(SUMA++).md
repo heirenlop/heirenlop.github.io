@@ -170,7 +170,7 @@ WORKDIR /catkin_ws/src
 可复现，测试KITTI数据集结果：
 
 <div class="container" style="display: flex; justify-content: center;">
-       <video controls width="640" height="360">
+  <video controls style="width: 100%; max-width: 640px; height: auto;">
            <source src="/videos/work-record/suma++1080p.mp4" type="video/mp4">
        </video>
 </div>
