@@ -162,7 +162,7 @@ url = "https://github.com/heirenlop"
 name = "LinkedIn"
 icon = "fa-brands fa-linkedin fa-2x"
 weight = 2
-url = "https://www.linkedin.com/in/%E4%BD%B3%E6%BD%9E-%E6%9D%8E-30b8961b7/"
+url = "www.linkedin.com/in/jialu-li-30b8961b7"
 
 [[params.social]]
 name = "Twitter"
