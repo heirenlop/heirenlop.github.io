@@ -20,7 +20,7 @@ tags = [
 
 # 一. 安装cuda toolkit
 
-    cuda toolkit内包含：cuda、cudnn、tensorrt等。
+tips： cuda toolkit内包含：cuda、cudnn、tensorrt等。
 
 1. 下载安装cuda toolkit
     下载链接：https://developer.nvidia.com/cuda-toolkit-archive
@@ -35,7 +35,6 @@ tags = [
     ```bash
     nvcc --version # 显示cuda版本
     ```
-
 
 ---
 

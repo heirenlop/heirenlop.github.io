@@ -36,6 +36,8 @@ tags = [
 - [13. 新建仓](#13-新建仓)
 - [14. 拉取submodule](#14-拉取submodule)
 - [15. 修改仓的地址](#15-修改仓的地址)
+- [16. 生成SSH密钥对](#16-生成ssh密钥对)
+- [17. 设置git 用户名和邮箱](#17-设置git-用户名和邮箱)
 - [tips](#tips)
 
 
@@ -267,11 +269,15 @@ git remote -v  #查看状态
 ---
 
 # 14. 拉取submodule
-(1) clone时直接拉取submodule
+(1) 确认仓是否有submodule
+```bash
+cat .gitmodules
+```
+(2) clone时直接拉取submodule
 ```bash
 git clone --recursive <repository_url>
 ```
-(2) clone后拉取submodule
+(3) clone后拉取submodule
 ```bash
 git submodule update --init --recursive
 ```
@@ -320,6 +326,34 @@ git status
 git add xxx
 git commit -m "xxx"
 git push origin main
+```
+
+---
+# 16. 生成SSH密钥对
+(1) 打开终端并执行以下命令，生成新的SSH密钥对
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+(2) 添加SSH密钥到ssh-agent
+```bash
+eval "$(ssh-agent -s)"
+```
+
+(3) 将SSH密钥添加到ssh-agent
+```bash
+ssh-add ~/.ssh/id_rsa
+```
+(4) 将生成的SSH公钥添加到GitHub。首先，显示SSH公钥内容
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+# 17. 设置git 用户名和邮箱
+```bash
+git config --global user.name "你的名字"
+git config --global user.email "你的邮箱@example.com"
+git config --global --list # 查看配置
+
 ```
 
 

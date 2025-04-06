@@ -104,14 +104,8 @@ tags = [
 11. 查看共享内存shm大小
     ```bash
     df -h /dev/shm 
-
----
-
     # docker内输入
     shm              64M  412K   64M   1% /dev/shm
-
----
-
     # 宿主机内输入
     tmpfs           7.7G  532M  7.2G    7% /dev/shm
     ```
@@ -125,9 +119,6 @@ tags = [
     ```
 14. 删除apt-get安装的软件
     ```bash
-
----
-
     # 以删除vlc为例
     sudo apt-get remove vlc
     sudo apt-get purge vlc
@@ -141,7 +132,11 @@ tags = [
     ```bash
     fc-list :lang=zh
     ```
-
+17. passwd命令设置密码
+    ```bash
+    sudo passwd -d <username> # 设置空密码
+    sudo passwd <username> # 输入并确认新的密码
+    ```
 
 
 ---
