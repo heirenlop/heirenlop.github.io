@@ -10,12 +10,29 @@ tags = [
     "虚拟环境"
 ]
 +++
-- [一. 环境管理](#一-环境管理)
-- [二. 环境配置](#二-环境配置)
-- [三. 包管理](#三-包管理)
-- [四. 换源](#四-换源)
+- [一. 安装](#一-安装)
+- [二. 环境管理](#二-环境管理)
+- [三. 环境配置](#三-环境配置)
+- [四. 包管理](#四-包管理)
+- [五. 换源](#五-换源)
+# 一. 安装
+```bash
+# 下载 Miniconda 安装脚本
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# or
+curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
-# 一. 环境管理
+# 运行安装脚本
+bash Miniconda3-latest-Linux-x86_64.sh
+
+# 激活 Conda 环境
+source ~/.bashrc
+
+# 测试
+conda --version
+```
+
+# 二. 环境管理
 
 1. 创建虚拟环境
     ```bash
@@ -54,7 +71,7 @@ tags = [
    conda config --show channels
    ```
    
-# 二. 环境配置
+# 三. 环境配置
 
 1. 导出虚拟环境配置文件.yaml
    ```bash
@@ -69,7 +86,7 @@ tags = [
    conda env update -f environment.yaml
    ```
    
-# 三. 包管理
+# 四. 包管理
 
 1. 安装包
    ```bash
@@ -81,7 +98,7 @@ tags = [
    conda update package_name # conda update numpy
    ```
 
-# 四. 换源
+# 五. 换源
 ```bash
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
