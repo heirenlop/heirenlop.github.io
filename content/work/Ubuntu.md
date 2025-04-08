@@ -138,7 +138,10 @@ tags = [
     sudo passwd <username> # 输入并确认新的密码
     ```
 
-
+18. 压缩zip文件
+    ```bash
+    zip -r my_project.zip my_project/
+    ```
 ---
 
 # 三. 常用软件
