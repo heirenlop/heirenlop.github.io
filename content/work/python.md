@@ -23,12 +23,13 @@ tags = [
     - [5.5 json](#55-json)
     - [5.6 random](#56-random)
     - [5.7 PIL](#57-pil)
-    - [5.8 opencv](#58-opencv)
+    - [5.8 opencv ： 图像处理](#58-opencv--图像处理)
     - [5.9 yaml](#59-yaml)
     - [5.10 rich](#510-rich)
     - [5.11 munch](#511-munch)
     - [5.12 trimesh](#512-trimesh)
-    - [5.13 multiprocessing](#513-multiprocessing)
+    - [5.13 multiprocessing ： 进程处理](#513-multiprocessing--进程处理)
+    - [5.14 open3d ： 图像生成3D点云](#514-open3d--图像生成3d点云)
   - [6. 数据结构](#6-数据结构)
     - [6.1 列表 \[\]](#61-列表-)
     - [6.2 字典 {}](#62-字典-)
@@ -147,12 +148,16 @@ with open(os.path.join(self.model_path, "cameras.json"), 'w') as file:
   0.1 * 0.1 
   ```
 - ~： 取反，一般用在bool掩码变量上
+- @： 矩阵乘法
 ------------
 ## 5. 库
 ### 5.1 pytorch 
 - torch.save(obj, file_path): 保存模型obj到路径file_path
+- torch.cuda() == torch.to("cuda")
 - torch.cuda.empty_cache()：清空缓存
 - torch.squeeze(): 删除维度
+- torch.data.fill_(x): 将张量中的所有元素填充为x
+- torch.median(): 计算张量中所有维度元素的中位数，并返回标量，如果元素数是偶数则返回2个中位数的均值，
 - torch.unsqueeze(): 增加维度
 ```python
 image = torch.randn(3, 224, 224)  # 创建一个形状为 (3, 224, 224) 的张量
@@ -227,28 +232,39 @@ gaussians.exposure_optimizer.step()
 - torch.zero_grad(): 清空梯度
 - torch.set_detect_anomaly(): 设置是否检测异常
 - torch.logical_and(a,b): 逻辑与,即满足条件a和b的索引
+- torch.repeat(dim0,dim1,...,dimN):沿着第 0 维复制 dim0 次，沿着第 1 维复制 dim1 次（其中1等于没复制）。
 - torch.tensor(): 将输入转换为张量
+- torch.permute(input,dims): 对张量进行维度变换
 - torch.tensor().grad(): 获取张量中的梯度
 - torch.tensor().isnan(): 判断张量中是否有NaN值
+- torch.from_numpy(): 将numpy数组转换为张量
 - torch.zeros(): 生成全零张量
 - torch.zeros_like(): 生成与输入张量形状相同的全零张量
 - torch.ones(): 生成全一张量
+- torch.randn_like(x): 生成与输入张量形状相同的随机正态分布张量，范围一般是(-3,3)
 - torch.clamp(input,min,max): 数值限制，保证取值如果大于max，则取max，如果小于min，则取min
 - torch.clamp_min(input,min): 数值限制，保证取值不小于min。input>min，则取input，否则取min
+- torch.mean(): 计算张量平均值
+- torch.mean(dim=0，keepdim=True): 计算张量第一维度的平均值，并保持原始维度
 - torch.nn.Parameter(): 将输入转换为可训练参数
 - torch.eye(): 生成单位矩阵
+- torch.contiguous():确保张量在内存中是连续的
+- torch[...,None] == torch.unsqueeze(-1)，新增一个维度
 - torch.rand(): 生成随机数
+  ```python
+  # 生成一个形状为(3,)的随机数tensor，且值在0到1之间
+  test = torch.rand(3)
+  ```
 - torch.stack(): 堆叠张量
+- torch.abs(a).sum(): 计算张量a绝对值之和，得到一个数值
+- torch.transpose(): 二维-矩阵转置 / 三维及以上-维度置换
 - torch.cat(): 拼接张量
   ```python
   # dim=0 → 在行方向拼接
   # dim=1 → 在列方向拼接
   torch.cat((tensor1, tensor2, ...), dim)
   ```
-  ```python
-  # 生成一个形状为(3,)的随机数tensor，且值在0到1之间
-  test = torch.rand(3)
-  ```
+
 ### 5.2 socket
 
 
@@ -261,9 +277,7 @@ t = np.clip(step / max_steps, 0, 1)
 ```
 - np.log()： 计算对数
 - np.exp()： 计算指数函数
-
-
-- np.array(): 将输入转换为 numpy 数组
+- np.array(Image.open(color_path)): 将输入xxx（如图像）转换为 numpy 数组
 - np.transpose()： 转置矩阵 
 - np.hstack()： 水平拼接矩阵
 - np.vstack()： 垂直拼接矩阵
@@ -273,6 +287,7 @@ t = np.clip(step / max_steps, 0, 1)
 - np.asarray()： 将输入转换为 numpy 数组
 - np.argmin(): 返回最小值的索引
 - np.roll(a,1)：把a的最后一个元素移到最前面
+- np.astype(xxx)： 将输入转换为指定类型xxx
 ###  5.4 os
 - os.getenv()： 获取环境变量
 - os.path.join()： 拼接路径
@@ -316,7 +331,7 @@ point3D_ids=array([  -1,   -1,   -1, ..., 3763,   -1,   -1]))
 ```python
 image = PIL.Image.open(path)
 ```
-### 5.8 opencv
+### 5.8 opencv ： 图像处理
 - cv2.imread(path)： 读取图片，返回一个numpy数组。
 - map1,map2 = cv2.initUndistortRectifyMap(cameraMatrix, distCoeffs, R, newCameraMatrix, size, m1type)： 初始化映射
 - image = cv2.remap(image, map1, map2, interpolation=cv2.INTER_LINEAR)： 得到去畸变后的图像。和initUndistortRectifyMap搭配使用。
@@ -326,7 +341,6 @@ image = PIL.Image.open(path)
 
 ### 5.9 yaml
 - output = yaml.full_load(f): 读取yaml文件，返回一个字典。
-------------
 
 ### 5.10 rich
 - rich.print(a): 打印a，支持颜色、格式化等。
@@ -336,11 +350,19 @@ image = PIL.Image.open(path)
 
 ### 5.12 trimesh
 - T = trimesh.transformations.quaternion_matrix(np.roll(quat, 1))： 创建旋转矩阵
-### 5.13 multiprocessing
+### 5.13 multiprocessing ： 进程处理
 - multiprocessing.Queue(): 创建一个队列，用于在多个进程之间交换数据。
+- multiprocessing.Queue.put(item): 在队尾中添加一个元素。
+- multiprocessing.Queue.get(): 从队头中取出一个元素。
+- multiprocessing.Queue.empty(): 判断队列是否为空。
 - multiprocessing.Process(): 创建一个进程，用于在多个进程中执行任务。
 - multiprocessing.start()： 启动子进程（开启新进程）。
 - multiprocessing.run()： 在主进程内运行子进程（不开启新进程）。
+
+### 5.14 open3d ： 图像生成3D点云
+- o3d.geometry.Image(xxx):封装图像xxx为3D点云
+- o3d.geometry.RGBDImage.create_from_color_and_depth(xxx):rgb图像 + 深度图像 => RGBD 图像
+- o3d.geometry.PointCloud.create_from_rgbd_image(xxx)：RGBD 图像 => 点云
 ## 6. 数据结构
 ### 6.1 列表 []
 - 特性:

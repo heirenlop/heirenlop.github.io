@@ -258,6 +258,11 @@ git commit -m "first commit"
 git remote add origin git@github.com:heirenlop/abc.git #链接远程仓
 git remote -v #查看状态
 git push -u origin main #推送
+
+# tips：
+# 如果没有main仓
+git branch -M main # 修改默认分支为main
+git push -u origin main
 ```
 (6) 修改remote链接
 ```bash
