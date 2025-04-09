@@ -39,16 +39,15 @@ sudo apt install openssh-server
 - 启动服务
 ```bash
 sudo systemctl enable ssh #可选开机启动
-sudo systemctl start ssh
+sudo systemctl start ssh #打开
 ```
 - 查看服务状态
 ```bash
-# 确保 SSH 是开启状态：
-sudo systemctl status ssh
+sudo systemctl status ssh #查询
 ```
 - 关闭服务
 ```bash
-sudo systemctl stop ssh
+sudo systemctl stop ssh #关闭
 ```
 
 ---
@@ -68,6 +67,10 @@ tailscale ip -4
 - 查看联网状态
 ```bash
 tailscale status
+```
+- 退出虚拟局域网
+```bash
+tailscale down
 ```
 
 ## 1.3 termius
