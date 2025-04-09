@@ -1,6 +1,6 @@
 +++
 authors = ["李佳潞"]
-title = "tailscale"
+title = "跨网ssh"
 date = "2025-04-09"
 categories = [
     "软件"
