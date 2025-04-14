@@ -223,6 +223,8 @@ tags = [
     ```
 
 
+4. AppImageLauncher
+   一个工具，用于将AppImage文件自动安装到系统，并显示图标。
 
 ---
 
