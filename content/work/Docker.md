@@ -24,6 +24,7 @@ tags = [
 - [九. Docker资源空间管理](#九-docker资源空间管理)
 - [十. Docker共享内存](#十-docker共享内存)
 - [十一. 动态挂载宿主机usb设备](#十一-动态挂载宿主机usb设备)
+- [12. 内粗管理](#12-内粗管理)
 - [tips](#tips)
 
 
@@ -496,8 +497,15 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 mount --bind /dev/bus/usb /dev/bus/usb
 ```
 
+# 12. 内粗管理
 
-
+```bash
+docker system df # 查看当前docker占用详情---安全
+docker builder prune # 清理构建缓存---安全
+docker volume prune # 清理未使用的数据卷（volume，保留当前已启动容器的volume）---注意先启动常用的容器
+docker image prune -a # 清理未使用的镜像（保留当前所有容器的） --- 可选
+docker container prune # 清理未使用的容器 --- 可选
+```
 
 ---
 
