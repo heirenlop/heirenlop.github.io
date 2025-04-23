@@ -34,7 +34,7 @@ tags = [
   - [12.3 功能](#123-功能)
   - [12.4 用法](#124-用法)
 - [13. 新建仓](#13-新建仓)
-- [14. 拉取submodule](#14-拉取submodule)
+- [14. submodule相关](#14-submodule相关)
 - [15. 修改仓的地址](#15-修改仓的地址)
 - [16. 生成SSH密钥对](#16-生成ssh密钥对)
 - [17. 设置git 用户名和邮箱](#17-设置git-用户名和邮箱)
@@ -273,7 +273,8 @@ git remote -v  #查看状态
 
 ---
 
-# 14. 拉取submodule
+# 14. submodule相关
+- 拉取submodule
 (1) 确认仓是否有submodule
 ```bash
 cat .gitmodules
@@ -285,6 +286,29 @@ git clone --recursive <repository_url>
 (3) clone后拉取submodule
 ```bash
 git submodule update --init --recursive
+```
+
+- 添加submodule
+(1) 在本地仓中添加submodule，add的内容在仓内的.gitmodules文件中
+```bash
+git submodule add <子模块地址> <存放路径>
+# 举例
+git submodule add https://gitlab.inria.fr/bkerbl/simple-knn.git submodules/simple-knn
+git submodule add -b dr_aa https://github.com/graphdeco-inria/diff-gaussian-rasterization.git submodules/diff-gaussian-rasterization
+git submodule add https://github.com/rahul-goel/fused-ssim.git submodules/fused-ssim
+```
+(2) 提交修改
+```bash
+git add .gitmodules submodules/
+git commit -m "Add submodules"
+git push origin main
+```
+(3) 移除submodule
+```bash
+git submodule deinit -f submodules/simple-knn
+rm -rf .git/modules/submodules/simple-knn
+git rm -f submodules/simple-knn
+git commit -m "Remove submodule simple-knn"
 ```
 
 
