@@ -297,13 +297,26 @@ git submodule add https://gitlab.inria.fr/bkerbl/simple-knn.git submodules/simpl
 git submodule add -b dr_aa https://github.com/graphdeco-inria/diff-gaussian-rasterization.git submodules/diff-gaussian-rasterization
 git submodule add https://github.com/rahul-goel/fused-ssim.git submodules/fused-ssim
 ```
-(2) 提交修改
+
+(2) submodule 切换到制定的分支（可选）
+```bash
+cd submodules/xxx
+git fetch  # 获取所有 commit
+git checkout <指定的 commit 哈希>
+
+cd ../.. #回到主仓库，记录这个 commit 的引用
+git add submodules/xxx
+git commit -m "切换 submodule xxx to commit 1a2b3c4d5e"
+```
+
+(3) 提交修改
 ```bash
 git add .gitmodules submodules/
 git commit -m "Add submodules"
 git push origin main
 ```
-(3) 移除submodule
+
+(4) 移除submodule
 ```bash
 git submodule deinit -f submodules/simple-knn
 rm -rf .git/modules/submodules/simple-knn
