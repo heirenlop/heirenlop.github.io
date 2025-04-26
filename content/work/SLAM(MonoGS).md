@@ -39,8 +39,10 @@ tags = [
 
 # 2. 问题
 ## 2.1 libtorch_cpu.so问题
-- 如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行 pip install mkl==2024.0
-   
+- 如果遇到错误 libtorch_cpu.so: undefined symbol: iJIT_NotifyEvent，尝试运行
+```bash
+pip install mkl==2024.0 -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
 ## 2.2 opengl问题
 - 如果是在conda内运行可视化，可能会出现x11问题，本质也是opengl问题，同3dgs问题相同：
 ```bash
