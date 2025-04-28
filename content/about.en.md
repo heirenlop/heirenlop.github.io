@@ -7,7 +7,6 @@ layout = "about"
 
 📑 **What you'll find here:**
 
-- Technical articles on robotics and autonomous driving  
 - Notes on SLAM (Simultaneous Localization and Mapping)  
 - Research project updates  
 - Personal thoughts and daily life reflections  
