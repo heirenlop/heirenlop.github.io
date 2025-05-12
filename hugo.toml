@@ -216,7 +216,7 @@ url = "work/"
 [[languages.zh-cn.menu.main]]
 name = "足迹"
 weight = 4
-url = "Travel-Map/"
+url = "travel-map/"
 
 [[languages.zh-cn.menu.main]]
 name = "生活"
@@ -259,7 +259,7 @@ url = "work/"
 [[languages.en.menu.main]]
 name = "Travel Map"
 weight = 4
-url = "Travel-Map/"
+url = "travel-map/"
 
 [[languages.en.menu.main]]
 name = "Daily Record"
