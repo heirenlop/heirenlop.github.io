@@ -209,19 +209,26 @@ weight = 2
 url = "resume/"
 
 [[languages.zh-cn.menu.main]]
-name = "生活"
-weight = 3
-url = "daily/"
-
-[[languages.zh-cn.menu.main]]
 name = "工作"
-weight = 4
+weight = 3
 url = "work/"
 
 [[languages.zh-cn.menu.main]]
-name = "杂项"
+name = "足迹"
+weight = 4
+url = "Travel-Map/"
+
+[[languages.zh-cn.menu.main]]
+name = "生活"
 weight = 5
+url = "daily/"
+
+[[languages.zh-cn.menu.main]]
+name = "杂项"
+weight = 6
 url = "other/"
+
+
 
 #-----------------------------------set EN--------------------------------------
 [languages.en]
@@ -240,23 +247,28 @@ weight = 1
 url = "about/"
 
 [[languages.en.menu.main]]
-name = "resume"
+name = "Resume"
 weight = 2
 url = "resume/"
 
 [[languages.en.menu.main]]
-name = "daily record"
+name = "Work Record"
 weight = 3
+url = "work/"
+
+[[languages.zh-cn.menu.main]]
+name = "Travel Map"
+weight = 4
+url = "Travel-Map/"
+
+[[languages.en.menu.main]]
+name = "Daily Record"
+weight = 5
 url = "daily/"
 
 [[languages.en.menu.main]]
-name = "work record"
-weight = 4
-url = "work/"
-
-[[languages.en.menu.main]]
-name = "other"
-weight = 5
+name = "Other"
+weight = 6
 url = "other/"
 
 #----------------------------------------------------------
