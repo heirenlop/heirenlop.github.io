@@ -256,7 +256,7 @@ name = "Work Record"
 weight = 3
 url = "work/"
 
-[[languages.zh-cn.menu.main]]
+[[languages.en.menu.main]]
 name = "Travel Map"
 weight = 4
 url = "Travel-Map/"
