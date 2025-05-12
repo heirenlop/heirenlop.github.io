@@ -58,7 +58,7 @@
   <div class="taxonomy-wrapper">
     <!-- 分类卡片 -->
     <div class="taxonomy-card">
-      <h2>📂 分类</h2>
+      <h2>📂 {{ if eq .Site.Language.Lang "en" }}Categories{{ else }}分类{{ end }}</h2>
       <div class="taxonomy-tags">
         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
           <a href="{{ "/categories/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>
@@ -68,10 +68,10 @@
   
     <!-- 标签卡片 -->
     <div class="taxonomy-card">
-      <h2>🏷️ 标签</h2>
+      <h2>🏷️ {{ if eq .Site.Language.Lang "en" }}Tags{{ else }}标签{{ end }}</h2>
       <div class="taxonomy-tags">
         {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-          <a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }}</a>
+          <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
         {{ end }}
       </div>
     </div>
