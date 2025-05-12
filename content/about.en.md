@@ -7,17 +7,31 @@ layout = "about"
 
 📑 **What you'll find here:**
 
-- Notes on SLAM (Simultaneous Localization and Mapping)  
-- Research project updates  
-- Personal thoughts and daily life reflections  
+- Study Notes (2024 — Present)
 
-📬 **Contact Me:**
+- Research Projects (2024 — Present)
 
-- Email: **13122356672@163.com / heirenlop@gmail.com**  
-- For more ways to connect, see the icons on the homepage  
+- Travel Journals (2019 — Present)
+
+---
 
 📚 **Site Index:**
 
 {{< sidebar-taxonomy >}}
 
 <!-- Embed a video here -->
+
+---
+
+📬 **Contact Me:**
+
+- Email: **13122356672@163.com / heirenlop@gmail.com**  
+- For more ways to connect, see the icons on the homepage  
+  
+---
+
+ 🌍 **Visitor Map**
+
+<div class="container">
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=-8NnXWZCil-LO-jkGg9rMcJ5e0YRUgaMCNZwfeDRRLM&cl=ffffff&w=a"></script>
+</div>

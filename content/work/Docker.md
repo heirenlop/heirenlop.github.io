@@ -11,19 +11,19 @@ tags = [
 ]
 +++
 
-- [一. Docker清华源apt-get安装](#一-docker清华源apt-get安装)
-- [二. 下载镜像加速](#二-下载镜像加速)
+- [1. Docker清华源apt-get安装](#1-docker清华源apt-get安装)
+- [2. 下载镜像加速](#2-下载镜像加速)
   - [方法1. 科学上网](#方法1-科学上网)
   - [方法2. 使用国内docker的镜像](#方法2-使用国内docker的镜像)
-- [三. 修改镜像存储路径](#三-修改镜像存储路径)
-- [四. Docker build/run/compose](#四-docker-buildruncompose)
-- [五. 镜像操作](#五-镜像操作)
-- [六. 容器操作](#六-容器操作)
-- [七. Dockerfile写法](#七-dockerfile写法)
-- [八. Docker访问X11服务器](#八-docker访问x11服务器)
-- [九. Docker资源空间管理](#九-docker资源空间管理)
-- [十. Docker共享内存](#十-docker共享内存)
-- [十一. 动态挂载宿主机usb设备](#十一-动态挂载宿主机usb设备)
+- [3. 修改镜像存储路径](#3-修改镜像存储路径)
+- [4. Docker build/run/compose](#4-docker-buildruncompose)
+- [5. 镜像操作](#5-镜像操作)
+- [6. 容器操作](#6-容器操作)
+- [7. Dockerfile写法](#7-dockerfile写法)
+- [8. Docker访问X11服务器](#8-docker访问x11服务器)
+- [9. Docker资源空间管理](#9-docker资源空间管理)
+- [10. Docker共享内存](#10-docker共享内存)
+- [11. 动态挂载宿主机usb设备](#11-动态挂载宿主机usb设备)
 - [12. 内粗管理](#12-内粗管理)
 - [tips](#tips)
 
@@ -31,7 +31,7 @@ tags = [
 
 ---
 
-# 一. Docker清华源apt-get安装
+# 1. Docker清华源apt-get安装
 
 1. 更新软件包索引并安装必要的依赖
     ```bash
@@ -88,7 +88,7 @@ tags = [
 ---
 
 
-# 二. 下载镜像加速
+# 2. 下载镜像加速
 
 因为墙的原因，在docker pull镜像的时候会很慢，或者说根本pull不下来，我ping的结果是丢包率100%。
 
@@ -160,7 +160,7 @@ sudo docker run hello-world
 
 ---
 
-# 三. 修改镜像存储路径
+# 3. 修改镜像存储路径
 
 1. 查看当前存储路径以及存储空间
 
@@ -216,7 +216,7 @@ sudo docker run hello-world
 
 ---
 
-# 四. Docker build/run/compose
+# 4. Docker build/run/compose
 
 1. 根据dockerfile构建镜像
 
@@ -260,7 +260,7 @@ sudo docker run hello-world
 
 ---
 
-# 五. 镜像操作
+# 5. 镜像操作
 
 1. 删除镜像：
 
@@ -303,7 +303,7 @@ sudo docker run hello-world
 
 ---
 
-# 六. 容器操作
+# 6. 容器操作
 
 1. 启动容器：
 
@@ -350,7 +350,7 @@ sudo docker run hello-world
 
 ---
 
-# 七. Dockerfile写法
+# 7. Dockerfile写法
 
 以SUMA++中dockerfile为例
 ```bash
@@ -436,7 +436,7 @@ WORKDIR /catkin_ws/src
 
 ---
 
-# 八. Docker访问X11服务器
+# 8. Docker访问X11服务器
 
 主机上显示图形界面，如rviz/rviz2的图形界面。
 
@@ -459,7 +459,7 @@ WORKDIR /catkin_ws/src
 
 ---
 
-# 九. Docker资源空间管理
+# 9. Docker资源空间管理
 
 ```bash
 docker system df # 显示docker占用的磁盘空间
@@ -473,7 +473,7 @@ docker system prune -a # 清理所有未使用的镜像和容器
 
 ---
 
-# 十. Docker共享内存
+# 10. Docker共享内存
 
 docker内shm默认值是 64MB，构建容器时，添加 --shm-size=1g 参数即可调整内存大小。
 ```bash
@@ -490,7 +490,7 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 
 ---
 
-# 十一. 动态挂载宿主机usb设备
+# 11. 动态挂载宿主机usb设备
 
 容器内执行
 ```bash
