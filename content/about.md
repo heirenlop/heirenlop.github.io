@@ -3,24 +3,35 @@ type = "page"
 layout = "about"
 +++
 
- **欢迎来到我的个人网站，网站于2024年10月上线。建立这个网站是为了记录学习科研，分享一些技术心得，也写写生活琐记。**
+**欢迎来到我的个人网站，网站于2024年10月上线。建立这个网站是为了记录学习/科研，分享一些技术心得，也写写生活琐事。**
 
-📑 **网站内容：**
+📑 **网站内容**
 
-- SLAM 笔记
-
-- 科研项目记录(2024年---至今)
-
+- SLAM 笔记  
+- 科研项目记录(2024年---至今)  
 - 日常生活随笔(2019年---至今)
 
-📬 **联系方式：**
+---
 
-- 邮箱：**13122356672@163.com / heirenlop@gmail.com**
+📬 **联系方式**
 
+- 邮箱：**13122356672@163.com / heirenlop@gmail.com**  
 - 其他联系方式见主页图标
 
-📚 **索引：**
+
+---
+
+📚 **索引**
 
 {{< sidebar-taxonomy >}}
 
 <!-- 放个视频 -->
+
+---
+
+
+🌍 **访客地图**
+
+<div class="container">
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=-8NnXWZCil-LO-jkGg9rMcJ5e0YRUgaMCNZwfeDRRLM&cl=ffffff&w=a"></script>
+</div>
