@@ -35,5 +35,5 @@ layout = "about"
 🌍 **访客地图**
 
 <div class="container">
-    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=-8NnXWZCil-LO-jkGg9rMcJ5e0YRUgaMCNZwfeDRRLM&cl=ffffff&w=a"></script>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=p1say2PNIg8QbapC26qLtEHHD0Flmv66jM9j64bfp-A&cl=ffffff&w=a"></script>
 </div>

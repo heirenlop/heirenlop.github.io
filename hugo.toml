@@ -1,5 +1,6 @@
 #网站的基 URL
-baseURL = "http://www.example.com"
+baseURL = "https://heirenlop.com/"
+canonifyURLs = true
 #网站的标题
 title = "heirenlop"
 #主题
