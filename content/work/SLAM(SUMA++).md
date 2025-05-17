@@ -170,11 +170,11 @@ WORKDIR /catkin_ws/src
 可复现，测试KITTI数据集结果：
 
 <div class="container" style="display: flex; justify-content: center;">
-       <video controls width="640" height="360">
-           <source src="/videos/work-record/suma++1080p.mp4" type="video/mp4">
-       </video>
+  <video controls style="max-width:100%; height:auto;">
+    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/v1.0/suma++1080p.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 视频播放。
+  </video>
 </div>
-
 
 
 ---
