@@ -120,7 +120,7 @@ Traceback (most recent call last):
 - 渲染效果：
 <div class="container" style="display: flex; justify-content: center;">
   <video controls style="max-width:100%; height:auto;">
-    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/v1.0/MonoGS-demo.mp4" type="video/mp4">
+    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/MonoGS-demo.mp4" type="video/mp4">
     您的浏览器不支持 HTML5 视频播放。
   </video>
 </div>
@@ -145,17 +145,12 @@ Traceback (most recent call last):
     (2) Docker：cuda-11.6 
     (3) conda：pytorch=1.12.1
 - 渲染效果：
-<div class="container">
-  <div class="image">
-        <figure>
-              <a data-fancybox="gallery" href="/images/work-record/Peek_MonoGS_camera_1080P.gif"  >
-                  <img src="/images/work-record/Peek_MonoGS_camera_1080P.gif" loading="lazy">
-              </a>
+ <figure class="container" style="display: flex; flex-direction: column; align-items: center;">
+            <img src="https://github.com/heirenlop/video-assets/releases/download/v1.0/Peek_MonoGS_camera_1080P.gif"
+                alt="SIBR演示" style="max-width:100%; height:auto;" />
             <figcaption>均值轨迹误差</figcaption>
-        </figure>
-    </div>
-</div>
-
+            </figure>
+            
 # 4. 代码解读
   
 - 仓设置为public，其中comment分支更新到2025/03/26，有需要可查阅 ---> [链接: 李佳潞-MonoGS-代码注释](https://github.com/heirenlop/MonoGS-with-comment/compare/comment)

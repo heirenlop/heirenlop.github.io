@@ -31,10 +31,12 @@ hugo 是图片标题，默认是鼠标悬浮显示
 
 假设视频存储在 `static/videos` 目录下：
 
-<video controls>
-  <source src="/videos/example-video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div class="container" style="display: flex; justify-content: center;">
+  <video controls style="max-width:100%; height:auto;">
+    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/example-video.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 视频播放。
+  </video>
+</div>
 
 ### 视频说明
 

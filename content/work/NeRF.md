@@ -63,19 +63,21 @@ tags = [
 
 1. lego_synthetic数据集
    PSNR=32 | Iter=150000 | LOSS= 0.0012
-    <div class="container">
-                    <video controls>
-                        <source src="/videos/work-record/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
-                    </video>
-                </div>
+   <div class="container" style="display: flex; justify-content: center;">
+     <video controls style="max-width:100%; height:auto;">
+       <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
+       您的浏览器不支持 HTML5 视频播放。
+     </video>
+   </div>
 
 2. fern_llff数据集
     PSNR=29 | Iter=200000 | LOSS= 0.0032
-    <div class="container">
-                    <video controls>
-                        <source src="/videos/work-record/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
-                    </video>
-                </div>
+   <div class="container" style="display: flex; justify-content: center;">
+     <video controls style="max-width:100%; height:auto;">
+       <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
+       您的浏览器不支持 HTML5 视频播放。
+     </video>
+   </div>
 
 # *论文部分*
 

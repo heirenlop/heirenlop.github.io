@@ -108,16 +108,18 @@ Conda installation process:
    Original data video captured on phone:
 
    <div class="container" style="display: flex; justify-content: center;">
-       <video controls style="height: 100%; max-height: 360px; height: auto;">
-           <source src="/videos/work-record/ori_water_bottle.mp4" type="video/mp4">
+       <video controls style="max-width:100%; height:auto;">
+           <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/ori_water_bottle.mp4" type="video/mp4">
+           Your browser does not support HTML5 video playback.
        </video>
    </div>
 
    SIBR：
 
    <div class="container" style="display: flex; justify-content: center;">
-  <video controls style="width: 100%; max-width: 640px; height: auto;">
-           <source src="/videos/work-record/SIBR_water_bottle.mp4" type="video/mp4">
+  <video controls style="max-width:100%; height:auto;">
+           <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/SIBR_water_bottle.mp4" type="video/mp4">
+           Your browser does not support HTML5 video playback.
        </video>
    </div>
 

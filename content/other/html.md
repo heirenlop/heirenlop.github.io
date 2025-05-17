@@ -65,9 +65,12 @@ tags = [
 属性：src（视频路径）、controls（显示播放控件）。
 
 示例：
-<video width="640" height="360" controls>
-      <source src="/videos/daily-travel/huache.mp4" type="video/mp4">
-</video>
+<div class="container" style="display: flex; justify-content: center;">
+  <video controls style="max-width:100%; height:auto;">
+    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/huache.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 视频播放。
+  </video>
+</div>
 
 <audio>：音频标签。
 属性：src（音频路径）、controls（显示播放控件）。
