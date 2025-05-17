@@ -1,4 +1,4 @@
-
+> 📍 This page embeds a **Google Map**. If the map fails to load, please try accessing with a VPN or other proxy tools.
 <div class="container">
 <center>
 <div style="max-width: 960px; margin: 0 auto;">
