@@ -109,7 +109,7 @@ Conda installation process:
 
    <div class="container" style="display: flex; justify-content: center;">
        <video controls style="max-width:100%; height:auto;">
-           <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/ori_water_bottle.mp4" type="video/mp4">
+           <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/ori_water_bottle.mp4" type="video/mp4">
            Your browser does not support HTML5 video playback.
        </video>
    </div>
@@ -118,7 +118,7 @@ Conda installation process:
 
    <div class="container" style="display: flex; justify-content: center;">
   <video controls style="max-width:100%; height:auto;">
-           <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/SIBR_water_bottle.mp4" type="video/mp4">
+           <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/SIBR_water_bottle.mp4" type="video/mp4">
            Your browser does not support HTML5 video playback.
        </video>
    </div>

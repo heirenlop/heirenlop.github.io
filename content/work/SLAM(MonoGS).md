@@ -120,7 +120,7 @@ Traceback (most recent call last):
 - 渲染效果：
 <div class="container" style="display: flex; justify-content: center;">
   <video controls style="max-width:100%; height:auto;">
-    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/MonoGS-demo.mp4" type="video/mp4">
+    <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/MonoGS-demo.mp4" type="video/mp4">
     您的浏览器不支持 HTML5 视频播放。
   </video>
 </div>
@@ -146,7 +146,7 @@ Traceback (most recent call last):
     (3) conda：pytorch=1.12.1
 - 渲染效果：
  <figure class="container" style="display: flex; flex-direction: column; align-items: center;">
-            <img src="https://github.com/heirenlop/video-assets/releases/download/v1.0/Peek_MonoGS_camera_1080P.gif"
+            <img src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/Peek_MonoGS_camera_1080P.gif"
                 alt="SIBR演示" style="max-width:100%; height:auto;" />
             <figcaption>均值轨迹误差</figcaption>
             </figure>

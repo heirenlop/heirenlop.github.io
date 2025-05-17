@@ -1,5 +1,5 @@
 
-> 📍 本页包含**Google 地图**嵌入组件，如地图无法加载或显示空白，请挂个 VPN 访问。
+> 📍 本页包含**Google 地图**嵌入组件，如遇啥也不显示或者地图无法加载的情况，请挂个 VPN 访问。
 <div class="container">
 <center>
 <div style="max-width: 960px; margin: 0 auto;">

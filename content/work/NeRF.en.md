@@ -63,7 +63,7 @@ None.
    PSNR = 32 | Iterations = 150,000 | LOSS = 0.0012  
    <div class="container" style="display: flex; justify-content: center;">
      <video controls style="max-width:100%; height:auto;">
-       <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
+       <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
        Your browser does not support HTML5 video playback.
      </video>
    </div>
@@ -72,7 +72,7 @@ None.
    PSNR = 29 | Iterations = 200,000 | LOSS = 0.0032  
    <div class="container" style="display: flex; justify-content: center;">
      <video controls style="max-width:100%; height:auto;">
-       <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/V1.0/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
+       <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
        Your browser does not support HTML5 video playback.
      </video>
    </div>
