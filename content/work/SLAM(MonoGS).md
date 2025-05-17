@@ -119,9 +119,10 @@ Traceback (most recent call last):
 ## 3.1 DEMO复现
 - 渲染效果：
 <div class="container" style="display: flex; justify-content: center;">
-  <video controls style="width: 100%; max-width: 640px; height: auto;">
-        <source src="/videos/work-record/MonoGS-demo.mp4" type="video/mp4">
-    </video>
+  <video controls style="max-width:100%; height:auto;">
+    <source src="https://github.com/heirenlop/heirenlop.github.io/releases/download/v1.0/MonoGS-demo.mp4" type="video/mp4">
+    您的浏览器不支持 HTML5 视频播放。
+  </video>
 </div>
 - 测试误差：
             <div class="container">
