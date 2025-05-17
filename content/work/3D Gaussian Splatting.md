@@ -247,7 +247,7 @@ tags = [
 
 
    
-    - 点云可视化：
+- 点云可视化：
 <div class="container">
     <div class="image">
         <figure>
