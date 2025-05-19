@@ -24,7 +24,7 @@ tags = [
 - [9. Docker资源空间管理](#9-docker资源空间管理)
 - [10. Docker共享内存](#10-docker共享内存)
 - [11. 动态挂载宿主机usb设备](#11-动态挂载宿主机usb设备)
-- [12. 内粗管理](#12-内粗管理)
+- [12. 内存管理](#12-内存管理)
 - [tips](#tips)
 
 
@@ -497,7 +497,7 @@ docker run --shm-size=8g -it your_image_name #终端运行容器
 mount --bind /dev/bus/usb /dev/bus/usb
 ```
 
-# 12. 内粗管理
+# 12. 内存管理
 
 ```bash
 docker system df # 查看当前docker占用详情---安全
