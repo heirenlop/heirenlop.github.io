@@ -211,7 +211,7 @@ url = "resume/"
 
 [[languages.zh-cn.menu.main]]
 name = "工作"
-weight = 3
+weight = 5
 url = "work/"
 
 [[languages.zh-cn.menu.main]]
@@ -221,7 +221,7 @@ url = "travel-map/"
 
 [[languages.zh-cn.menu.main]]
 name = "生活"
-weight = 5
+weight = 3
 url = "daily/"
 
 [[languages.zh-cn.menu.main]]
@@ -254,7 +254,7 @@ url = "resume/"
 
 [[languages.en.menu.main]]
 name = "Work Record"
-weight = 3
+weight = 5
 url = "work/"
 
 [[languages.en.menu.main]]
@@ -264,7 +264,7 @@ url = "travel-map/"
 
 [[languages.en.menu.main]]
 name = "Daily Record"
-weight = 5
+weight = 3
 url = "daily/"
 
 [[languages.en.menu.main]]
