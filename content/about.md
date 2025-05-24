@@ -33,7 +33,7 @@ layout = "about"
 
 
 🌍 **访客地图**
-
+> 📍 本模块嵌入了 **ClustrMaps** 访客地图组件。如遇地图无法加载或页面空白，建议尝试挂 VPN 后刷新页面。
 <div class="container">
     <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=p1say2PNIg8QbapC26qLtEHHD0Flmv66jM9j64bfp-A&cl=ffffff&w=a"></script>
 </div>
