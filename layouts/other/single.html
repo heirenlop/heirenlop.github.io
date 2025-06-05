@@ -22,7 +22,11 @@
             </span>
             <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              {{ i18n "reading_time" .ReadingTime }}
+              {{ if eq .Lang "zh-CN" }}
+                {{ i18n "reading_time" (div (countwords .Plain) 300) }}
+              {{ else }}
+                {{ i18n "reading_time" .ReadingTime }}
+              {{ end }}
             </span>
           </div>
           {{/*  {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}  */}}
