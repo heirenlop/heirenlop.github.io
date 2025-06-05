@@ -20,14 +20,14 @@
                 {{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
               </time>
             </span>
-            <span class="reading-time">
+            {{/*  <span class="reading-time">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
               {{ if eq .Lang "zh-CN" }}
                 {{ i18n "reading_time" (div (countwords .Plain) 300) }}
               {{ else }}
                 {{ i18n "reading_time" .ReadingTime }}
               {{ end }}
-            </span>
+            </span>  */}}
           </div>
           {{/*  {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}  */}}
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}
