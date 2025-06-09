@@ -220,12 +220,12 @@ weight = 4
 url = "travel-map/"
 
 [[languages.zh-cn.menu.main]]
-name = "生活"
+name = "旅行"
 weight = 3
 url = "daily/"
 
 [[languages.zh-cn.menu.main]]
-name = "杂项"
+name = "随笔"
 weight = 6
 url = "other/"
 
@@ -263,12 +263,12 @@ weight = 4
 url = "travel-map/"
 
 [[languages.en.menu.main]]
-name = "Daily Record"
+name = "Travel"
 weight = 3
 url = "daily/"
 
 [[languages.en.menu.main]]
-name = "Other"
+name = "Notes"
 weight = 6
 url = "other/"
 
