@@ -23,6 +23,7 @@ noClasses = false
 
 [params]
 author = "李佳潞"
+latestPostLabel = "📝 最新文章："
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 # description = "John Doe's personal website"
 description = "Jialu Li's personal website"
@@ -241,6 +242,7 @@ author = "Jialu Li"
 info = ""
 description = ""
 keywords = ""
+latestPostLabel = "📝 Latest post:"
 
 [[languages.en.menu.main]]
 name = "About"
@@ -283,3 +285,4 @@ url = "other/"
 
 # 添加可在md文件中插入html标签配置
 unsafe = true
+

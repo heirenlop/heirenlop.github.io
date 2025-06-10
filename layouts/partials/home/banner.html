@@ -1,0 +1,35 @@
+<div class="latest-post-wrapper">
+  <div class="latest-post-banner">
+    {{ $pages := where .Site.RegularPages "Draft" "ne" true }}
+    {{ $pages = $pages.ByDate.Reverse }}
+    {{ with index $pages 0 }}
+      <a href="{{ .RelPermalink }}" class="banner-link" target="_blank" rel="noopener">
+        <span class="banner-text">
+          <span class="banner-label">
+            {{ with .Site.Params.latestPostLabel }}
+              {{ . }}
+            {{ else }}
+              📣 Latest post:
+            {{ end }}
+          </span>
+          <span class="banner-date">{{ .Date | time.Format "2006-01-02" }}</span>
+          <span class="banner-title">{{ .Title }}</span>
+        </span>
+      </a>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.latest-post-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.latest-post-banner {
+  transform: translateY(-50px);  /* ✅ 只移动 banner，自身上浮10px */
+}
+</style>
