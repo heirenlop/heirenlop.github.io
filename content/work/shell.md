@@ -1,7 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Shell"
-date = "2025-01-23"
+date = "2025-06-23"
 categories = [
     "脚本"
 ]
@@ -17,11 +17,14 @@ tags = [
 - [4. 代理设置脚本  ](#4-代理设置脚本--)
 - [5. 容器内代理设置脚本  ](#5-容器内代理设置脚本--)
 - [6. MonoGS和3DGS的conda 环境配置](#6-monogs和3dgs的conda-环境配置)
+- [7. 替换图片路径](#7-替换图片路径)
+- [8. 替换视频路径](#8-替换视频路径)
+- [9. 配置 nvm + Node.js 20](#9-配置-nvm--nodejs-20)
 
 
 ---
 
-# 1. 通用下载脚本
+## 1. 通用下载脚本
 
 以下载cuda12.2toolkit为例
 
@@ -55,7 +58,7 @@ done
 
 ---
 
-# 2. 下载VOC2007 <h2 id="section2"> </h2>
+## 2. 下载VOC2007 <h2 id="section2"> </h2>
 
 ```shell
 #!/bin/bash
@@ -103,7 +106,7 @@ echo "✅ VOC 2007 数据集下载、解压、清理完成！"
 
 --- 
 
-# 3. 下载COCO <h2 id="section3"> </h2>
+## 3. 下载COCO <h2 id="section3"> </h2>
 
 ```shell
 #!/bin/bash
@@ -151,7 +154,7 @@ echo "🎉 COCO2017 数据集下载、解压和清理完成！"
 
 ---
 
-# 4. 代理设置脚本 <h2 id="section4"> </h2>
+## 4. 代理设置脚本 <h2 id="section4"> </h2>
 
 ```shell
 #!/bin/bash
@@ -222,7 +225,7 @@ fi
 
 ---
 
-# 5. 容器内代理设置脚本 <h2 id="section5"> </h2>
+## 5. 容器内代理设置脚本 <h2 id="section5"> </h2>
 
 ```shell
 #!/bin/bash
@@ -282,7 +285,7 @@ fi
 
 <a href="https://heirenlop.github.io/%E5%B7%A5%E4%BD%9C%E8%AE%B0%E5%BD%95/proxy/">⬅返回proxy页面🔗</a>
 
-# 6. MonoGS和3DGS的conda 环境配置
+## 6. MonoGS和3DGS的conda 环境配置
 ```shell
 #!/bin/bash
 
@@ -307,3 +310,89 @@ fi
 
 ```
 
+## 7. 替换图片路径
+
+```bash
+#!/bin/bash
+
+# 设置要替换的路径
+LOCAL_PATH="/images/work-record"
+CDN_PREFIX="https://cdn.heirenlop.com/work-record"
+
+# 设置搜索目录
+TARGET_DIR="/home/heirenlop/workspace/heirenlop.github.io/content/work"
+
+# 查找并替换
+find "$TARGET_DIR" -type f \( -name "*.html" -o -name "*.md" \) | while read -r file; do
+  echo "🛠️  处理文件: $file"
+
+  # 使用 sed 替换 href 和 src 两个位置的路径
+  sed -i "s|href=\"$LOCAL_PATH|href=\"$CDN_PREFIX|g" "$file"
+  sed -i "s|src=\"$LOCAL_PATH|src=\"$CDN_PREFIX|g" "$file"
+done
+
+echo "✅ 全部替换完成。"
+
+```
+
+## 8. 替换视频路径
+
+```bash
+
+!/bin/bash
+
+# 要替换的旧 URL 和新 URL
+OLD_URL="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/"
+NEW_URL="https://cdn-v.heirenlop.com/"
+
+# 设置搜索目录
+TARGET_DIR="/home/heirenlop/workspace/heirenlop.github.io/content"  # 请修改为你
+的实际目录
+
+# 遍历所有 .html 和 .md 文件
+find "$TARGET_DIR" -type f \( -name "*.html" -o -name "*.md" \) | while read -r file; do
+  echo "🔁 替换文件: $file"
+  sed -i "s|$OLD_URL|$NEW_URL|g" "$file"
+done
+
+echo "✅ 全部替换完成。"
+
+```
+
+## 9. 配置 nvm + Node.js 20 
+```bash
+!/bin/bash
+
+# 设置清华源
+export NVM_NODEJS_ORG_MIRROR=https://mirrors.tuna.tsinghua.edu.cn/nodejs-release/
+export NVM_DIR="$HOME/.nvm"
+
+# 克隆 nvm 仓库
+git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+cd "$NVM_DIR" || exit
+
+# 切换到稳定版本
+git checkout v0.39.7
+
+# 加载 nvm
+. "$NVM_DIR/nvm.sh"
+
+# 写入 bashrc 自动加载
+if ! grep -q 'nvm.sh' ~/.bashrc; then
+  echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bashrc
+  echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> ~/.bashrc
+fi
+
+# 重新加载 bashrc
+source ~/.bashrc
+
+# 安装 Node.js 20 并设为默认
+nvm install 20
+nvm use 20
+nvm alias default 20
+
+# 输出版本确认
+echo "✅ nvm 版本: $(nvm --version)"
+echo "✅ node 版本: $(node -v)"
+echo "✅ npm 版本: $(npm -v)"
+```
