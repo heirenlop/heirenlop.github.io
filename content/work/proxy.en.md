@@ -32,7 +32,7 @@ tags = [
         <div class="container">
             <div class="image">
                 <figure>
-                    <img src="/images/work-record/proxy.png",alt="proxy",loading="lazy">
+                    <img src="https://cdn.heirenlop.com/work-record/proxy.png",alt="proxy",loading="lazy">
                     <figcaption>Ubuntu Proxy Setup</figcaption>
                 </figure>
             </div>

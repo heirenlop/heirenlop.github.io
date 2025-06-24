@@ -402,4 +402,12 @@ git config --global --list # 查看配置
 ---
 
 # tips
-![没图？](/images/work-record/github.png "github逻辑图")
+<div class="container">
+    <div class="image">
+        <figure>
+                <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/github.png">
+                <img src="https://cdn.heirenlop.com/work-record/github.png" loading="lazy">
+            </a>
+        </figure>
+    </div>
+</div>

@@ -45,8 +45,8 @@ tags = [
 <div class="container">
     <div class="image">
         <figure>
-            <a data-fancybox="gallery" href="/images/work-record/vscode1.png">
-            <img src="/images/work-record/vscode1.png",alt="设置1",loading="lazy">
+            <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/vscode1.png">
+            <img src="https://cdn.heirenlop.com/work-record/vscode1.png",alt="设置1",loading="lazy">
             </a>
             <figcaption>步骤1</figcaption>
         </figure>
@@ -55,8 +55,8 @@ tags = [
 <div class="container">
     <div class="image">
         <figure>
-                    <a data-fancybox="gallery" href="/images/work-record/vscode2.png">
-            <img src="/images/work-record/vscode2.png",alt="设置2",loading="lazy">
+                    <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/vscode2.png">
+            <img src="https://cdn.heirenlop.com/work-record/vscode2.png",alt="设置2",loading="lazy">
             </a>
             <figcaption>步骤2</figcaption>
         </figure>
@@ -223,8 +223,8 @@ tags = [
     <div class="container">
         <div class="image">
             <figure>
-                        <a data-fancybox="gallery" href="/images/work-record/vscode调试.png">
-                <img src="/images/work-record/vscode调试.png",alt=" ",loading="lazy">
+                        <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/vscode调试.png">
+                <img src="https://cdn.heirenlop.com/work-record/vscode调试.png",alt=" ",loading="lazy">
                 </a>
                 <figcaption>选择调试程序</figcaption>
             </figure>

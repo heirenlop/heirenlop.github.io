@@ -128,8 +128,8 @@ Traceback (most recent call last):
             <div class="container">
                 <div class="image">
                     <figure>
-                         <a data-fancybox="gallery" href="/images/work-record/MonoGS误差.png"  >
-              <img src="/images/work-record/MonoGS误差.png" loading="lazy">
+                         <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/MonoGS误差.png"  >
+              <img src="https://cdn.heirenlop.com/work-record/MonoGS误差.png" loading="lazy">
           </a>
                         <figcaption>均值轨迹误差</figcaption>
                     </figure>

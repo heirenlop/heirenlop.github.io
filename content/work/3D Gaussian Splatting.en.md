@@ -127,10 +127,10 @@ Conda installation process:
 <!-- 放在页面任意位置都可以（支持 PC + 手机滑动） -->
 <div class="twenty-container">
   <img class="twenty-before" 
-       src="/images/work-record/ori_water_bottle.png" 
+       src="https://cdn.heirenlop.com/work-record/ori_water_bottle.png" 
        alt="Original Image">
   <img class="twenty-after" 
-       src="/images/work-record/sbir_water_bottle.png" 
+       src="https://cdn.heirenlop.com/work-record/sbir_water_bottle.png" 
        alt="SBIR Image">
   <div class="twenty-handle"></div>
 </div>

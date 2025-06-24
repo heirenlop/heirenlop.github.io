@@ -21,7 +21,7 @@ Delete the Windows partition and allocate the freed space to Ubuntu
     <div class="container">
         <div class="image">
             <figure>
-                    <img src="/images/work-record/gparted.png">
+                    <img src="https://cdn.heirenlop.com/work-record/gparted.png">
                     <figcaption>Choose to enter Ubuntu</figcaption>
             </figure>
         </div>

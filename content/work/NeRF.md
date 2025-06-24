@@ -91,7 +91,7 @@ https://www.matthewtancik.com/nerf
 <div class="container">
     <div class="image">
         <figure>
-            <img src="/images/work-record/nerf_logic.png" alt="" loading="lazy">
+            <img src="https://cdn.heirenlop.com/work-record/nerf_logic.png" alt="" loading="lazy">
             <figcaption>Nerf逻辑图</figcaption>
         </figure>
     </div>

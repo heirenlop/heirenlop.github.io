@@ -187,8 +187,8 @@ play按钮的位置实在是太小
 <div class="container">
                 <div class="image">
                     <figure>
-                    <a data-fancybox="gallery" href="/images/work-record/suma++.png">
-                        <img src="/images/work-record/suma++.png">
+                    <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/suma++.png">
+                        <img src="https://cdn.heirenlop.com/work-record/suma++.png">
                         </a>
                         <figcaption>抽象play按钮</figcaption>
                     </figure>

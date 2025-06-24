@@ -21,8 +21,8 @@ tags = [
     <div class="container">
         <div class="image">
             <figure>
-                                     <a data-fancybox="gallery" href="/images/work-record/gparted.png">
-                    <img src="/images/work-record/gparted.png">
+                                     <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/gparted.png">
+                    <img src="https://cdn.heirenlop.com/work-record/gparted.png">
                     </a>
                     <figcaption>选地一个进入ubunut</figcaption>
             </figure>

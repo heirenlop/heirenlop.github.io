@@ -28,8 +28,8 @@ tags = [
     <div class="container">
                     <div class="image">
                         <figure>
-                                                             <a data-fancybox="gallery" href="/images/work-record/pytorch-conda.png">
-                            <img src="/images/work-record/pytorch-conda.png",alt="pytorch",loading="lazy">
+                                                             <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/pytorch-conda.png">
+                            <img src="https://cdn.heirenlop.com/work-record/pytorch-conda.png",alt="pytorch",loading="lazy">
                             </a>
                             <figcaption>pytorch-conda</figcaption>
                         </figure>

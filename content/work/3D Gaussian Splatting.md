@@ -139,10 +139,10 @@ tags = [
 <!-- 放在页面任意位置都可以（支持 PC + 手机滑动） -->
 <div class="twenty-container">
   <img class="twenty-before" 
-       src="/images/work-record/ori_water_bottle.png" 
+       src="https://cdn.heirenlop.com/work-record/ori_water_bottle.png" 
        alt="Original Image">
   <img class="twenty-after" 
-       src="/images/work-record/sbir_water_bottle.png" 
+       src="https://cdn.heirenlop.com/work-record/sbir_water_bottle.png" 
        alt="SBIR Image">
   <div class="twenty-handle"></div>
 </div>
@@ -251,8 +251,8 @@ tags = [
 <div class="container">
     <div class="image">
         <figure>
-                <a data-fancybox="gallery" href="/images/work-record/pointcloud_water_bottle.png">
-                <img src="/images/work-record/pointcloud_water_bottle.png" loading="lazy">
+                <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/pointcloud_water_bottle.png">
+                <img src="https://cdn.heirenlop.com/work-record/pointcloud_water_bottle.png" loading="lazy">
             </a>
             <figcaption>上图为SFM后初始点云，下图为30 000次迭代后点云</figcaption>
         </figure>

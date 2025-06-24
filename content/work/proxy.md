@@ -30,8 +30,8 @@ tags = [
   <div class="container">
       <div class="image">
           <figure>
-            <a data-fancybox="gallery" href="/images/work-record/proxy.png" >
-              <img src="/images/work-record/proxy.png" loading="lazy">
+            <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/proxy.png" >
+              <img src="https://cdn.heirenlop.com/work-record/proxy.png" loading="lazy">
           </a>
               <figcaption>ubuntu设置代理</figcaption>
           </figure>

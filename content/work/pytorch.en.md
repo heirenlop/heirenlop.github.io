@@ -24,7 +24,7 @@ tags = [
     <div class="container">
         <div class="image">
             <figure>
-                <img src="/images/work-record/pytorch-conda.png",alt="pytorch",loading="lazy">
+                <img src="https://cdn.heirenlop.com/work-record/pytorch-conda.png",alt="pytorch",loading="lazy">
                 <figcaption>pytorch-conda</figcaption>
             </figure>
         </div>

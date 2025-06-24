@@ -95,8 +95,8 @@ tags = [
 <div class="container">
                 <div class="image">
                     <figure>
-                    <a data-fancybox="gallery" href="/images/work-record/ping.png">
-                        <img src="/images/work-record/ping.png">
+                    <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/ping.png">
+                        <img src="https://cdn.heirenlop.com/work-record/ping.png">
                         </a>
                         <figcaption>丢包率</figcaption>
                     </figure>

@@ -65,8 +65,8 @@ python run.py configs/Replica/room0.yaml
 <div class="container">
     <div class="image">
         <figure>
-          <a data-fancybox="gallery" href="/images/work-record/wandb1.png" data-lightbox="point-slam">
-              <img src="/images/work-record/wandb1.png" loading="lazy">
+          <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/wandb1.png" data-lightbox="point-slam">
+              <img src="https://cdn.heirenlop.com/work-record/wandb1.png" loading="lazy">
           </a>
         </figure>
     </div>
@@ -129,8 +129,8 @@ python run.py configs/Replica/room0.yaml
 <div class="container">
     <div class="image">
         <figure>
-          <a data-fancybox="gallery" href="/images/work-record/wandb2.png" data-lightbox="point-slam">
-              <img src="/images/work-record/wandb2.png" loading="lazy">
+          <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/wandb2.png" data-lightbox="point-slam">
+              <img src="https://cdn.heirenlop.com/work-record/wandb2.png" loading="lazy">
           </a>
         </figure>
     </div>
@@ -173,8 +173,8 @@ c. RGB Residual：
 <div class="container">
     <div class="image">
         <figure>
-          <a data-fancybox="gallery" href="/images/work-record/wandb3.jpg" data-lightbox="point-slam">
-              <img src="/images/work-record/wandb3.jpg" loading="lazy">
+          <a data-fancybox="gallery" href="https://cdn.heirenlop.com/work-record/wandb3.jpg" data-lightbox="point-slam">
+              <img src="https://cdn.heirenlop.com/work-record/wandb3.jpg" loading="lazy">
           </a>
         </figure>
     </div>
