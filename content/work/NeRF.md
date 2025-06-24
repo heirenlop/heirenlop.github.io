@@ -65,7 +65,7 @@ tags = [
    PSNR=32 | Iter=150000 | LOSS= 0.0012
    <div class="container" style="display: flex; justify-content: center;">
      <video controls style="max-width:100%; height:auto;">
-       <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
+       <source src="https://cdn-v.heirenlop.com/blender_paper_lego_spiral_200000_rgb.mp4" type="video/mp4">
        您的浏览器不支持 HTML5 视频播放。
      </video>
    </div>
@@ -74,7 +74,7 @@ tags = [
     PSNR=29 | Iter=200000 | LOSS= 0.0032
    <div class="container" style="display: flex; justify-content: center;">
      <video controls style="max-width:100%; height:auto;">
-       <source src="https://pub-5b6dc435fbf3499ca474b4b6941cb647.r2.dev/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
+       <source src="https://cdn-v.heirenlop.com/fern_test_spiral_200000_rgb.mp4" type="video/mp4">
        您的浏览器不支持 HTML5 视频播放。
      </video>
    </div>
