@@ -20,24 +20,6 @@
                 {{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
               </time>
             </span>
-            {{/*  <span class="reading-time">
-              <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              {{ if or (eq .Lang "zh") (eq .Lang "zh-CN") }}
-                {{ i18n "reading_time" (div (countwords .Plain) 300) }}
-              {{ else }}
-                {{ i18n "reading_time" .ReadingTime }}
-              {{ end }}
-            </span>
-            
-            <span class="word-count" style="margin-left: 1rem;">
-              <i class="fa fa-regular fa-message" style="color: #ff8e2d;"></i>
-              本文有 {{ .WordCount }} 个字
-              <i class="fa fa-regular fa-clock" style="color: #ff8e2d;"></i>
-              需要花费 {{ .ReadingTime }} 分钟阅读
-            </span>  */}}
-            
-          </div>
-          {{/*  {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}  */}}
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .GetTerms "tags" }}{{ partial "taxonomy/tags.html" . }}{{ end }}
         </div>
@@ -49,6 +31,7 @@
         {{ end }}
         {{ .Content }}
       </div>
+
       <footer>
         {{ partial "posts/series.html" . }}
         {{ partial "posts/disqus.html" . }}
@@ -59,8 +42,14 @@
         {{ partial "posts/telegram.html" . }}
         {{ partial "posts/cusdis.html" . }}
       </footer>
-    </article>
-
+      <hr style="margin-top: 2rem; border: none; border-top: 1px solid #ccc;" />
+    
+    {{ partial "share.html" . }}
+    <div style="margin-top: 3rem;"></div>
+    {{ partial "like.html" . }}
     {{ partial "posts/math.html" . }}
+    <div style="margin-top: 3rem;"></div>
+    {{ partial "comments.html" . }}
+  </article>
   </section>
 {{ end }}

@@ -20,16 +20,6 @@
                 {{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
               </time>
             </span>
-            {{/*  <span class="reading-time">
-              <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              {{ if eq .Lang "zh-CN" }}
-                {{ i18n "reading_time" (div (countwords .Plain) 300) }}
-              {{ else }}
-                {{ i18n "reading_time" .ReadingTime }}
-              {{ end }}
-            </span>  */}}
-          </div>
-          {{/*  {{ with .GetTerms "authors" }}{{ partial "taxonomy/authors.html" . }}{{ end }}  */}}
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .GetTerms "tags" }}{{ partial "taxonomy/tags.html" . }}{{ end }}
         </div>
@@ -42,7 +32,6 @@
         {{ .Content }}
       </div>
 
-
       <footer>
         {{ partial "posts/series.html" . }}
         {{ partial "posts/disqus.html" . }}
@@ -53,9 +42,14 @@
         {{ partial "posts/telegram.html" . }}
         {{ partial "posts/cusdis.html" . }}
       </footer>
-    </article>
-
+      <hr style="margin-top: 2rem; border: none; border-top: 1px solid #ccc;" />
+    
+    {{ partial "share.html" . }}
+    <div style="margin-top: 3rem;"></div>
+    {{ partial "like.html" . }}
     {{ partial "posts/math.html" . }}
+    <div style="margin-top: 3rem;"></div>
     {{ partial "comments.html" . }}
+  </article>
   </section>
 {{ end }}

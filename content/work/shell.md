@@ -20,6 +20,7 @@ tags = [
 - [7. 替换图片路径](#7-替换图片路径)
 - [8. 替换视频路径](#8-替换视频路径)
 - [9. 配置 nvm + Node.js 20](#9-配置-nvm--nodejs-20)
+- [10. 修改pdf尺寸为标准A4(需要 ghostscript)](#10-修改pdf尺寸为标准a4需要-ghostscript)
 
 
 ---
@@ -395,4 +396,41 @@ nvm alias default 20
 echo "✅ nvm 版本: $(nvm --version)"
 echo "✅ node 版本: $(node -v)"
 echo "✅ npm 版本: $(npm -v)"
+```
+
+## 10. 修改pdf尺寸为标准A4(需要 ghostscript)
+
+```bash
+#!/bin/bash
+
+# 📁 要处理的目录（当前目录）
+TARGET_DIR="./"
+
+# 📂 输出目录（可选）
+OUTPUT_DIR="./a4_output"
+mkdir -p "$OUTPUT_DIR"
+
+# 📐 A4尺寸（单位：points）
+# A4 = 595pt x 842pt（210mm x 297mm）
+A4_WIDTH=595
+A4_HEIGHT=842
+
+# 🔁 遍历所有 PDF 文件
+find "$TARGET_DIR" -maxdepth 1 -type f -name "*.pdf" | while read -r file; do
+  filename=$(basename "$file")
+  output_file="$OUTPUT_DIR/${filename%.pdf}_A4.pdf"
+  echo "🛠️   正在处理: $filename"
+
+  gs -o "$output_file" \
+     -sDEVICE=pdfwrite \
+     -dCompatibilityLevel=1.4 \
+     -dPDFFitPage \
+     -dFIXEDMEDIA \
+     -dDEVICEWIDTHPOINTS=$A4_WIDTH \
+     -dDEVICEHEIGHTPOINTS=$A4_HEIGHT \
+     "$file"
+done
+
+echo "✅ 所有文件已缩放并保存至: $OUTPUT_DIR"
+
 ```
