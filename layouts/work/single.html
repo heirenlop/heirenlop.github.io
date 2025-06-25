@@ -43,13 +43,15 @@
         {{ partial "posts/cusdis.html" . }}
       </footer>
       <hr style="margin-top: 2rem; border: none; border-top: 1px solid #ccc;" />
-    
+      
+      {{ partial "donations.html" . }}
       {{ partial "like.html" . }}
       <div style="margin-top: 3rem;"></div>
       {{ partial "share.html" . }}
       {{ partial "posts/math.html" . }}
       <div style="margin-top: 3rem;"></div>
       {{ partial "comments.html" . }}
+      
   </article>
   </section>
 {{ end }}

@@ -10,6 +10,7 @@ tags = [
     "新西兰"
 ]
 url = "/other/nz-visa-diy/"
+show_donation = true
 +++
 
 ---
@@ -76,3 +77,5 @@ url = "/other/nz-visa-diy/"
 - <a href="/file/cover-letter template.pdf" download style="padding: 8px 16px; background: #007BFF; color: white; border-radius: 5px; text-decoration: none;">📎 下载 Cover Letter 模板</a>
 
 - <a href="/file/Relationship evidence template.pptx" download style="padding: 8px 16px; background: #007BFF; color: white; border-radius: 5px; text-decoration: none;">📎 下载 realtionship evidence 模板</a>
+
+
