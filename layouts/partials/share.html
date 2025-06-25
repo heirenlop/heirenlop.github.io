@@ -5,26 +5,83 @@
       分享 <span style="font-size: 16px; opacity: 0.6;">(Share)</span>
     </span>
   </div>
-      
- 
-      
-    <div class="share-box">
-      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="white-space: nowrap;">
-        <a class="a2a_button_sina_weibo"  title="分享到微博 / Share to Weibo" style="margin-right: 4px;"></a>
-        <a class="a2a_button_telegram" title="分享到电报 / Share to Telegram" style="margin-right: 4px;"></a>
-        <a class="a2a_button_x" title="分享到推特 / Share to X" style="margin-right: 4px;"></a>
-        <a class="a2a_button_facebook" title="分享到脸书 / Share to Facebook" style="margin-right: 4px;"></a>
-        <a class="a2a_button_copy_link" title="点击复制链接 / Click to copy the link"></a>
-      </div>
-    </div>
-        
-    <!-- 分享说明 -->
-    <div style="font-size: 1.3rem; color: #888; margin-top: 0.5rem;">
-      如需转载/引用，请注明出处。商业转载请联系作者授权。(Please indicate the source when sharing. Contact for commercial use.）
+
+  <!-- 分享按钮 -->
+  <div class="share-box">
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="white-space: nowrap;">
+      <!-- 微信二维码按钮 -->
+      <a href="javascript:void(0);" onclick="showWeChatQR()" title="分享到微信 / Share to WeChat" style="margin-right: 4px;">
+        <img src="/images/wechat-icon.png" alt="WeChat" style="width: 32px; vertical-align: middle;" />
+      </a>
+      <a class="a2a_button_sina_weibo" title="分享到微博 / Share to Weibo" style="margin-right: 4px;"></a>
+      <a class="a2a_button_telegram" title="分享到电报 / Share to Telegram" style="margin-right: 4px;"></a>
+      <a class="a2a_button_x" title="分享到推特 / Share to X" style="margin-right: 4px;"></a>
+      <a class="a2a_button_facebook" title="分享到脸书 / Share to Facebook" style="margin-right: 4px;"></a>
+      <a class="a2a_button_copy_link" title="复制链接 / Copy link" style="margin-right: 4px;"></a>
+
     </div>
   </div>
 
-  
+  <!-- 分享说明 -->
+  <div style="font-size: 1.3rem; color: #888; margin-top: 0.5rem;">
+    如需转载/引用，请注明出处。商业转载请联系作者授权。<br/>
+    (Please indicate the source when sharing. Contact for commercial use.)
+  </div>
+
+<!-- 微信二维码弹窗 -->
+<div id="wechat-qrcode-popup" style="
+  display: none;
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ebebeb;
+  padding: 24px 30px;
+  z-index: 9999;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 300px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #353535;
+">
+  <div id="wechat-qrcode" style="margin-bottom: 16px;"></div>
+  <p style="font-size: 16px; margin-bottom: 20px;">📱 请用微信扫一扫分享</p>
+  <button onclick="hideWeChatQR()" style="
+    padding: 8px 16px;
+    background-color: #1aad19;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  " onmouseover="this.style.backgroundColor='#179b16'" onmouseout="this.style.backgroundColor='#1aad19'">
+    关闭
+  </button>
+</div>
+
   <!-- AddToAny 脚本 -->
   <script async src="https://static.addtoany.com/menu/page.js"></script>
-  
+
+  <!-- 二维码生成库 -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+  <!-- 二维码逻辑 -->
+  <script>
+    function showWeChatQR() {
+      const url = window.location.href;
+      const qrContainer = document.getElementById("wechat-qrcode");
+      qrContainer.innerHTML = "";
+      new QRCode(qrContainer, {
+        text: url,
+        width: 200,
+        height: 200,
+      });
+      document.getElementById("wechat-qrcode-popup").style.display = "block";
+    }
+
+    function hideWeChatQR() {
+      document.getElementById("wechat-qrcode-popup").style.display = "none";
+    }
+  </script>
+</div>
