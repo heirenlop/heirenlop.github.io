@@ -34,7 +34,8 @@ info = [""]
 avatarURL = "images/avatar.jpg"
 # favicon = "images/favicon.ico"
 # gravatar = "13122356672@163.com"
-images = ["images/avatar.jpg"]
+# 分享时显示的图片
+images = ["images/logo.svg"]
 # 日期格式
 dateFormat = "2006-01-02"
 since = 2024
