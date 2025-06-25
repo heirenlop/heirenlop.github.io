@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Clash for Linux"
+url = "/work/clash-for-linux/"
 date = "2025-02-06"
 categories = [
     "软件"

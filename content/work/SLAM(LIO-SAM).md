@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "LIO-SAM"
+url = "/work/lio-sam/"
 date = "2024-12-12"
 categories = [
     "SLAM"

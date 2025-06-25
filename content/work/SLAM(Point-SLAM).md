@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Point-SLAM"
+url = "/work/point-slam/"
 date = "2024-12-31"
 categories = [
     "SLAM"

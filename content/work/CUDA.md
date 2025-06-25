@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "CUDA"
+url = "/work/cuda/"
 date = "2025-01-23"
 categories = [
     "开发工具"

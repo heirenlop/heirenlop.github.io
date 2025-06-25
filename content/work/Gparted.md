@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Gparted"
+url = "/work/gparted/"
 date = "2025-01-19"
 categories = [
     "软件"

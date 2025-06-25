@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "NTFS<-->EXT4"
+url = "/work/ntfs-ext4/"
 date = "2025-01-15"
 categories = [
     "格式转换"

@@ -9,6 +9,8 @@ series = [""]
 tags = [
     "cloudflare"
 ]
+url = "/other/cloudflare/"
+
 +++
 
 ## 1. 参考

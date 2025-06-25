@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Shell"
+url = "/work/shell/"
 date = "2025-06-23"
 categories = [
     "脚本"

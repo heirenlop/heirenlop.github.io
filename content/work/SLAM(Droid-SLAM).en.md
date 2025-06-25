@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Droid-SLAM"
+url = "/work/en/droid-slam/"
 date = "2024-12-12"
 categories = [
     "SLAM"

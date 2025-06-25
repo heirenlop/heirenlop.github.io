@@ -9,6 +9,8 @@ series = [""]
 tags = [
     
 ]
+url = "/other/hugo/"
+
 +++
 
 

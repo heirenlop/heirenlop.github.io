@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Conda"
+url = "/work/conda/"
 date = "2025-01-18"
 categories = [
     "开发工具"

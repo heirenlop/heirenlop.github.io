@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Docker"
+url = "/work/docker/"
 date = "2024-12-03"
 categories = [
     "开发工具"

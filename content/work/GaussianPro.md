@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "GaussianPro"
+url = "/work/gaussianpro/"
 date = "2025-04-15"
 categories = [
     "三维重建"

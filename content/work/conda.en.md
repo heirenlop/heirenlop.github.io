@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Conda"
+url = "/work/en/conda/"
 date = "2025-01-18"
 categories = [
     "Development Tools"

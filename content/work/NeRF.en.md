@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Neural Radiance Fields"
+url = "/work/en/neural-radiance-fields/"
 date = "2025-01-20"
 categories = [
     "Computer Vision"

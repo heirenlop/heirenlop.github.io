@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Github"
+url = "/work/en/github/"
 date = "2024-10-28"
 categories = [
     "Development Tools"

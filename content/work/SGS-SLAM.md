@@ -1,7 +1,7 @@
-
 +++
 authors = ["李佳潞"]
 title = "SGS-SLAM"
+url = "/work/SGS-SLAM/"
 date = "2025-03-15"
 categories = [
     "SLAM"

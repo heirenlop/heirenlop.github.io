@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "python"
+url = "/work/python/"
 date = "2025-03-12"
 categories = [
     "python"

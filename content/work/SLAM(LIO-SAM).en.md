@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "LIO-SAM"
+url = "/work/en/lio-sam/"
 date = "2024-12-12"
 categories = [
     "SLAM"

@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "NeRF-SLAM"
+url = "/work/nerf-slam/"
 date = "2025-01-23"
 categories = [
     "SLAM"

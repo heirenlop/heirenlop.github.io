@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Github"
+url = "/work/github/"
 date = "2024-10-28"
 categories = [
     "开发工具"

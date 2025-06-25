@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Shell"
+url = "/work/en/shell/"
 date = "2025-01-23"
 categories = [
     "Scripting"

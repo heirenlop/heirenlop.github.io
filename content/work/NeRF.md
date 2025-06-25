@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Neural Radiance Fields"
+url = "/work/neural-radiance-fields/"
 date = "2025-01-20"
 categories = [
     "三维重建"

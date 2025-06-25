@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Proxy"
+url = "/work/en/proxy/"
 date = "2025-02-11"
 categories = [
     "Software"

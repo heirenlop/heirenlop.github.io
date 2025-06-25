@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Clash for Linux"
+url = "/work/en/clash-for-linux/"
 date = "2025-02-06"
 categories = [
     "Software"

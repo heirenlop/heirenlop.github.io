@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "MonoGS"
+url = "/work/monogs/"
 date = "2025-02-13"
 categories = [
     "SLAM"

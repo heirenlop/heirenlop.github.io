@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "NTFS<-->EXT4"
+url = "/work/en/ntfs-ext4/"
 date = "2025-01-15"
 categories = [
     "Format Conversion"

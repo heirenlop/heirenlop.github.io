@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Pytorch"
+url = "/work/pytorch/"
 date = "2025-01-03"
 categories = [
     "库"

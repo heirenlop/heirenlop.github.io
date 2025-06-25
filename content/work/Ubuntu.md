@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Ubuntu"
+url = "/work/ubuntu/"
 date = "2024-10-24"
 categories = [
     "系统"

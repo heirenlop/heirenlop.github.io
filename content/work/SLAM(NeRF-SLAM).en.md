@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "NeRF-SLAM"
+url = "/work/en/nerf-slam/"
 date = "2025-01-23"
 categories = [
     "SLAM"

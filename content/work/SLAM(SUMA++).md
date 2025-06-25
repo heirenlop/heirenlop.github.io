@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "SUMA++"
+url = "/work/suma-plus-plus/"
 date = "2024-12-11"
 categories = [
     "SLAM"

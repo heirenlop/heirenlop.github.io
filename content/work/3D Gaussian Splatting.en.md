@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "3D Gaussian Splatting"
+url = "/work/en/3d-gaussian-splatting/"
 date = "2025-01-20"
 categories = [
     "Computer Vision"

@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Droid-SLAM"
+url = "/work/droid-slam/"
 date = "2024-12-12"
 categories = [
     "SLAM"

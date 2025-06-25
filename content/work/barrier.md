@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Barrier"
+url = "/work/barrier/"
 date = "2024-12-02"
 categories = [
     "软件"

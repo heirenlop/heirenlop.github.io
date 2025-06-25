@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Vscode"
+url = "/work/vscode/"
 date = "2024-10-24"
 categories = [
     "软件"

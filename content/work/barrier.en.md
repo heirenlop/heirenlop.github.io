@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Barrier"
+url = "/work/en/barrier/"
 date = "2024-12-02"
 categories = [
     "Software"

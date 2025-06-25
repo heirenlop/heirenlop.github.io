@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "3D Gaussian Splatting"
+url = "/work/3d-gaussian-splatting/"
 date = "2025-01-20"
 categories = [
     "三维重建"

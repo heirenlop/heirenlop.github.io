@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "Gaussian-SLAM"
+url = "/work/gaussian-slam/"
 date = "2025-01-19"
 categories = [
     "SLAM"

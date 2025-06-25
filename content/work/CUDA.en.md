@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "CUDA"
+url = "/work/en/cuda/"
 date = "2025-01-23"
 categories = [
     "Development Tools"

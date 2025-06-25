@@ -1,6 +1,7 @@
 +++
 authors = ["李佳潞"]
 title = "proxy"
+url = "/work/proxy/"
 date = "2025-02-11"
 categories = [
     "软件"

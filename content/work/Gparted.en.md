@@ -1,6 +1,7 @@
 +++
 authors = ["Li Jialu"]
 title = "Gparted"
+url = "/work/en/gparted/"
 date = "2025-01-19"
 categories = [
     "Software"
