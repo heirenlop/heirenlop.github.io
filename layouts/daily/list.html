@@ -3,19 +3,57 @@
 {{ end }}
 {{ define "content" }}
   <section class="container list">
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="{{ .Permalink | safeURL }}">
-          {{ title (i18n (lower .Title)) | default .Title }}
-        </a>
-      </h1>
-    </header>
-    {{ .Content }}
-    <ul>
-      {{- range .Paginator.Pages -}}
-        {{- .Render "li" -}}
-      {{- end -}}
-    </ul>
+    <style>
+      .travel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 2rem 0;
+      }
+      .travel-card {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        border-radius: 10px;
+        color: rgb(255, 254, 254);
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      }
+      .travel-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(205, 204, 204, 0.2));
+      }
+      .travel-card-content {
+        position: absolute;
+        bottom: 0px;
+        left: 10px;
+        z-index: 2;
+      }
+      .travel-card h2 {
+        font-size: 18px;
+        margin: 0 0 -8px 0; 
+        color: white
+      ;
+      }
+      .travel-card p {
+        margin: 0;
+        font-size: 14px;
+      }
+      </style>
+      
+      <div class="travel-grid">
+        {{ range .Paginator.Pages }}
+          <a href="{{ .RelPermalink }}" class="travel-card" style="background-image: url('{{ with .Params.cover }}{{ . }}{{ else }}/images/default.jpg{{ end }}')">
+            <div class="travel-card-content">
+              <h2>{{ .Title }}</h2>
+              <p>📅 {{ .Date.Format "2006-01-02" }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </div>
 
     {{ partial "pagination.html" . }}
   </section>
