@@ -2,7 +2,7 @@
 title = "为什么用 VISA 信用卡刷外币更便宜？"
 date = "2025-05-29"
 categories = ["常识"]
-tags = ["VISA", "跨境支付", "外汇"]
+tags = ["VISA", "外汇"]
 series = [""]
 url = "/other/visa-vs-unionpay/"
 +++
