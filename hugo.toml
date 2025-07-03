@@ -25,10 +25,8 @@ noClasses = false
 author = "李佳潞"
 latestPostLabel = "📝 最新文章："
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
-# description = "John Doe's personal website"
-description = "Jialu Li's personal website"
-keywords = "blog,developer,personal"
-# info = ["Full Stack DevOps", "Magician"]
+description = "李佳潞的博客，记录人工智能、博士记录、旅行分享、音乐分享等内容。"
+keywords = "AI, 3D Gaussian Splatting, SLAM, 博士生活, 技术博客, 数字游民, 海外生活, Hugo 博客, 移民新西兰, 信息差，旅行，音乐"
 info = [""]
 #240 * 240px
 avatarURL = "images/avatar.jpg"
