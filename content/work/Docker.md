@@ -27,7 +27,7 @@ tags = [
 - [10. Docker共享内存](#10-docker共享内存)
 - [11. 动态挂载宿主机usb设备](#11-动态挂载宿主机usb设备)
 - [12. 内存管理](#12-内存管理)
-  - [13. docker容器打包](#13-docker容器打包)
+- [13. docker容器打包](#13-docker容器打包)
 - [tips](#tips)
 
 
@@ -512,7 +512,7 @@ docker container prune # 清理未使用的容器 --- 可选
 
 ---
 
-## 13. docker容器打包
+# 13. docker容器打包
 
 ```bash
 机器一：
