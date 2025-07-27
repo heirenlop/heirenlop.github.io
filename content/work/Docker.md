@@ -3,6 +3,7 @@ authors = ["李佳潞"]
 title = "Docker"
 url = "/work/docker/"
 date = "2024-12-03"
+lastmod = "2025-07-21"
 categories = [
     "开发工具"
 ]
@@ -26,6 +27,7 @@ tags = [
 - [10. Docker共享内存](#10-docker共享内存)
 - [11. 动态挂载宿主机usb设备](#11-动态挂载宿主机usb设备)
 - [12. 内存管理](#12-内存管理)
+- [13. docker容器打包](#13-docker容器打包)
 - [tips](#tips)
 
 
@@ -509,6 +511,17 @@ docker container prune # 清理未使用的容器 --- 可选
 ```
 
 ---
+
+# 13. docker容器打包
+
+```bash
+机器一：
+docker commit 容器名a 镜像名b:backup # 打包容器a为镜像b
+docker save -o b.tar b:backup # 保存镜像为tar，文件在当前目录下
+cp b.tar /mnt/d/b.tar # 复制镜像到其他机器
+机器二：
+docker load -i b.tar # 加载镜像
+```
 
 # tips
 通过docker运行hugo博客
