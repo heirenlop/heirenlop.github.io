@@ -13,6 +13,8 @@ layout = "about"
 
 - Travel Journals (2019 — Present)
 
+- Music Journal (2024 – Present)
+
 ---
 
 📚 **Site Index:**

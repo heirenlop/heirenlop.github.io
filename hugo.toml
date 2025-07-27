@@ -212,7 +212,7 @@ url = "resume/"
 
 [[languages.zh-cn.menu.main]]
 name = "工作"
-weight = 5
+weight = 6
 url = "work/"
 
 [[languages.zh-cn.menu.main]]
@@ -227,10 +227,13 @@ url = "daily/"
 
 [[languages.zh-cn.menu.main]]
 name = "随笔"
-weight = 6
+weight = 7
 url = "other/"
 
-
+[[languages.zh-cn.menu.main]]
+name = "音乐"
+weight = 5
+url = "music/"
 
 #-----------------------------------set EN--------------------------------------
 [languages.en]
@@ -256,7 +259,7 @@ url = "resume/"
 
 [[languages.en.menu.main]]
 name = "Work Record"
-weight = 5
+weight = 6
 url = "work/"
 
 [[languages.en.menu.main]]
@@ -271,8 +274,13 @@ url = "daily/"
 
 [[languages.en.menu.main]]
 name = "Notes"
-weight = 6
+weight = 7
 url = "other/"
+
+[[languages.en.menu.main]]
+name = "Music"
+weight = 5
+url = "music/"
 
 #----------------------------------------------------------
 

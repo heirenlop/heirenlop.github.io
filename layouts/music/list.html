@@ -1,0 +1,83 @@
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  <section class="container list">
+    <style>
+      .travel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 2rem 0;
+      }
+      
+      .travel-card {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        border-radius: 10px;
+        color: rgb(255, 254, 254);
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease-in-out;  /* ✨ 平滑过渡 */
+      }
+      
+      .travel-card:hover {
+        transform: scale(1.03);  /* 🔍 轻微放大 */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);  /* ✨ 更重阴影 */
+      }
+      
+      .travel-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(205, 204, 204, 0.2));
+        transition: background 0.3s ease-in-out;  /* 遮罩变暗动画 */
+      }
+      
+      .travel-card:hover::before {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(205, 204, 204, 0.1));  /* 🌫️ 更暗遮罩 */
+      }
+      
+      .travel-card-content {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        z-index: 2;
+        transition: transform 0.3s ease-in-out;
+      }
+      
+      .travel-card:hover .travel-card-content {
+        transform: translateY(-5px);  /* 📜 悬停时文字上浮 */
+      }
+      
+      .travel-card h2 {
+        font-size: 18px;
+        margin: 0 0 6px 0;  /* 更贴近下方 p */
+        color: white;
+        line-height: 1.2;
+      }
+      
+      .travel-card p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.2;
+      }
+      
+      </style>
+      
+      <div class="travel-grid">
+        {{ range .Paginator.Pages }}
+          <a href="{{ .RelPermalink }}" class="travel-card" style="background-image: url('{{ with .Params.cover }}{{ . }}{{ else }}/images/default.jpg{{ end }}')">
+            <div class="travel-card-content">
+              <h2>{{ .Title }}</h2>
+              <p>📅 {{ .Date.Format "2006-01-02" }}</p>
+            </div>
+          </a>
+        {{ end }}
+      </div>
+
+    {{ partial "pagination.html" . }}
+  </section>
+{{ end }}
