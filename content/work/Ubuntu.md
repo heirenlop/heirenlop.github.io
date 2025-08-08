@@ -143,6 +143,10 @@ tags = [
     ```bash
     zip -r my_project.zip my_project/
     ```
+19. 强制刷新页面
+    ```bash
+    ctrl + shift + r
+    ```
 ---
 
 # 三. 常用软件

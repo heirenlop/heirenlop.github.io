@@ -1,9 +1,9 @@
 +++
 authors = ["李佳潞"]
-title = "cloudflare部署"
+title = "cloudflare部署前端"
 date = "2025-05-17"
 categories = [
-    "博客"
+    "博客部署"
 ]
 series = [""]
 tags = [
