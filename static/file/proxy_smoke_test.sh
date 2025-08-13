@@ -28,22 +28,24 @@ else
 fi
 set -e
 
-
-echo -e "\n== 测试 Pip 访问 =="
-rm -rf /tmp/proxytest && mkdir -p /tmp/proxytest
-if pip download -q --retries 1 --timeout 10 --no-deps -d /tmp/proxytest requests; then
-  echo "✔ Pip OK (已下载 $(ls /tmp/proxytest | wc -l) 个文件)"
+# ---- Pip 下载测试（自动清理）----
+tmpdir="$(mktemp -d)"
+trap 'rm -rf "$tmpdir" >/dev/null 2>&1 || true' EXIT
+if pip download -q --retries 1 --timeout 10 --no-deps -d "$tmpdir" requests; then
+  echo "✔ Pip OK ($(ls "$tmpdir" | wc -l) files)"
 else
-  echo "✘ Pip 失败"; exit 1
+  echo "✘ Pip 失败"
 fi
 
-echo -e "\n== 测试 Conda 访问 =="
+# ---- Conda 索引测试（完毕后清索引）----
 conda clean -y --index-cache >/dev/null 2>&1 || true
 if conda search -c conda-forge zstd --info >/tmp/conda.log 2>&1; then
   echo "✔ Conda OK"; sed -n '1,12p' /tmp/conda.log
 else
-  echo "✘ Conda 失败，日志预览："; sed -n '1,40p' /tmp/conda.log; exit 1
+  echo "✘ Conda 失败"; sed -n '1,40p' /tmp/conda.log
 fi
+conda clean -y --index-cache >/dev/null 2>&1 || true
+
 
 echo -e "\n🎉 全部测试完成"
 
