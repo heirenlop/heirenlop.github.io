@@ -9,7 +9,7 @@ series = [""]
 tags = [
     "cloudflare"
 ]
-url = "/other/cloudflare/"
+url = "/other/en/cloudflare/"
 +++
 - [1. Reference](#1-reference)
 - [2. My Blog Deployment Setup](#2-my-blog-deployment-setup)
