@@ -3,5 +3,5 @@ public/
 
 # Hugo cache directory
 # resources/_gen/
-*.en.md
+# *.en.md
 *.en.html
