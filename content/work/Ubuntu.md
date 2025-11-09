@@ -2,7 +2,7 @@
 authors = ["李佳潞"]
 title = "Ubuntu"
 url = "/work/ubuntu/"
-date = "2024-10-24"
+date = "2025-11-09"
 categories = [
     "系统"
 ]
@@ -12,18 +12,25 @@ tags = [
 ]
 +++
 
-- [一. 烧录镜像](#一-烧录镜像)
-- [二. 常用指令](#二-常用指令)
-- [七. 网速测试](#七-网速测试)
-- [九. 关闭升级提示](#九-关闭升级提示)
-- [十. 备份系统rsync](#十-备份系统rsync)
-- [十一. 创建桌面快捷方式](#十一-创建桌面快捷方式)
-- [十二. 修改fcitx输入法候选框大小](#十二-修改fcitx输入法候选框大小)
+
+- [1. 烧录镜像](#1-烧录镜像)
+- [2. 常用指令](#2-常用指令)
+- [3. 常用软件](#3-常用软件)
+- [4. USB设备挂载问题](#4-usb设备挂载问题)
+- [5. Docker自动补全](#5-docker自动补全)
+- [6. 取消升级提示](#6-取消升级提示)
+- [7. 网速测试](#7-网速测试)
+- [8. 关闭升级提示](#8-关闭升级提示)
+- [9. 备份系统rsync](#9-备份系统rsync)
+- [10. 创建桌面快捷方式](#10-创建桌面快捷方式)
+- [11. 修改fcitx输入法候选框大小](#11-修改fcitx输入法候选框大小)
+
 
 
 ---
 
-# 一. 烧录镜像
+
+## 1. 烧录镜像
 
 1. U盘烧录软件：rufus
     [rufus](https://en.softonic.com/download/rufus/windows/post-download)
@@ -37,119 +44,127 @@ tags = [
 
 ---
 
-# 二. 常用指令
+## 2. 常用指令
 
 1. 查看通信以及丢包率
-    ```bash
-    ping #ip地址
-    ```
+```bash
+ping #ip地址
+```
 
 2. 查看空间大小
-    ```bash
-    df -h # 总览盘大小
-    du -sh /path/to/file # 文件夹大小
-    ```
+```bash
+df -h # 总览盘大小
+du -sh /path/to/file # 文件夹大小
+```
 
 3. 文件夹赋权限
-    ```bash
-    sudo chmod -R 777 #文件夹路径
-    ```
-    修改文件夹的拥有者
-    ```bash
-    sudo chown -R <user>:<user> #文件路径,如sudo chown -R heirenlop:heirenlop ./workspace
-    ```
+```bash
+sudo chmod -R 777 #文件夹路径
+```
+修改文件夹的拥有者
+```bash
+sudo chown -R <user>:<user> #文件路径,如sudo chown -R heirenlop:heirenlop ./workspace
+```
 
 4. 查看usb信息
-   (1) 查看usb设备
-   ```bash
-   lsusb
-   ```
-   (2) 查看usb设备详细信息
-   ```bash
-   lsusb -v
-   ```
-   (3) 查看硬件设备内核信息，用来调试
-   ```bash
-   dmesg | grep -i usb
-   ```
+(1) 查看usb设备
+```bash
+lsusb
+```
+(2) 查看usb设备详细信息
+```bash
+lsusb -v
+```
+(3) 查看硬件设备内核信息，用来调试
+```bash
+dmesg | grep -i usb
+```
 
 5. 查找历史指令并高亮显示
-   ```bash
-   history | grep -i <keyword>
-   ```
+```bash
+history | grep -i <keyword>
+```
 
 6. 查找文件
-   ```bash
-   locate filename
-   ```
-   忽略filename大小写
-   ```bash
-   locate -i filename
-   ```
+```bash
+locate filename
+```
+忽略filename大小写
+```bash
+locate -i filename
+```
 
 7. 查看GPU占用率
-   ```bash
-   watch -n 1 nvidia-smi #每隔一秒刷新
-   ```
+```bash
+watch -n 1 nvidia-smi #每隔一秒刷新
+```
 8. 流编辑器
-   ```bash
-   sed -i 's/<old>/<new>/g' filename #修改filename文件内old为new
+```bash
+sed -i 's/<old>/<new>/g' filename #修改filename文件内old为new
 9.  安装程序
-    ```bash
-    sudo apt install -y <package> # -y 自动确认所有提示
-    ``` 
+```bash
+sudo apt install -y <package> # -y 自动确认所有提示
+``` 
 10. 查看图片分辨率
-    ```bash
-    file image.jpg 
-    ```
+```bash
+file image.jpg 
+```
 11. 查看共享内存shm大小
-    ```bash
-    df -h /dev/shm 
-    # docker内输入
-    shm              64M  412K   64M   1% /dev/shm
-    # 宿主机内输入
-    tmpfs           7.7G  532M  7.2G    7% /dev/shm
-    ```
+```bash
+df -h /dev/shm 
+# docker内输入
+shm              64M  412K   64M   1% /dev/shm
+# 宿主机内输入
+tmpfs           7.7G  532M  7.2G    7% /dev/shm
+```
 12. 查看系统日志
-    ```bash
-    dmesg | tail -n 50
-    ```
+```bash
+dmesg | tail -n 50
+```
 13. 解压.tar.gz文件
-    ```bash
-    tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
-    ```
+```bash
+tar -zxvf file.tar.gz -C /path/to/directory # -C 指定解压路径
+```
 14. 删除apt-get安装的软件
-    ```bash
-    # 以删除vlc为例
-    sudo apt-get remove vlc
-    sudo apt-get purge vlc
-    sudo apt-get autoremove 
-    ```
+```bash
+# 以删除vlc为例
+sudo apt-get remove vlc
+sudo apt-get purge vlc
+sudo apt-get autoremove 
+```
 15. 查看主机序列号
-    ```bash
-    sudo dmidecode -s system-serial-number
-    ```
+```bash
+sudo dmidecode -s system-serial-number
+```
 16. 查看系统安装了哪些字体
-    ```bash
-    fc-list :lang=zh
-    ```
+```bash
+fc-list :lang=zh
+```
 17. passwd命令设置密码
-    ```bash
-    sudo passwd -d <username> # 设置空密码
-    sudo passwd <username> # 输入并确认新的密码
-    ```
+```bash
+sudo passwd -d <username> # 设置空密码
+sudo passwd <username> # 输入并确认新的密码
+```
 
 18. 压缩zip文件
-    ```bash
-    zip -r my_project.zip my_project/
-    ```
+```bash
+zip -r my_project.zip my_project/
+```
 19. 强制刷新页面
-    ```bash
-    ctrl + shift + r
-    ```
+```bash
+ctrl + shift + r
+```
+
+
+
+
 ---
 
-# 三. 常用软件
+
+
+
+## 3. 常用软件
+
 1. terminator
     (1) history显示指令时间
     ```bash
@@ -231,16 +246,26 @@ tags = [
 4. AppImageLauncher
    一个工具，用于将AppImage文件自动安装到系统，并显示图标。
 
+
+5. fish
+命令行补全工具
+```bash
+sudo apt update
+sudo apt install fish -y
+fish # 启动
+chsh -s /usr/bin/fish # 把 fish 设为默认 shell
+```
+
 ---
 
-# 四. USB设备挂载问题
+## 4. USB设备挂载问题
 
     一般来讲USB设备挂在到USB2.0的接口，不要挂载到USB3.0接口。USB 2.0端口的兼容性通常更好，电力需求更稳定，因此可能会提供更好的连接稳定性。比如随身wifi需要挂载到USB2.0接口。
 
 
 ---
 
-# 五. Docker自动补全
+## 5. Docker自动补全
 
 1. 安装 bash-completion
 
@@ -258,7 +283,7 @@ tags = [
 
 ---
 
-# 六. 取消升级提示
+## 6. 取消升级提示
 ```bash
 sudo vim /etc/update-manager/release-upgrades
 ```
@@ -270,7 +295,7 @@ Prompt=never
 
 ---
 
-# 七. 网速测试
+## 7. 网速测试
 安装speedtest
 ```bash
 sudo apt update
@@ -284,7 +309,7 @@ speedtest-cli --secure
 
 ---
 
-# 九. 关闭升级提示
+## 8. 关闭升级提示
 
 1. /etc/apt/apt.conf.d/10periodic
     禁止自动下载更新文件，（0 是关闭，1 是开启，将所有值改为 0）
@@ -308,7 +333,7 @@ speedtest-cli --secure
 
 ---
 
-# 十. 备份系统rsync
+## 9. 备份系统rsync
 
 1. rsync指令
    
@@ -399,7 +424,7 @@ speedtest-cli --secure
 
 ---
 
-# 十一. 创建桌面快捷方式
+## 10. 创建桌面快捷方式
 
 以colmap为例
 
@@ -427,7 +452,7 @@ speedtest-cli --secure
 
 ---
 
-# 十二. 修改fcitx输入法候选框大小
+## 11. 修改fcitx输入法候选框大小
 1. 进入fcitx配置界面
     ```bash
 
@@ -444,5 +469,6 @@ speedtest-cli --secure
    ```bash
    fcitx -r
    ```
+
 
 
