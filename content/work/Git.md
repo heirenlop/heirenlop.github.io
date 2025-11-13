@@ -435,8 +435,10 @@ git bundle create /tmp/repo-backup-$(date +%F-%H%M).bundle --all
 
 ## 20. 取消代理推送
 ```bash
-git -c http.proxy= -c https.proxy= push gitlab HEAD:dev_adapt_one_head_NCLT --force-with-lease
-
+# 推送到GitLab
+git -c http.proxy= -c https.proxy= push gitlab dev_adapt_one_head_NCLT 
+# 推送到Github
+git -c http.proxy= -c https.proxy= push origin dev_adapt_one_head_NCLT
 ```
 
 
