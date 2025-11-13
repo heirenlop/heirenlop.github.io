@@ -2,7 +2,7 @@
 authors = ["李佳潞"]
 title = "Git"
 url = "/work/git/"
-date = "2024-10-21"
+date = "2025-11-13"
 categories = [
     "开发工具"
 ]
@@ -39,13 +39,16 @@ tags = [
 - [15. 修改仓的地址](#15-修改仓的地址)
 - [16. 生成SSH密钥对](#16-生成ssh密钥对)
 - [17. 设置git 用户名和邮箱](#17-设置git-用户名和邮箱)
+- [18. 修改提交历史的用户名和邮箱](#18-修改提交历史的用户名和邮箱)
+- [19. 创建备份](#19-创建备份)
+- [20. 取消代理推送](#20-取消代理推送)
 - [tips](#tips)
 
 
 
 ---
 
-# 1. 新建分支
+## 1. 新建分支
 基于所在本地分支创建新分支
 ```shell
 git checkout -b xxx 
@@ -63,7 +66,7 @@ git branch -u origin/xxx xxx
 
 ---
 
-# 2. 删除分支
+## 2. 删除分支
 删除远程分支
 ```shell
 git push origin --delete xxx
@@ -76,30 +79,30 @@ git branch -D xxx
 
 ---
 
-# 3. 回退版本
-## 3.1 整个分支回退到指定版本 
+## 3. 回退版本
+### 3.1 整个分支回退到指定版本 
 ```bash
 git reset --hard 版本号
 ```
-## 3.2 回退后强制上传回退版本
+### 3.2 回退后强制上传回退版本
 a. 命令行推送
 ```bash
-git push origin xxx -force #xxx为分支名，如git push origin main -force
+git push origin xxx -force ##xxx为分支名，如git push origin main -force
 ```
 b. 界面推送
 在vscode的git插件中直接点同步，即可推送到远程仓库
 
 
-## 3.3 指定文件回退到某版本
+### 3.3 指定文件回退到某版本
 ```bash
-git checkout 版本号 -- 文件路径 #git checkout abc1234 -- file.txt
+git checkout 版本号 -- 文件路径 ##git checkout abc1234 -- file.txt
 ```
 
 
 ---
 
-# 4. 清空本地修改
-## 4.1 已跟踪文件
+## 4. 清空本地修改
+### 4.1 已跟踪文件
 
 清空所有已跟踪文件的修改
 ```shell
@@ -107,26 +110,26 @@ git checkout .
 ```
 清空本地某个文件修改
 ```shell
-git checkout xxx #xxx为某文件
+git checkout xxx ##xxx为某文件
 ```
-## 4.2未跟踪文件
+### 4.2未跟踪文件
 
 清空所有未跟踪文件/目录的修改
 ```bash
-git clean -fd #f为未跟踪的文件，d为未跟踪的目录
+git clean -fd ##f为未跟踪的文件，d为未跟踪的目录
 ```
 
 
 ---
 
-# 5. 撤销与修改
+## 5. 撤销与修改
 add到暂存区后未commit，撤销 add
 ```shell
-git restore -staged xxx #xxx为需要撤销的文件
+git restore -staged xxx ##xxx为需要撤销的文件
 ```
 commit到本地仓后未push，修改 commit
 ```shell
-git commit --amend -m "xxx" #xxx为新的提交消息
+git commit --amend -m "xxx" ##xxx为新的提交消息
 ```
 commit 到地仓后未push，撤销 commit
 ```shell
@@ -136,7 +139,7 @@ git reset --soft 上一个版本号
 
 ---
 
-# 6. 基于所在分支的某个版本号拉新分支
+## 6. 基于所在分支的某个版本号拉新分支
 ```shell
 git checkout -b new branch name xxx 版本号
 git switch -c new branch name xxx 版本号
@@ -145,7 +148,7 @@ git switch -c new branch name xxx 版本号
 
 ---
 
-# 7. 打包 bundle
+## 7. 打包 bundle
 常规流程
 ```shell
 git status
@@ -165,7 +168,7 @@ dle venfy xxx.bundle
 
 ---
 
-# 8. 切换到老版本号后再切换回最新版本号
+## 8. 切换到老版本号后再切换回最新版本号
 ```shell
 git checkout xxx 版本号
 git pull 远程分支到本地
@@ -174,31 +177,31 @@ git pull 远程分支到本地
 
 ---
 
-# 9. 查看差异
+## 9. 查看差异
 查看版本差异
 ```shell
 git diff 版本号
 ```
 查看版本某文件差异
 ```shell
-git diff 版本号 -- 文件名 #文件的路径写全
+git diff 版本号 -- 文件名 ##文件的路径写全
 ```
 
 
 ---
 
-# 10. 强制重命名当前分支
+## 10. 强制重命名当前分支
 ```shell
-git branch -M xxx #xxx为新分支名
+git branch -M xxx ##xxx为新分支名
 ```
 
 
 ---
 
-# 11. 将远程仓库地址添加到本地仓库
+## 11. 将远程仓库地址添加到本地仓库
 一般为新建仓后，把本地仓推到远程仓做准备用。
 ```shell
-git remote add origin xxx #xxx为远程仓库地址
+git remote add origin xxx ##xxx为远程仓库地址
 ```
 如
 ```shell
@@ -208,11 +211,11 @@ git remote add origin https://github.com/heirenlop/heirenlop.github.io.git
 
 ---
 
-# 12. git fetch和git pull的区别
+## 12. git fetch和git pull的区别
 git fetch
-## 12.1 功能
+### 12.1 功能
 从远程仓库下载最新的提交和分支信息，但不会自动合并这些更改到当前的工作分支。不会影响当前的工作目录或分支。你需要手动检查和合并这些更改（例如使用 git merge 或 git rebase）。
-## 12.2 用法
+### 12.2 用法
 ```shell
 git fetch <remote>
 ```
@@ -221,10 +224,10 @@ git fetch <remote>
 git fetch origin
 ```
 git pull
-## 12.3 功能
+### 12.3 功能
 是 git fetch 和 git merge 的组合。它从远程仓库下载最新的提交，并立即将这些更改合并到当前的工作分支。
 
-## 12.4 用法
+### 12.4 用法
 ```shell
 git pull <remote> <branch>
 ```
@@ -236,7 +239,7 @@ git pull origin main
 
 ---
 
-# 13. 新建仓
+## 13. 新建仓
 
 (1) 个人主页New repository
 (2) 本地创建新仓，以abc为例
@@ -246,9 +249,9 @@ git init
 ```
 (3) 添加文件，以README为例
 ```bash 
-git status #查看状态
+git status ##查看状态
 git add README.md
-git status #查看状态
+git status ##查看状态
 ```
 (4) 提交
 ```bash
@@ -256,25 +259,25 @@ git commit -m "first commit"
 ```
 (5) 推送
 ```bash
-git remote add origin git@github.com:heirenlop/abc.git #链接远程仓
-git remote -v #查看状态
-git push -u origin main #推送
+git remote add origin git@github.com:heirenlop/abc.git ##链接远程仓
+git remote -v ##查看状态
+git push -u origin main ##推送
 
-# tips：
-# 如果没有main仓
-git branch -M main # 修改默认分支为main
+## tips：
+## 如果没有main仓
+git branch -M main ## 修改默认分支为main
 git push -u origin main
 ```
 (6) 修改remote链接
 ```bash
-git remote -v  #查看状态
-git remote set-url origin git@github.com:heirenlop/abc.git  #x修改为新的链接
-git remote -v  #查看状态
+git remote -v  ##查看状态
+git remote set-url origin git@github.com:heirenlop/abc.git  ##x修改为新的链接
+git remote -v  ##查看状态
 ```
 
 ---
 
-# 14. submodule相关
+## 14. submodule相关
 - 拉取submodule
 (1) 确认仓是否有submodule
 ```bash
@@ -293,7 +296,7 @@ git submodule update --init --recursive
 (1) 在本地仓中添加submodule，add的内容在仓内的.gitmodules文件中
 ```bash
 git submodule add <子模块地址> <存放路径>
-# 举例
+## 举例
 git submodule add https://gitlab.inria.fr/bkerbl/simple-knn.git submodules/simple-knn
 git submodule add -b dr_aa https://github.com/graphdeco-inria/diff-gaussian-rasterization.git submodules/diff-gaussian-rasterization
 git submodule add https://github.com/rahul-goel/fused-ssim.git submodules/fused-ssim
@@ -302,10 +305,10 @@ git submodule add https://github.com/rahul-goel/fused-ssim.git submodules/fused-
 (2) submodule 切换到制定的分支（可选）
 ```bash
 cd submodules/xxx
-git fetch  # 获取所有 commit
+git fetch  ## 获取所有 commit
 git checkout <指定的 commit 哈希>
 
-cd ../.. #回到主仓库，记录这个 commit 的引用
+cd ../.. ##回到主仓库，记录这个 commit 的引用
 git add submodules/xxx
 git commit -m "切换 submodule xxx to commit 1a2b3c4d5e"
 ```
@@ -328,36 +331,36 @@ git commit -m "Remove submodule simple-knn"
 
 ---
 
-# 15. 修改仓的地址
+## 15. 修改仓的地址
 
 在忘记fork且clone到本地的情况下，修改别人仓地址为自己仓
 (1) 网页新建自己仓
 (2) 修改远程地址步骤
 ```bash
-# 检查当前远程仓地址
+## 检查当前远程仓地址
 git remote -v
 
-#output 
+##output 
 origin  https://github.com/original_owner/original_repo.git (fetch)
 origin  https://github.com/original_owner/original_repo.git (push)
 
-# 删除原始远程仓地址
+## 删除原始远程仓地址
 git remote remove origin
 
-# 添加新的远程仓地址
+## 添加新的远程仓地址
 git remote add origin https://github.com/your_username/your_repo.git
 
-# 检查是否修改成功
+## 检查是否修改成功
 git remote -v
 
-# output
+## output
 origin  https://github.com/your_username/your_repo.git (fetch)
 origin  https://github.com/your_username/your_repo.git (push)
 
-# 推送到新的远程仓
+## 推送到新的远程仓
 git push -u origin main 
 
-# tips： 如果main分支不存在，新建一个main分支，再推送
+## tips： 如果main分支不存在，新建一个main分支，再推送
 git branch -M main
 git push -u origin main
 
@@ -372,7 +375,7 @@ git push origin main
 ```
 
 ---
-# 16. 生成SSH密钥对
+## 16. 生成SSH密钥对
 (1) 打开终端并执行以下命令，生成新的SSH密钥对
 ```bash
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -391,18 +394,55 @@ ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub
 ```
 
-# 17. 设置git 用户名和邮箱
+## 17. 设置git 用户名和邮箱
 ```bash
 git config --global user.name "你的名字"
 git config --global user.email "你的邮箱@example.com"
-git config --global --list # 查看配置
+git config --global --list ## 查看配置
+
+```
+
+## 18. 修改提交历史的用户名和邮箱
+```bash
+# 安装 git-filter-repo
+pip3 install --user git-filter-repo
+
+# 确认提交身份是你
+git config user.name  "xxxxx"
+git config user.email "your_email@example.com"
+
+# 修改最近20个提交的用户名和邮箱
+git rebase -i HEAD~20
+# 把所有行的 pick 保持不变，退出后：
+git filter-repo --force --refs HEAD --commit-callback '
+commit.author_name     = b"xxxxx"
+commit.author_email    = b"your_email@example.com"
+commit.committer_name  = b"xxxxx"
+commit.committer_email = b"your_email@example.com"
+'
+
+# 验证
+git log -20 --format='%h %an <%ae> | %cn <%ce>'
+# 推送 / 取消proxy推送
+git push --force-with-lease
+git -c http.proxy= -c https.proxy= push gitlab HEAD:dev_adapt_one_head_NCLT --force-with-lease
+```
+
+## 19. 创建备份
+```bash
+git bundle create /tmp/repo-backup-$(date +%F-%H%M).bundle --all
+```
+
+## 20. 取消代理推送
+```bash
+git -c http.proxy= -c https.proxy= push gitlab HEAD:dev_adapt_one_head_NCLT --force-with-lease
 
 ```
 
 
 ---
 
-# tips
+## tips
 <div class="container">
     <div class="image">
         <figure>
