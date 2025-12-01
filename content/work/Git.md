@@ -42,6 +42,7 @@ tags = [
 - [18. 修改提交历史的用户名和邮箱](#18-修改提交历史的用户名和邮箱)
 - [19. 创建备份](#19-创建备份)
 - [20. 取消代理推送](#20-取消代理推送)
+- [21. 当前分支推送到其他分支](#21-当前分支推送到其他分支)
 - [tips](#tips)
 
 
@@ -441,6 +442,11 @@ git -c http.proxy= -c https.proxy= push gitlab dev_adapt_one_head_NCLT
 git -c http.proxy= -c https.proxy= push origin dev_adapt_one_head_NCLT
 ```
 
+## 21. 当前分支推送到其他分支
+```bash
+git push -f gitlab main:dev_adapt_NCLT -u
+git push -f origin main:dev_adapt_NCLT -u
+```
 
 ---
 
