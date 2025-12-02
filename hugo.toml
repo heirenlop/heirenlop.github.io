@@ -204,7 +204,6 @@ languageName = ":cn:"
 [[languages.zh-cn.menu.main]]
 identifier = "life"          # 唯一ID，子菜单用这个当 parent
 name       = "生活"
-url        = "/life/"        # 想要点“生活”也有汇总页就保留；不需要可改成 "/"
 weight     = 1
 
   # 子菜单：关于
@@ -247,7 +246,6 @@ weight     = 1
 [[languages.zh-cn.menu.main]]
 identifier = "work"
 name       = "工作"
-url        = "/work/"
 weight     = 2
 
   # 子菜单：简历
@@ -289,7 +287,6 @@ latestPostLabel = "📝 Latest post:"
 [[languages.en.menu.main]]
 identifier = "life"
 name       = "Life"
-url        = "/life/"
 weight     = 1
 
   [[languages.en.menu.main]]
@@ -327,7 +324,6 @@ weight     = 1
 [[languages.en.menu.main]]
 identifier = "work"
 name       = "Work"
-url        = "/work/"
 weight     = 2
 
   [[languages.en.menu.main]]
