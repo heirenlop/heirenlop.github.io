@@ -32,7 +32,9 @@
     mermaid.initialize({ startOnLoad: true });
   </script>
   {{ end }}
-
+  {{ if .Params.toc }}
+  <script src="/assets/js/toc.js"></script>
+  {{ end }}
   {{ if .Site.Params.disableDefaultJsScripts }}
   {{ if not .Site.Params.hideColorSchemeToggle }}
   {{ errorf "Invalid configuration. Default JS scripts are disabled, but 'hideColorSchemeToggle' is false." }}
