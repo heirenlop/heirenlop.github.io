@@ -1,135 +1,103 @@
 <style>
-    /* 顶级菜单项相对定位，用于放子菜单 */
-    .navigation-item {
-      position: relative;
-    }
+  /* 顶级菜单项相对定位，用于放子菜单 */
+  .navigation-item {
+    position: relative;
+  }
 
-    /* 下拉菜单基础样式（不区分明暗） */
-    .navigation-submenu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0.4rem 0;
-      border-radius: 0.6rem;
-      min-width: 150px;
-      display: none;
-      z-index: 20;
-      color: inherit; /* 继承文字颜色 */
-    }
+  /* 下拉菜单基础样式（悬浮菜单） */
+  .navigation-submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0.4rem 0;
+    border-radius: 0.6rem;
+    min-width: 150px;
+    display: none;
+    z-index: 20;
+    color: inherit;
+  }
 
-    /* 亮色主题下的下拉菜单背景 & 阴影 */
-    .colorscheme-light .navigation-submenu {
-      background: rgba(255, 255, 255, 0.98);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-    }
+  /* 亮色主题下的下拉菜单背景 & 阴影 */
+  .colorscheme-light .navigation-submenu {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
 
-    /* 暗色主题下的下拉菜单背景 & 阴影 */
-    .colorscheme-dark .navigation-submenu,
-    .colorscheme-auto.dark .navigation-submenu {
-      background: rgba(10, 10, 10, 0.98);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
+  /* 暗色主题下的下拉菜单背景 & 阴影 */
+  .colorscheme-dark .navigation-submenu,
+  .colorscheme-auto.dark .navigation-submenu {
+    background: rgba(10, 10, 10, 0.98);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
 
-    /* 子菜单链接：字体稍微大一点，留出呼吸感 */
-    .navigation-subitem .navigation-link {
-      display: block;
-      padding: 0.55rem 1.1rem;
-      white-space: nowrap;
-      font-size: 1.65rem;
-      line-height: 1.4;
-    }
+  /* 子菜单链接基础样式 */
+  .navigation-subitem .navigation-link {
+    display: block;
+    white-space: nowrap;
+  }
 
-    /* 悬停高亮子菜单项（用背景，不改文字颜色） */
-    .navigation-subitem .navigation-link:hover {
-      background: rgba(128, 128, 128, 0.15);
-      text-decoration: none;
-    }
+  .navigation-subitem .navigation-link:hover {
+    background: rgba(128, 128, 128, 0.15);
+    text-decoration: none;
+  }
 
-    /* 有子菜单的顶级按钮样式：看起来跟 a 一样 */
-    .navigation-toggle {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      font: inherit;
-      color: inherit;
-      cursor: pointer;
-    }
+  /* 有子菜单的顶级按钮：长得跟 a 一样 */
+  .navigation-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
 
-    /* 悬停顶级菜单时显示下拉（桌面端） */
-    .navigation-item.has-children:hover > .navigation-submenu {
-      display: block;
-    }
+  /* 悬停 / focus 时显示下拉 */
+  .navigation-item.has-children:hover > .navigation-submenu {
+    display: block;
+  }
+  .navigation-item.has-children:focus-within > .navigation-submenu {
+    display: block;
+  }
 
-    /* 顶级菜单 / 子菜单内有 focus 时也显示（移动端点击按钮） */
-    .navigation-item.has-children:focus-within > .navigation-submenu {
-      display: block;
-    }
-    /* ====== 顶部导航整体呼吸感优化 ====== */
+  /* ========= 统一调小一点字号 + padding，兼顾大小屏 ========= */
 
-/* 顶级导航列表：让每个菜单项之间有间距（桌面端） */
-.navigation-list {
-  display: flex;
-  align-items: center;
-  gap: 1.3rem;              /* 菜单项左右间距，给一点空间 */
-}
+  /* 顶部导航文字 */
+  .navigation-link {
+    padding: 0.2rem 0.5rem;     /* 比之前小一点 */
+    font-size: 1.9rem;          /* 原来 1.9，整体缩一下 */
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+  }
 
-/* 每个顶级菜单项再略微加一点左右 margin，兼容某些主题没用 gap 的情况 */
-.navigation-item {
-  margin: 0 0.3rem;
-}
+  .navigation-toggle {
+    padding: 0.2rem 0.5rem;
+    line-height: 1.6;
+  }
 
-/* 顶级导航文字本身：加一点内边距 + 行高 */
-.navigation-link {
-  padding: 0.3rem 0.6rem;   /* 上下 0.3rem，左右 0.6rem */
-  line-height: 1.8;         /* 比默认 1.2–1.4 舒服很多 */
-  font-size: 1.9rem;        /* 如果觉得太大可以改回 1.5rem 左右 */
-  letter-spacing: 0.03em;   /* 略微拉开字间距，看起来不那么挤 */
-  font-weight: 750
-}
+  /* 子菜单项 */
+  .navigation-subitem .navigation-link {
+    padding: 0.35rem 0.9rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
 
-/* 有子菜单的顶级按钮，看起来跟普通链接一致 */
-.navigation-toggle {
-  padding: 0.3rem 0.6rem;
-  line-height: 1.8;
-}
-
-/* ====== 子菜单的呼吸感优化 ====== */
-
-/* 子菜单整体：上下再多一点 padding，让阴影盒子不显得太紧 */
-.navigation-submenu {
-  padding: 0.4rem 0;        /* 原来是 0.4rem，可以稍微加一点 */
-}
-
-/* 子菜单项的文字：上下加大内边距，让每一项更好点到 */
-.navigation-subitem .navigation-link {
-  display: block;
-  padding: 0.5rem 1.1rem;   /* 比之前 0.55 / 1.1 更松一点 */
-  white-space: nowrap;
-  font-size: 1.6rem;       /* 这个大小你刚才感觉还 ok 就保留 */
-  line-height: 1.6;
-  font-weight: 600
-}
-
-/* 子菜单 hover 状态保持，只做轻微高亮 */
-.navigation-subitem .navigation-link:hover {
-  background: rgba(128, 128, 128, 0.15);
-  text-decoration: none;
-}
-/* ====== 语言切换按钮优化 ====== */
-.lang-switch a {
-  font-size: 1.6rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-  border: 3px solid rgba(128, 128, 128, 0.4);
-  font-weight: 600;
-}
-
+  /* 语言切换小 pill */
+  .lang-switch a {
+    font-size: 1.4rem;
+    padding: 0.1rem 0.45rem;
+    border-radius: 999px;
+    border: 2px solid rgba(128, 128, 128, 0.5);
+    font-weight: 600;
+  }
 </style>
+
 </header>
 
 
