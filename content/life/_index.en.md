@@ -2,7 +2,7 @@
 title: ""
 ---
 <style>
-    .work-directory {
+    .life-directory {
       margin-top: 0.5rem;
       font-size: 2.55rem;      /* Make the overall font slightly larger */
       line-height: 1.8;
@@ -11,23 +11,24 @@ title: ""
       white-space: pre-line;   /* Keep line breaks and leading spaces */
     }
 
-    .work-directory a {
+    .life-directory a {
       text-decoration: none;
     }
 
-    .work-directory a:hover {
+    .life-directory a:hover {
       text-decoration: underline;
     }
 
 </style>
 
-> This is the entry to all work & research related content.  
+> This is the entry to all life-related content.  
 > Pick a branch below and keep exploring:
 
-## Work Directory
-<div class="work-directory">
-Work
-├── <a href="/resume/">Resume</a>
-└── <a href="/notes/">Notes</a>
-<!-- ├── <a href="/projects/">Projects</a> -->
+## Life Directory
+<div class="life-directory">
+├── <a href="/about/">About</a>
+├── <a href="/daily/">Travel</a>
+├── <a href="/travel-map/">Footprints</a>
+├── <a href="/music/">Music</a>
+└── <a href="/other/">Essays</a>
 </div>

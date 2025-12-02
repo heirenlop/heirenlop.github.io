@@ -2,7 +2,7 @@
 title: ""
 ---
 <style>
-    .work-directory {
+    .life-directory {
       margin-top: 0.5rem;
       font-size: 2.55rem;      /* 整体字体稍微大一点 */
       line-height: 1.8;
@@ -11,23 +11,24 @@ title: ""
       white-space: pre-line;   /* 保留换行和前面的对齐 */
     }
 
-    .work-directory a {
+    .life-directory a {
       text-decoration: none;
     }
 
-    .work-directory a:hover {
+    .life-directory a:hover {
       text-decoration: underline;
     }
 
 </style>
 
-> 这里是工作科研相关内容的入口，  
+> 这里是生活相关内容的入口，  
 > 从下面选一个分支继续逛：
 
-## 工作目录
-<div class="work-directory">
-工作 
-├── <a href="/resume/">简历</a>
-└── <a href="/notes/">笔记</a>
-<!-- ├── <a href="/projects/">项目</a> -->
+## 生活目录
+<div class="life-directory">
+├── <a href="/about/">关于</a>
+├── <a href="/daily/">旅行</a>
+├── <a href="/travel-map/">足迹</a>
+├── <a href="/music/">音乐</a>
+└── <a href="/other/">随笔</a>
 </div>

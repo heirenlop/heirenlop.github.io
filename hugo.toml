@@ -200,40 +200,78 @@ url = "https://www.zhihu.com/people/heiren-70"
 [languages.zh-cn]
 languageName = ":cn:"
 
+# 顶栏：生活
 [[languages.zh-cn.menu.main]]
-name = "关于"
-weight = 1
-url = "about/"
+identifier = "life"          # 唯一ID，子菜单用这个当 parent
+name       = "生活"
+url        = "/life/"        # 想要点“生活”也有汇总页就保留；不需要可改成 "/"
+weight     = 1
 
-[[languages.zh-cn.menu.main]]
-name = "简介"
-weight = 2
-url = "resume/"
+  # 子菜单：关于
+  [[languages.zh-cn.menu.main]]
+  name   = "关于"
+  url    = "/about/"
+  parent = "life"
+  weight = 1
 
-[[languages.zh-cn.menu.main]]
-name = "工作"
-weight = 6
-url = "work/"
+  # 子菜单：旅行日志
+  [[languages.zh-cn.menu.main]]
+  name   = "旅行"
+  url    = "/daily/"
+  parent = "life"
+  weight = 2
 
-[[languages.zh-cn.menu.main]]
-name = "足迹"
-weight = 4
-url = "travel-map/"
+  # 子菜单：足迹地图
+  [[languages.zh-cn.menu.main]]
+  name   = "足迹"
+  url    = "/travel-map/"
+  parent = "life"
+  weight = 3
 
-[[languages.zh-cn.menu.main]]
-name = "旅行"
-weight = 3
-url = "daily/"
+  # 子菜单：音乐
+  [[languages.zh-cn.menu.main]]
+  name   = "音乐"
+  url    = "/music/"
+  parent = "life"
+  weight = 4
 
-[[languages.zh-cn.menu.main]]
-name = "随笔"
-weight = 7
-url = "other/"
+  # 子菜单：随笔
+  [[languages.zh-cn.menu.main]]
+  name   = "随笔"
+  url    = "/other/"
+  parent = "life"
+  weight = 5
 
+
+# 顶栏：工作（父菜单）
 [[languages.zh-cn.menu.main]]
-name = "音乐"
-weight = 5
-url = "music/"
+identifier = "work"
+name       = "工作"
+url        = "/work/"
+weight     = 2
+
+  # 子菜单：简历
+  [[languages.zh-cn.menu.main]]
+  name   = "简历"
+  url    = "/resume/"
+  parent = "work"
+  weight = 1
+
+  # 子菜单：项目
+  # [[languages.zh-cn.menu.main]]
+  # name   = "项目"
+  # url    = "/projects/"
+  # parent = "work"
+  # weight = 2
+
+  # 子菜单：工作记录 
+  [[languages.zh-cn.menu.main]]
+  name   = "笔记"
+  url    = "/notes/"
+  parent = "work"
+  weight = 3
+
+
 
 #-----------------------------------set EN--------------------------------------
 [languages.en]
@@ -247,40 +285,68 @@ description = ""
 keywords = ""
 latestPostLabel = "📝 Latest post:"
 
+# Top: Life
 [[languages.en.menu.main]]
-name = "About"
-weight = 1
-url = "about/"
+identifier = "life"
+name       = "Life"
+url        = "/life/"
+weight     = 1
 
-[[languages.en.menu.main]]
-name = "Resume"
-weight = 2
-url = "resume/"
+  [[languages.en.menu.main]]
+  name   = "About"
+  url    = "/about/"
+  parent = "life"
+  weight = 1
 
-[[languages.en.menu.main]]
-name = "Work Record"
-weight = 6
-url = "work/"
+  [[languages.en.menu.main]]
+  name   = "Travel"
+  url    = "/daily/"
+  parent = "life"
+  weight = 2
 
-[[languages.en.menu.main]]
-name = "Travel Map"
-weight = 4
-url = "travel-map/"
+  [[languages.en.menu.main]]
+  name   = "Footprints"
+  url    = "/travel-map/"
+  parent = "life"
+  weight = 3
 
-[[languages.en.menu.main]]
-name = "Travel"
-weight = 3
-url = "daily/"
+  [[languages.en.menu.main]]
+  name   = "Music"
+  url    = "/music/"
+  parent = "life"
+  weight = 4
 
-[[languages.en.menu.main]]
-name = "Notes"
-weight = 7
-url = "other/"
+  [[languages.en.menu.main]]
+  name   = "Essays"
+  url    = "/other/"
+  parent = "life"
+  weight = 5
 
+
+# Top: Work
 [[languages.en.menu.main]]
-name = "Music"
-weight = 5
-url = "music/"
+identifier = "work"
+name       = "Work"
+url        = "/work/"
+weight     = 2
+
+  [[languages.en.menu.main]]
+  name   = "Resume"
+  url    = "/resume/"
+  parent = "work"
+  weight = 1
+
+  # [[languages.en.menu.main]]
+  # name   = "Projects"
+  # url    = "/projects/"
+  # parent = "work"
+  # weight = 2
+
+  [[languages.en.menu.main]]
+  name   = "Notes"
+  url    = "/work/"
+  parent = "work"
+  weight = 3
 
 #----------------------------------------------------------
 

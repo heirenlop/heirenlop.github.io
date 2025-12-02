@@ -1,3 +1,63 @@
+  <style>
+    /* 顶级菜单项相对定位，用于放子菜单 */
+    .navigation-item {
+      position: relative;
+    }
+
+    /* 下拉菜单基础样式（不区分明暗） */
+    .navigation-submenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0.4rem 0;
+      border-radius: 0.6rem;
+      min-width: 150px;
+      display: none;
+      z-index: 20;
+      /* 让文字颜色继承主题原来的 .navigation-link 颜色 */
+      color: inherit;
+    }
+
+    /* 亮色主题下的下拉菜单背景 & 阴影 */
+    .colorscheme-light .navigation-submenu {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    /* 暗色主题下的下拉菜单背景 & 阴影 */
+    .colorscheme-dark .navigation-submenu,
+    .colorscheme-auto.dark .navigation-submenu {
+      background: rgba(10, 10, 10, 0.98);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* 子菜单链接：字体稍微大一点，留出呼吸感 */
+    .navigation-subitem .navigation-link {
+      display: block;
+      padding: 0.55rem 1.1rem;
+      white-space: nowrap;
+      font-size: 1.65rem;      /* 比之前大一号 */
+      line-height: 1.4;
+    }
+
+    /* 悬停高亮子菜单项（用背景，不改文字颜色） */
+    .navigation-subitem .navigation-link:hover {
+      background: rgba(128, 128, 128, 0.15);
+      text-decoration: none;
+    }
+
+    /* 悬停顶级菜单时显示下拉 */
+    .navigation-item.has-children:hover > .navigation-submenu {
+      display: block;
+    }
+  </style>
+</header>
+
+
 <nav class="navigation">
   <section class="container">
     {{ with .Site }}
@@ -10,14 +70,42 @@
       <label class="menu-button float-right" for="menu-toggle">
         <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
       </label>
-      <ul class="navigation-list">
-        {{ with .Site.Menus.main}}
+            <ul class="navigation-list">
+        {{ with .Site.Menus.main }}
           {{ range sort . }}
-            <li class="navigation-item">
-              <a class="navigation-link {{ .Params.class }}" href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">{{ .Name }}</a>
-            </li>
+            {{/* 跳过子菜单，只在这里渲染顶级菜单项 */}}
+            {{ if .Parent }}
+              {{ continue }}
+            {{ end }}
+
+            {{ if .HasChildren }}
+              <li class="navigation-item has-children">
+                <a class="navigation-link {{ .Params.class }}"
+                   href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
+                  {{ .Name }}
+                </a>
+                <ul class="navigation-submenu">
+                  {{ range .Children }}
+                    <li class="navigation-subitem">
+                      <a class="navigation-link {{ .Params.class }}"
+                         href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
+                        {{ .Name }}
+                      </a>
+                    </li>
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              <li class="navigation-item">
+                <a class="navigation-link {{ .Params.class }}"
+                   href="{{ index (apply (slice .URL) (.Params.urlFunc | default "relLangURL") ".") 0 }}">
+                  {{ .Name }}
+                </a>
+              </li>
+            {{ end }}
           {{ end }}
         {{ end }}
+
         {{ if hugo.IsMultilingual }}
           {{ $node := . }}
           {{ .Scratch.Set "separator" true }}
@@ -36,6 +124,7 @@
           {{ end }}
         {{ end }}
       </ul>
+
     {{ end }}
   </section>
 </nav>
