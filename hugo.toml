@@ -340,7 +340,7 @@ weight     = 2
 
   [[languages.en.menu.main]]
   name   = "Notes"
-  url    = "/work/"
+  url    = "/notes/"
   parent = "work"
   weight = 3
 
