@@ -254,7 +254,7 @@ weight     = 2
   url    = "/resume/"
   parent = "work"
   weight = 1
-
+# 开启projects 功能
   # 子菜单：项目
   # [[languages.zh-cn.menu.main]]
   # name   = "项目"
@@ -331,7 +331,7 @@ weight     = 2
   url    = "/resume/"
   parent = "work"
   weight = 1
-
+# 开启projects 功能
   # [[languages.en.menu.main]]
   # name   = "Projects"
   # url    = "/projects/"
